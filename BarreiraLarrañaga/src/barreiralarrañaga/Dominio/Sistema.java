@@ -7,13 +7,11 @@ import java.util.Observable;
 public class Sistema extends Observable implements Serializable{
     private ArrayList<Cliente> listaClientes;
     private ArrayList<Horario> horariosDisponibles;
-    private ArrayList<TipoComida> tiposComidaDisponibles;
     private ArrayList<Restaurante> listaRestaurantes;
     
     public Sistema() {
         listaClientes = new ArrayList<Cliente>();
         horariosDisponibles = new ArrayList<Horario>();
-        tiposComidaDisponibles = new ArrayList<TipoComida>();
         listaRestaurantes = new ArrayList<Restaurante>();
     }
 
