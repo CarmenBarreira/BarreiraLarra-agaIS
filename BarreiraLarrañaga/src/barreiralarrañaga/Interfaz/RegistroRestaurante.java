@@ -4,7 +4,6 @@ import barreiralarrañaga.Dominio.Sistema;
 
 public class RegistroRestaurante extends javax.swing.JFrame {
 
-   
     public RegistroRestaurante(Sistema sis) {
         initComponents();
     }
@@ -25,7 +24,8 @@ public class RegistroRestaurante extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         txtNombreR2 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo Restaurante");
         setAutoRequestFocus(false);
 
         lblDireccionR.setText("Dirección: ");
