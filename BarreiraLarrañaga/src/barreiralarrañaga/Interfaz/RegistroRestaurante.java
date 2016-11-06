@@ -1,9 +1,14 @@
 package barreiralarrañaga.Interfaz;
 
+import barreiralarrañaga.Dominio.Restaurante;
 import barreiralarrañaga.Dominio.Sistema;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 public class RegistroRestaurante extends javax.swing.JFrame {
 
+    boolean esNuevo = true;
+    
     public RegistroRestaurante(Sistema sis) {
         initComponents();
     }
@@ -17,12 +22,12 @@ public class RegistroRestaurante extends javax.swing.JFrame {
         lblNombreR = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnAgregarR = new javax.swing.JButton();
-        txtNombreR1 = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         lblDireccionR1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lblDireccionR2 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        txtNombreR2 = new javax.swing.JTextField();
+        txtTipoComida = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nuevo Restaurante");
@@ -36,6 +41,11 @@ public class RegistroRestaurante extends javax.swing.JFrame {
         jLabel1.setText("Nuevo Restaurante");
 
         btnAgregarR.setText("Agregar");
+        btnAgregarR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarRActionPerformed(evt);
+            }
+        });
 
         lblDireccionR1.setText("Horarios: ");
 
@@ -63,11 +73,11 @@ public class RegistroRestaurante extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtNombreR1))
+                                        .addComponent(txtDireccion))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtNombreR2))
+                                        .addComponent(txtTipoComida))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -95,11 +105,11 @@ public class RegistroRestaurante extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -112,6 +122,56 @@ public class RegistroRestaurante extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarRActionPerformed
+        String nombre, direccion, tipoComida;
+        nombre = txtNombreR.getText();
+        direccion = txtDireccion.getText();
+        tipoComida= txtTipoComida.getText();
+        
+        Restaurante aux = null ; 
+        
+        if(nombre.length() == 0 || direccion.length() ==0 || tipoComida.length() ==0){
+             JOptionPane.showMessageDialog(this, "Debe completar todos los datos", "Campos Obligatorios", ERROR_MESSAGE);
+        }else{
+            if(!stringCorrecto(nombre, "nombre")){
+                JOptionPane.showMessageDialog(this, "El nombre es Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)", "Nombre Incorrecto", ERROR_MESSAGE);
+                txtNombreR.selectAll();
+                txtNombreR.requestFocusInWindow();
+            }
+            else{//nombre correcto
+                if(!stringCorrecto(direccion, "direccion")){
+                    JOptionPane.showMessageDialog(this, "La direccion es Incorrecto", "Direccion Incorrecta", ERROR_MESSAGE);
+                    txtDireccion.selectAll();
+                    txtDireccion.requestFocusInWindow();
+                }
+                else{
+                   if(!stringCorrecto(tipoComida, "tipoComida")){
+                       JOptionPane.showMessageDialog(this, "El tipo de comida es Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)", "Nombre Incorrecto", ERROR_MESSAGE);
+                        txtTipoComida.selectAll();
+                        txtTipoComida.requestFocusInWindow();
+                   }else{//todos los datos bien
+                        if (esNuevo) {
+                             aux = new Restaurante(nombre, direccion, tipoComida);
+                        } 
+                   }
+                } 
+            }           
+        }
+        
+        if (sis.getListaRestaurantes().indexOf(aux) != -1) {
+            JOptionPane.showMessageDialog(this, "Ya Existe un restaurante con el mismo nombre y direccion: " + aux.getNombre(), "Restaurante Duplicado", ERROR_MESSAGE);
+            txtNombreR.selectAll();
+            txtNombreR.requestFocusInWindow();
+            txtDireccion.selectAll();
+            txtDireccion.requestFocusInWindow();
+        }
+        else{
+            sis.agregarRestaurante(aux);
+            JOptionPane.showMessageDialog(this, "Restaurante registrado correctamente", "Restaurante registrado exitosamente", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnAgregarRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,7 +204,7 @@ public class RegistroRestaurante extends javax.swing.JFrame {
             }
         });
     }*/
-
+    Sistema sis = new Sistema();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarR;
     private javax.swing.JButton jButton1;
@@ -154,8 +214,30 @@ public class RegistroRestaurante extends javax.swing.JFrame {
     private javax.swing.JLabel lblDireccionR1;
     private javax.swing.JLabel lblDireccionR2;
     private javax.swing.JLabel lblNombreR;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombreR;
-    private javax.swing.JTextField txtNombreR1;
-    private javax.swing.JTextField txtNombreR2;
+    private javax.swing.JTextField txtTipoComida;
     // End of variables declaration//GEN-END:variables
+
+    public boolean stringCorrecto(String s, String tipo) {
+        /*Esta funcion valida si el string que se pasa por parametro segun el tipo
+        es o no valido. Y retorna un booleano segun sea o no valido*/
+        boolean esCorrecto = false;
+        boolean espaciosVacios = false;
+        if (!s.isEmpty()) {
+            if (s.charAt(0) == ' ' || s.isEmpty()) {
+                espaciosVacios = true;
+            }
+            if (s.equals("") || espaciosVacios || s.length()>10) {
+                //el string esta vacio o empieza con espacio
+                if (tipo.toUpperCase().equals("nombre".toUpperCase())
+                        || (tipo.toUpperCase().equals("alias".toUpperCase()))) {
+                    esCorrecto = false;
+                }
+            } else {
+                esCorrecto = true;
+            }
+        }
+        return esCorrecto;
+    }
 }

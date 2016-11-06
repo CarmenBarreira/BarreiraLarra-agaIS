@@ -20,6 +20,10 @@ public class Sistema extends Observable implements Serializable{
     public void setListaClientes(ArrayList<Cliente> laListaClientes) {
         this.listaClientes = laListaClientes;
     }
+
+    public ArrayList<Restaurante> getListaRestaurantes() {
+        return listaRestaurantes;
+    }
    
     public void agregarCliente(Cliente miCliente) {
         /*agrega el cliente en la lista de clientes */
@@ -54,4 +58,14 @@ public class Sistema extends Observable implements Serializable{
         }
         updateObserver();
     }
+
+    public void agregarRestaurante(Restaurante miRestaurante) {
+        /*agrega el restaurante en la lista de restaurantes */
+        listaRestaurantes.add(miRestaurante);
+        updateObserver();
+    }
+
+
+
+
 }

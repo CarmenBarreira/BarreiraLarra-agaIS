@@ -8,13 +8,13 @@ public class Restaurante {
     private String nombre;
     private String direccion;
     private String tipoComida;
-    private ArrayList<Horario> horariosDisponibles;
+ 
 
     public Restaurante() {
         this.nombre = "Sin nombre";
         this.direccion = "Sin direccion";
         this.tipoComida ="ninguna";
-        horariosDisponibles = new ArrayList<Horario>();
+       
     }
 
     public Restaurante(String nombre, String direccion, String tipoComida) {
@@ -35,11 +35,6 @@ public class Restaurante {
         this.tipoComida = elTipoComida;
     }
 
-    public void setHorariosDisponibles(ArrayList<Horario> losHorariosDisponibles) {
-        this.horariosDisponibles = losHorariosDisponibles;
-    }
-
-    
     public String getNombre() {
         return nombre;
     }
@@ -52,10 +47,6 @@ public class Restaurante {
         return tipoComida;
     }
 
-    public ArrayList<Horario> getHorariosDisponibles() {
-        return horariosDisponibles;
-    }
-    
     
 
     

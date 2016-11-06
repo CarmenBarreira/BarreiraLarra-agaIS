@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame {
         btnRegistroCliente = new javax.swing.JButton();
         btnRestaurantes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnEvaluarRestaurante = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Restaurante IS");
@@ -49,6 +50,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/restaurante.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
+        btnEvaluarRestaurante.setText("Evaluar Restaurante");
+        btnEvaluarRestaurante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEvaluarRestauranteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,7 +70,8 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(107, 107, 107)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnRegistroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRestaurantes, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnRestaurantes, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEvaluarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -72,9 +81,11 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(btnRestaurantes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEvaluarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pack();
@@ -96,6 +107,10 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRestaurantesActionPerformed
+
+    private void btnEvaluarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarRestauranteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEvaluarRestauranteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +158,7 @@ public class Principal extends javax.swing.JFrame {
     
     private Sistema elSis;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEvaluarRestaurante;
     private javax.swing.JButton btnRegistroCliente;
     private javax.swing.JButton btnRestaurantes;
     private javax.swing.JLabel jLabel1;

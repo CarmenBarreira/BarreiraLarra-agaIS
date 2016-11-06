@@ -4,13 +4,13 @@ package barreiralarrañaga.Dominio;
 public class Evaluacion {
     private Cliente cliente;
     private Restaurante restaurante; 
-    private String reseña; 
+    private String resenia; 
     private int estrellas;
 
     public Evaluacion() {
         cliente = new Cliente();
         restaurante = new Restaurante();
-        reseña = "";
+        resenia = "";
         estrellas = 0;        
     }
 
@@ -23,8 +23,8 @@ public class Evaluacion {
         return restaurante;
     }
 
-    public String getReseña() {
-        return reseña;
+    public String getResenia() {
+        return resenia;
     }
 
     public int getEstrellas() {
