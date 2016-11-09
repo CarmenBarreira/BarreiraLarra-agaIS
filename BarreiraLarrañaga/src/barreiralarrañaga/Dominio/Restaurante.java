@@ -2,25 +2,25 @@ package barreiralarrañaga.Dominio;
 
 import java.util.ArrayList;
 
-public class Restaurante {
+public class Restaurante implements Comparable<Restaurante>{
 
     //ATRIBUTOS
     private String nombre;
     private String direccion;
-    private String tipoComida;
+    private ArrayList<String> tiposComida;
  
 
     public Restaurante() {
         this.nombre = "Sin nombre";
         this.direccion = "Sin direccion";
-        this.tipoComida ="ninguna";
+        this.tiposComida = new ArrayList<String>();
        
     }
 
     public Restaurante(String nombre, String direccion, String tipoComida) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.tipoComida = tipoComida;
+        this.tiposComida = new ArrayList<String>();
     }
     
     public void setNombre(String elNombre) {
@@ -31,10 +31,6 @@ public class Restaurante {
         this.direccion = laDireccion;
     }
 
-    public void setTipoComida(String elTipoComida) {
-        this.tipoComida = elTipoComida;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -43,8 +39,9 @@ public class Restaurante {
         return direccion;
     }
 
-    public String getTipoComida() {
-        return tipoComida;
+    @Override
+    public int compareTo(Restaurante o) {
+        return this.getNombre().compareTo(o.getNombre());
     }
 
     

@@ -2,6 +2,7 @@ package barreiralarrañaga.Dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Observable;
 
 public class Sistema extends Observable implements Serializable{
@@ -42,20 +43,16 @@ public class Sistema extends Observable implements Serializable{
         updateObserver();
     }
 
-    public void modificaCliente(int posicion, String alias, String nombre, int edad) {
+    public void modificaCliente(int posicion, String correo, String nombre) {
         /*Modifica de la lista de clientes, el cliente cuya posición en la lista 
         se pasa por parámetros */
 
         Cliente miCliente = getListaClientes().get(posicion);
-        if (!(alias.equalsIgnoreCase(""))) {
-            miCliente.setAlias(alias);
-        }
+       
         if (!(nombre.equalsIgnoreCase(""))) {
             miCliente.setNombre(nombre);
         }
-        if (edad != 0) {
-            miCliente.setEdad(edad);
-        }
+        
         updateObserver();
     }
 
@@ -65,7 +62,11 @@ public class Sistema extends Observable implements Serializable{
         updateObserver();
     }
 
-
+    public ArrayList<Restaurante> ordenarCrecienteRestaurantes (){
+    /*Ordena los restaurantes por nombre en orden alfabetico creciente*/
+        Collections.sort(this.getListaRestaurantes());
+        return this.getListaRestaurantes();
+    }
 
 
 }
