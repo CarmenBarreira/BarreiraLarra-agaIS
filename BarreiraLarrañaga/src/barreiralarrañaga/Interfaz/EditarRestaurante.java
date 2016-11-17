@@ -170,7 +170,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
             }           
         }
         
-        if (sis.getListaRestaurantes().indexOf(aux) != -1) {
+      /*  if (sis.getListaRestaurantes().indexOf(aux) != -1) {
             JOptionPane.showMessageDialog(this, "Ya Existe un restaurante con el mismo nombre y direccion: " + aux.getNombre(), "Restaurante Duplicado", ERROR_MESSAGE);
             txtNombreR.selectAll();
             txtNombreR.requestFocusInWindow();
@@ -181,7 +181,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
             sis.agregarRestaurante(aux);
             JOptionPane.showMessageDialog(this, "Restaurante registrado correctamente", "Restaurante registrado exitosamente", JOptionPane.INFORMATION_MESSAGE);
             this.dispose();
-        }
+        }*/
     }//GEN-LAST:event_btnEditarRestauranteActionPerformed
 
     /**

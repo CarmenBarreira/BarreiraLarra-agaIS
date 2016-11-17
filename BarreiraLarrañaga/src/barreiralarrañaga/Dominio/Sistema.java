@@ -2,71 +2,48 @@ package barreiralarrañaga.Dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Observable;
 
 public class Sistema extends Observable implements Serializable{
-    private ArrayList<Cliente> listaClientes;
-    private ArrayList<Restaurante> listaRestaurantes;
-    
+   Restaurante restaurante; 
+    ArrayList<Evaluacion> evaluaciones;
+
     public Sistema() {
-        listaClientes = new ArrayList<Cliente>();
-        listaRestaurantes = new ArrayList<Restaurante>();
+        restaurante = new Restaurante();
+        evaluaciones= new ArrayList<Evaluacion>();
     }
 
-    public ArrayList<Cliente> getListaClientes() {
-        return listaClientes;
+    public Restaurante getRestaurante() {
+        return this.restaurante;
     }
 
-    public void setListaClientes(ArrayList<Cliente> laListaClientes) {
-        this.listaClientes = laListaClientes;
+    public ArrayList<Evaluacion> getEvaluaciones() {
+        return this.evaluaciones;
     }
 
-    public ArrayList<Restaurante> getListaRestaurantes() {
-        return listaRestaurantes;
+    public void setRestaurante(Restaurante miRestaurante) {
+        this.restaurante = miRestaurante;
+    }
+
+    public void setEvaluaciones(ArrayList<Evaluacion> lasEvaluaciones) {
+        this.evaluaciones = lasEvaluaciones;
     }
    
-    public void agregarCliente(Cliente miCliente) {
-        /*agrega el cliente en la lista de clientes */
-        listaClientes.add(miCliente);
-        updateObserver();
-    }
-     
+    
     public void updateObserver() {
         setChanged();
         notifyObservers();
     } 
     
-    public void eliminarCliente(Cliente c) {
-        /*Elimina de la lista de clientes, el cliente*/
-        listaClientes.remove(c);
+   
+    public void agregarEditarRestaurante(Restaurante miRestaurante) {
+        this.setRestaurante(miRestaurante);
         updateObserver();
     }
-
-    public void modificaCliente(int posicion, String correo, String nombre) {
-        /*Modifica de la lista de clientes, el cliente cuya posición en la lista 
-        se pasa por parámetros */
-
-        Cliente miCliente = getListaClientes().get(posicion);
-       
-        if (!(nombre.equalsIgnoreCase(""))) {
-            miCliente.setNombre(nombre);
-        }
-        
-        updateObserver();
+    
+    public ArrayList<Evaluacion> evaluacionesSorteo (){        
+        /*Esta funcion va retornar las evaluaciones que estan completas*/
+        return new ArrayList<Evaluacion>();
     }
-
-    public void agregarRestaurante(Restaurante miRestaurante) {
-        /*agrega el restaurante en la lista de restaurantes */
-        listaRestaurantes.add(miRestaurante);
-        updateObserver();
-    }
-
-    public ArrayList<Restaurante> ordenarCrecienteRestaurantes (){
-    /*Ordena los restaurantes por nombre en orden alfabetico creciente*/
-        Collections.sort(this.getListaRestaurantes());
-        return this.getListaRestaurantes();
-    }
-
-
+    
 }

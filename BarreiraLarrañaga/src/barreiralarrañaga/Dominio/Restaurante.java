@@ -13,8 +13,7 @@ public class Restaurante implements Comparable<Restaurante>{
     public Restaurante() {
         this.nombre = "Sin nombre";
         this.direccion = "Sin direccion";
-        this.tiposComida = new ArrayList<String>();
-       
+        this.tiposComida = new ArrayList<String>();       
     }
 
     public Restaurante(String nombre, String direccion, String tipoComida) {

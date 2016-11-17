@@ -6,17 +6,13 @@ public class Evaluacion {
     private Restaurante restaurante; 
     private String resenia; 
     private int estrellas;
+    private String fechaEvaluacion; 
 
     public Evaluacion() {
         cliente = new Cliente();
         restaurante = new Restaurante();
-        resenia = "";
-        estrellas = 0;        
-    }
-
-        
-    public Cliente getCliente() {
-        return cliente;
+        resenia = "Sin resenia";
+        estrellas = 0;
     }
 
     public Restaurante getRestaurante() {
@@ -30,6 +26,22 @@ public class Evaluacion {
     public int getEstrellas() {
         return estrellas;
     }
-    
+
+    public String getFechaEvaluacion() {
+        return fechaEvaluacion;
+    }
+
+    public void setRestaurante(Restaurante elRestaurante) {
+        this.restaurante = elRestaurante;
+    }
+
+    public void setResenia(String laResenia) {
+        this.resenia = laResenia;
+    }
+
+    public void setEstrellas(int lasEstrellas) {
+        this.estrellas = lasEstrellas;
+    }
+   
     
 }
