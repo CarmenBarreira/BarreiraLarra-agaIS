@@ -12,7 +12,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
     public MenuRestaurantes(Sistema sis) throws ClassNotFoundException {
        initComponents();
         elSis = sis;
-       // lblDireccionRestauranteP.setText(elSis.getRestaurante().getDireccion());
+       // lblDireccionIngresada.setText(elSis.getRestaurante().getDireccion());
         
         //elSis.addObserver(this);           
     }      
@@ -21,44 +21,47 @@ public class MenuRestaurantes extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblNombreRestaurante = new javax.swing.JLabel();
         lblDirMostrar = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblHorario = new javax.swing.JLabel();
+        lblFoto = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblCorreoCliente = new javax.swing.JLabel();
         lblNombreCliente1 = new javax.swing.JLabel();
         txtCorreoCliente = new javax.swing.JTextField();
         txtNombreCliente = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        lblResenia = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResenia = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
+        lblEstrellas = new javax.swing.JLabel();
         cmbEstrellas = new javax.swing.JComboBox<>();
         btnEnviar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        lblDireccionRestaurante = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        lblDireccionRestauranteP = new javax.swing.JLabel();
+        lblComidas = new javax.swing.JLabel();
+        lblComidaIngresada = new javax.swing.JLabel();
+        lblHorarioIngresado = new javax.swing.JLabel();
+        lblDireccionIngresada = new javax.swing.JLabel();
         btnEditarRestaurante = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtMensajes = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
-        jLabel1.setText("Restaurante IS");
+        lblNombreRestaurante.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
+        lblNombreRestaurante.setText("Restaurante IS");
 
         lblDirMostrar.setText("Direccion: ");
 
-        jLabel3.setText("Horario: ");
+        lblHorario.setText("Horario: ");
 
-        jLabel4.setFont(jLabel4.getFont());
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg"))); // NOI18N
-        jLabel4.setIconTextGap(6);
-        jLabel4.setMaximumSize(new java.awt.Dimension(434, 150));
-        jLabel4.setMinimumSize(new java.awt.Dimension(434, 150));
-        jLabel4.setPreferredSize(new java.awt.Dimension(434, 150));
-        jLabel4.setVerifyInputWhenFocusTarget(false);
+        lblFoto.setFont(lblFoto.getFont());
+        lblFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg"))); // NOI18N
+        lblFoto.setIconTextGap(6);
+        lblFoto.setMaximumSize(new java.awt.Dimension(434, 150));
+        lblFoto.setMinimumSize(new java.awt.Dimension(434, 150));
+        lblFoto.setPreferredSize(new java.awt.Dimension(434, 150));
+        lblFoto.setVerifyInputWhenFocusTarget(false);
 
         lblCorreoCliente.setText("Correo: ");
 
@@ -76,13 +79,13 @@ public class MenuRestaurantes extends javax.swing.JFrame{
             }
         });
 
-        jLabel6.setText("Reseña: ");
+        lblResenia.setText("Reseña: ");
 
         txtResenia.setColumns(20);
         txtResenia.setRows(5);
         jScrollPane1.setViewportView(txtResenia);
 
-        jLabel7.setText("Estrellas : ");
+        lblEstrellas.setText("Estrellas : ");
 
         cmbEstrellas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
@@ -110,8 +113,8 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                         .addComponent(txtCorreoCliente))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                            .addComponent(lblResenia, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEstrellas))
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,24 +135,24 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                     .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblResenia, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(lblEstrellas)
                     .addComponent(cmbEstrellas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
 
-        jLabel5.setText("Comidas: ");
+        lblComidas.setText("Comidas: ");
 
-        lblDireccionRestaurante.setText("Italiana");
+        lblComidaIngresada.setText("Italiana");
 
-        jLabel9.setText("Jueves a Domingos - 10:00 a 00:00");
+        lblHorarioIngresado.setText("Jueves a Domingos - 10:00 a 00:00");
 
-        lblDireccionRestauranteP.setText("Cuareim 1451");
+        lblDireccionIngresada.setText("Cuareim 1451");
 
         btnEditarRestaurante.setText("Editar Restaurante");
         btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +160,10 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                 btnEditarRestauranteActionPerformed(evt);
             }
         });
+
+        txtMensajes.setColumns(20);
+        txtMensajes.setRows(5);
+        jScrollPane2.setViewportView(txtMensajes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,27 +177,32 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblDirMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblHorario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblDireccionRestauranteP, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(lblDireccionIngresada, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblHorarioIngresado, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(58, 58, 58)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                                        .addComponent(lblNombreRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnEditarRestaurante))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblDireccionRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(35, 35, 35))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblComidas, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblComidaIngresada, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,27 +210,32 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblNombreRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDirMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDireccionRestauranteP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblDireccionIngresada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblHorario, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(lblHorarioIngresado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDireccionRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblComidas, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblComidaIngresada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -246,6 +263,13 @@ public class MenuRestaurantes extends javax.swing.JFrame{
         else{
             if(resenia.length() == 0){
                 JOptionPane.showMessageDialog(this, "Debe ingresar al menos un comentario", "Reseña Incorrecta", ERROR_MESSAGE);            
+            }
+            else{
+               String textoAnt = txtMensajes.getText();
+               txtMensajes.setText(textoAnt + " "+ nombre +" "+ email + " "+resenia+ " ");
+               txtNombreCliente.setText("");
+               txtCorreoCliente.setText("");
+               txtResenia.setText("");
             }
         }
         
@@ -316,21 +340,23 @@ public class MenuRestaurantes extends javax.swing.JFrame{
     private javax.swing.JButton btnEditarRestaurante;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JComboBox<String> cmbEstrellas;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblComidaIngresada;
+    private javax.swing.JLabel lblComidas;
     private javax.swing.JLabel lblCorreoCliente;
     private javax.swing.JLabel lblDirMostrar;
-    private javax.swing.JLabel lblDireccionRestaurante;
-    private javax.swing.JLabel lblDireccionRestauranteP;
+    private javax.swing.JLabel lblDireccionIngresada;
+    private javax.swing.JLabel lblEstrellas;
+    private javax.swing.JLabel lblFoto;
+    private javax.swing.JLabel lblHorario;
+    private javax.swing.JLabel lblHorarioIngresado;
     private javax.swing.JLabel lblNombreCliente1;
+    private javax.swing.JLabel lblNombreRestaurante;
+    private javax.swing.JLabel lblResenia;
     private javax.swing.JTextField txtCorreoCliente;
+    private javax.swing.JTextArea txtMensajes;
     private javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextArea txtResenia;
     // End of variables declaration//GEN-END:variables

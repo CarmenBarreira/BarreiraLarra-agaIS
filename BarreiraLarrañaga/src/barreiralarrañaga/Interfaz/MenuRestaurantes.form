@@ -3,6 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -32,37 +33,44 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="lblDirMostrar" pref="64" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" max="32767" attributes="0"/>
+                                  <Component id="lblHorario" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblDireccionRestauranteP" min="-2" pref="267" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" min="-2" pref="267" max="-2" attributes="0"/>
+                                          <Component id="lblDireccionIngresada" min="-2" pref="267" max="-2" attributes="0"/>
+                                          <Component id="lblHorarioIngresado" min="-2" pref="267" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" pref="254" max="-2" attributes="0"/>
-                                      <EmptySpace pref="229" max="32767" attributes="0"/>
+                                      <Component id="lblNombreRestaurante" min="-2" pref="254" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btnEditarRestaurante" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel5" min="-2" pref="64" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblDireccionRestaurante" min="-2" pref="267" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblFoto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblComidas" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblComidaIngresada" min="-2" pref="267" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="149" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,7 +80,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="lblNombreRestaurante" min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -82,29 +90,37 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblDirMostrar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="lblDireccionRestauranteP" alignment="3" max="32767" attributes="0"/>
+                  <Component id="lblDireccionIngresada" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="7" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel3" pref="29" max="32767" attributes="0"/>
-                  <Component id="jLabel9" max="32767" attributes="0"/>
+                  <Component id="lblHorario" pref="29" max="32767" attributes="0"/>
+                  <Component id="lblHorarioIngresado" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="9" max="32767" attributes="0"/>
-              <Component id="jLabel4" pref="151" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel5" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                  <Component id="lblDireccionRestaurante" alignment="3" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblFoto" pref="151" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblComidas" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="lblComidaIngresada" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane2" min="-2" pref="352" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblNombreRestaurante">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tempus Sans ITC" size="24" style="1"/>
@@ -117,16 +133,16 @@
         <Property name="text" type="java.lang.String" value="Direccion: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lblHorario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Horario: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lblFoto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
           <FontInfo relative="true">
-            <Font component="jLabel4" property="font" relativeSize="true" size="0"/>
+            <Font component="lblFoto" property="font" relativeSize="true" size="0"/>
           </FontInfo>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
@@ -165,8 +181,8 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel6" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblResenia" min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="lblEstrellas" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -195,12 +211,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel6" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="lblResenia" min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="80" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEstrellas" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cmbEstrellas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -231,7 +247,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lblResenia">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rese&#xf1;a: "/>
           </Properties>
@@ -251,7 +267,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="lblEstrellas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estrellas : "/>
           </Properties>
@@ -282,22 +298,22 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="lblComidas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Comidas: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblDireccionRestaurante">
+    <Component class="javax.swing.JLabel" name="lblComidaIngresada">
       <Properties>
         <Property name="text" type="java.lang.String" value="Italiana"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="lblHorarioIngresado">
       <Properties>
         <Property name="text" type="java.lang.String" value="Jueves a Domingos - 10:00 a 00:00"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblDireccionRestauranteP">
+    <Component class="javax.swing.JLabel" name="lblDireccionIngresada">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cuareim 1451"/>
       </Properties>
@@ -310,5 +326,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarRestauranteActionPerformed"/>
       </Events>
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="txtMensajes">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

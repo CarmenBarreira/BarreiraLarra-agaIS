@@ -29,10 +29,12 @@ public class EditarRestaurante extends javax.swing.JFrame {
         lblDireccionR2 = new javax.swing.JLabel();
         txtTipoComida = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        lblDireccionR3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Editar Restaurante");
         setAutoRequestFocus(false);
+        setResizable(false);
 
         lblDireccionR.setText("Dirección: ");
 
@@ -63,6 +65,8 @@ public class EditarRestaurante extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(434, 150));
         jLabel4.setVerifyInputWhenFocusTarget(false);
 
+        lblDireccionR3.setText("Días: ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,7 +94,8 @@ public class EditarRestaurante extends javax.swing.JFrame {
                                         .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblDireccionR3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -122,12 +127,13 @@ public class EditarRestaurante extends javax.swing.JFrame {
                             .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblDireccionR3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEditarRestaurante)
                 .addGap(21, 21, 21))
         );
@@ -214,6 +220,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
     private javax.swing.JLabel lblDireccionR;
     private javax.swing.JLabel lblDireccionR1;
     private javax.swing.JLabel lblDireccionR2;
+    private javax.swing.JLabel lblDireccionR3;
     private javax.swing.JLabel lblNombreR;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombreR;

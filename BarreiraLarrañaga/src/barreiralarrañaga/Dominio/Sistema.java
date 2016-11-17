@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 public class Sistema extends Observable implements Serializable{
-   Restaurante restaurante; 
-    ArrayList<Evaluacion> evaluaciones;
+    private Restaurante restaurante; 
+    private ArrayList<Evaluacion> evaluaciones;
+    private ArrayList<Cliente> clientes;
 
     public Sistema() {
+        clientes = new ArrayList<Cliente>();
         restaurante = new Restaurante();
         evaluaciones= new ArrayList<Evaluacion>();
     }
