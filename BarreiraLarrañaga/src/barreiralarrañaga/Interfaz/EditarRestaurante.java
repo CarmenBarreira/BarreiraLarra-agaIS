@@ -2,6 +2,7 @@ package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Restaurante;
 import barreiralarrañaga.Dominio.Sistema;
+import javafx.scene.control.Alert;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
@@ -30,7 +31,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Nuevo Restaurante");
+        setTitle("Editar Restaurante");
         setAutoRequestFocus(false);
 
         lblDireccionR.setText("Dirección: ");
@@ -161,27 +162,16 @@ public class EditarRestaurante extends javax.swing.JFrame {
                        JOptionPane.showMessageDialog(this, "El tipo de comida es Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)", "Nombre Incorrecto", ERROR_MESSAGE);
                         txtTipoComida.selectAll();
                         txtTipoComida.requestFocusInWindow();
-                   }else{//todos los datos bien
-                        if (esNuevo) {
-                             aux = new Restaurante(nombre, direccion, tipoComida);
-                        } 
+                   }else{//todos los datos bien                        
+                        aux = new Restaurante(nombre, direccion, tipoComida);
+                        sis.setRestaurante(aux);   
+                        JOptionPane.showMessageDialog(null, "Se modificó exitosamente el restaurante", "Editar restaurante", JOptionPane.INFORMATION_MESSAGE);
+                        this.dispose();
                    }
                 } 
             }           
         }
-        
-      /*  if (sis.getListaRestaurantes().indexOf(aux) != -1) {
-            JOptionPane.showMessageDialog(this, "Ya Existe un restaurante con el mismo nombre y direccion: " + aux.getNombre(), "Restaurante Duplicado", ERROR_MESSAGE);
-            txtNombreR.selectAll();
-            txtNombreR.requestFocusInWindow();
-            txtDireccion.selectAll();
-            txtDireccion.requestFocusInWindow();
-        }
-        else{
-            sis.agregarRestaurante(aux);
-            JOptionPane.showMessageDialog(this, "Restaurante registrado correctamente", "Restaurante registrado exitosamente", JOptionPane.INFORMATION_MESSAGE);
-            this.dispose();
-        }*/
+      
     }//GEN-LAST:event_btnEditarRestauranteActionPerformed
 
     /**

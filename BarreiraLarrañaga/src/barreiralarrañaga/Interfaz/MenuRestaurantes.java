@@ -12,6 +12,8 @@ public class MenuRestaurantes extends javax.swing.JFrame{
     public MenuRestaurantes(Sistema sis) throws ClassNotFoundException {
        initComponents();
         elSis = sis;
+       // lblDireccionRestauranteP.setText(elSis.getRestaurante().getDireccion());
+        
         //elSis.addObserver(this);           
     }      
     
@@ -37,7 +39,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
         jLabel5 = new javax.swing.JLabel();
         lblDireccionRestaurante = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        lblDireccionRestaurante1 = new javax.swing.JLabel();
+        lblDireccionRestauranteP = new javax.swing.JLabel();
         btnEditarRestaurante = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -147,7 +149,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
 
         jLabel9.setText("Jueves a Domingos - 10:00 a 00:00");
 
-        lblDireccionRestaurante1.setText("Cuareim 1451");
+        lblDireccionRestauranteP.setText("Cuareim 1451");
 
         btnEditarRestaurante.setText("Editar Restaurante");
         btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +179,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblDireccionRestauranteP, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(58, 58, 58)
@@ -203,7 +205,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDirMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblDireccionRestauranteP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
@@ -238,8 +240,13 @@ public class MenuRestaurantes extends javax.swing.JFrame{
         resenia= txtResenia.getText();
         cantEstrellas = Integer.parseInt(cmbEstrellas.getSelectedItem().toString());       
         
-        if(validaEmail(email)==false ){
-             JOptionPane.showMessageDialog(this, "El correo ingresado es Incorrecto", "Email Incorrecta", ERROR_MESSAGE);        
+        if(email.length()!= 0 && validaEmail(email)==false ){
+            JOptionPane.showMessageDialog(this, "El correo ingresado es Incorrecto", "Email Incorrecta", ERROR_MESSAGE);        
+        }
+        else{
+            if(resenia.length() == 0){
+                JOptionPane.showMessageDialog(this, "Debe ingresar al menos un comentario", "Reseña Incorrecta", ERROR_MESSAGE);            
+            }
         }
         
     }//GEN-LAST:event_btnEnviarActionPerformed
@@ -321,7 +328,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
     private javax.swing.JLabel lblCorreoCliente;
     private javax.swing.JLabel lblDirMostrar;
     private javax.swing.JLabel lblDireccionRestaurante;
-    private javax.swing.JLabel lblDireccionRestaurante1;
+    private javax.swing.JLabel lblDireccionRestauranteP;
     private javax.swing.JLabel lblNombreCliente1;
     private javax.swing.JTextField txtCorreoCliente;
     private javax.swing.JTextField txtNombreCliente;
