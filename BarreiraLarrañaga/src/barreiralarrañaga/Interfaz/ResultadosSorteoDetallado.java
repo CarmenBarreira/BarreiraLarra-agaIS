@@ -12,11 +12,8 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import barreiralarrañaga.Dominio.Sorteo;
 
-/**
- *
- * @author Juan
- */
-public class ResultadosSorteoDetallado extends javax.swing.JFrame {
+
+public final class ResultadosSorteoDetallado extends javax.swing.JFrame {
 
     Sorteo sorteoDesc;
 

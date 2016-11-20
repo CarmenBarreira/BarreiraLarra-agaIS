@@ -6,16 +6,9 @@
 package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Sistema;
-import java.awt.Color;
-import java.awt.Image;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
 import javax.swing.border.Border;
 
 /**

@@ -15,6 +15,7 @@ public class LeerReseniaUI extends javax.swing.JFrame {
 
     /**
      * Creates new form LeerReseniaUI
+     * @param eva
      */
     public LeerReseniaUI(Evaluacion eva) {
         initComponents();

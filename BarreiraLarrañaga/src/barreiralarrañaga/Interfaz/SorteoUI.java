@@ -15,13 +15,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Juan
  */
-public class SorteoUI extends javax.swing.JFrame {
+public final class SorteoUI extends javax.swing.JFrame {
 
     Sistema unSis;
     ArrayList<Cliente> arrayGanadores;
 
     /**
      * Creates new form SorteoUI
+     * @param sis
      */
     public SorteoUI(Sistema sis) {
         unSis = sis;
