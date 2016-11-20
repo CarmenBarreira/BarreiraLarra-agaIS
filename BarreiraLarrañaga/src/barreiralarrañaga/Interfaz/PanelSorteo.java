@@ -49,6 +49,7 @@ public class PanelSorteo extends javax.swing.JPanel {
 
         setMaximumSize(new java.awt.Dimension(683, 548));
         setMinimumSize(new java.awt.Dimension(683, 548));
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(683, 548));
 
         btnTitulo.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N

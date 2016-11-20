@@ -119,6 +119,7 @@ if(eval==5){
         setMaximumSize(new java.awt.Dimension(683, 548));
         setMinimumSize(new java.awt.Dimension(683, 548));
         setName(""); // NOI18N
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(683, 548));
 
         jLabel4.setFont(jLabel4.getFont());

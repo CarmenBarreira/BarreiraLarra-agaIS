@@ -17,7 +17,7 @@ import javax.swing.border.Border;
  */
 public class InicioUI extends javax.swing.JFrame {
     
-    IntroPanel asd = new IntroPanel();
+
     Sistema sis;
     Border bor;
 
@@ -26,16 +26,10 @@ public class InicioUI extends javax.swing.JFrame {
      */
     public InicioUI(Sistema unSis) {
         initComponents();
-        paneInterior.add(asd);
-        asd.setVisible(true);
+
+         paneInterior.setVisible(false);
         sis = unSis;
-        bor = BorderFactory.createLineBorder(Color.white);
-        bor = BorderFactory.createCompoundBorder(BorderFactory.createRaisedBevelBorder(),
-                BorderFactory.createLoweredBevelBorder());
-        restauranteBtn.setBorder(bor);
-        sorteoBtn.setBorder(bor);
-        salirBtn.setBorder(bor);
-        reseniaBtn.setBorder(bor);
+
     }
 
     /**
@@ -47,120 +41,109 @@ public class InicioUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        paneInterior = new javax.swing.JDesktopPane();
-        jPanel1 = new javax.swing.JPanel();
         restauranteBtn = new javax.swing.JButton();
         reseniaBtn = new javax.swing.JButton();
         sorteoBtn = new javax.swing.JButton();
         salirBtn = new javax.swing.JButton();
+        paneInterior = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Restaurant Coffee Room");
+        setMaximumSize(new java.awt.Dimension(904, 570));
+        setMinimumSize(new java.awt.Dimension(904, 570));
+        setResizable(false);
+        setSize(new java.awt.Dimension(904, 570));
+        getContentPane().setLayout(null);
+
+        restauranteBtn.setBackground(new java.awt.Color(220, 234, 255));
+        restauranteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconoRestaurant.png"))); // NOI18N
+        restauranteBtn.setBorderPainted(false);
+        restauranteBtn.setContentAreaFilled(false);
+        restauranteBtn.setFocusPainted(false);
+        restauranteBtn.setFocusable(false);
+        restauranteBtn.setMaximumSize(new java.awt.Dimension(180, 120));
+        restauranteBtn.setMinimumSize(new java.awt.Dimension(180, 120));
+        restauranteBtn.setOpaque(false);
+        restauranteBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        restauranteBtn.setRequestFocusEnabled(false);
+        restauranteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restauranteBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(restauranteBtn);
+        restauranteBtn.setBounds(10, 30, 180, 120);
+
+        reseniaBtn.setBackground(new java.awt.Color(220, 234, 255));
+        reseniaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconoResenia.png"))); // NOI18N
+        reseniaBtn.setBorderPainted(false);
+        reseniaBtn.setContentAreaFilled(false);
+        reseniaBtn.setDefaultCapable(false);
+        reseniaBtn.setFocusPainted(false);
+        reseniaBtn.setFocusable(false);
+        reseniaBtn.setMaximumSize(new java.awt.Dimension(180, 120));
+        reseniaBtn.setMinimumSize(new java.awt.Dimension(180, 120));
+        reseniaBtn.setOpaque(false);
+        reseniaBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        reseniaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reseniaBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(reseniaBtn);
+        reseniaBtn.setBounds(10, 150, 179, 127);
+
+        sorteoBtn.setBackground(new java.awt.Color(220, 234, 255));
+        sorteoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSorteos.png"))); // NOI18N
+        sorteoBtn.setBorderPainted(false);
+        sorteoBtn.setContentAreaFilled(false);
+        sorteoBtn.setDefaultCapable(false);
+        sorteoBtn.setFocusPainted(false);
+        sorteoBtn.setFocusable(false);
+        sorteoBtn.setMaximumSize(new java.awt.Dimension(180, 120));
+        sorteoBtn.setMinimumSize(new java.awt.Dimension(180, 120));
+        sorteoBtn.setOpaque(false);
+        sorteoBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        sorteoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sorteoBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(sorteoBtn);
+        sorteoBtn.setBounds(10, 280, 180, 120);
+
+        salirBtn.setBackground(new java.awt.Color(220, 234, 255));
+        salirBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSalir.png"))); // NOI18N
+        salirBtn.setBorderPainted(false);
+        salirBtn.setContentAreaFilled(false);
+        salirBtn.setDefaultCapable(false);
+        salirBtn.setFocusPainted(false);
+        salirBtn.setFocusable(false);
+        salirBtn.setMaximumSize(new java.awt.Dimension(180, 120));
+        salirBtn.setMinimumSize(new java.awt.Dimension(180, 120));
+        salirBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        salirBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(salirBtn);
+        salirBtn.setBounds(10, 400, 180, 120);
 
         paneInterior.setForeground(new java.awt.Color(60, 63, 65));
         paneInterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         paneInterior.setDragMode(javax.swing.JDesktopPane.OUTLINE_DRAG_MODE);
         paneInterior.setMaximumSize(new java.awt.Dimension(683, 548));
         paneInterior.setMinimumSize(new java.awt.Dimension(683, 548));
+        paneInterior.setOpaque(false);
         paneInterior.setLayout(new java.awt.GridLayout(1, 2));
+        getContentPane().add(paneInterior);
+        paneInterior.setBounds(200, 0, 700, 560);
 
-        jPanel1.setForeground(new java.awt.Color(60, 63, 65));
-        jPanel1.setFocusable(false);
-
-        restauranteBtn.setBackground(new java.awt.Color(220, 234, 255));
-        restauranteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconoRestaurant.png"))); // NOI18N
-        restauranteBtn.setFocusPainted(false);
-        restauranteBtn.setFocusable(false);
-        restauranteBtn.setPreferredSize(new java.awt.Dimension(75, 32));
-        restauranteBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                restauranteBtnActionPerformed(evt);
-            }
-        });
-
-        reseniaBtn.setBackground(new java.awt.Color(220, 234, 255));
-        reseniaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconoResenia.png"))); // NOI18N
-        reseniaBtn.setFocusPainted(false);
-        reseniaBtn.setFocusable(false);
-        reseniaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reseniaBtnActionPerformed(evt);
-            }
-        });
-
-        sorteoBtn.setBackground(new java.awt.Color(220, 234, 255));
-        sorteoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSorteos.png"))); // NOI18N
-        sorteoBtn.setFocusPainted(false);
-        sorteoBtn.setFocusable(false);
-        sorteoBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sorteoBtnActionPerformed(evt);
-            }
-        });
-
-        salirBtn.setBackground(new java.awt.Color(220, 234, 255));
-        salirBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSalir.png"))); // NOI18N
-        salirBtn.setFocusPainted(false);
-        salirBtn.setFocusable(false);
-        salirBtn.setPreferredSize(new java.awt.Dimension(75, 32));
-        salirBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 191, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(sorteoBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(reseniaBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(restauranteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 164, Short.MAX_VALUE))
-                    .addContainerGap(21, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 474, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(restauranteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(reseniaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(sorteoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(paneInterior, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(paneInterior, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/fondoTest.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-10, 0, 960, 560);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,6 +151,7 @@ public class InicioUI extends javax.swing.JFrame {
     private void sorteoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sorteoBtnActionPerformed
         
         paneInterior.removeAll();
+        paneInterior.setVisible(true);
         PanelSorteo sort = new PanelSorteo(sis);
         paneInterior.add(sort);
         paneInterior.revalidate();
@@ -175,6 +159,7 @@ public class InicioUI extends javax.swing.JFrame {
     }//GEN-LAST:event_sorteoBtnActionPerformed
 
     private void reseniaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reseniaBtnActionPerformed
+          paneInterior.setVisible(true);
         paneInterior.removeAll();
         PanelResenias pRes = new PanelResenias(sis);
         paneInterior.add(pRes);
@@ -185,6 +170,7 @@ public class InicioUI extends javax.swing.JFrame {
 
     private void restauranteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restauranteBtnActionPerformed
         paneInterior.removeAll();
+           paneInterior.setVisible(true);
         PanelRestaurantes pRestau = new PanelRestaurantes(sis);
         paneInterior.add(pRestau);
         paneInterior.revalidate();
@@ -207,7 +193,7 @@ public class InicioUI extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JDesktopPane paneInterior;
     private javax.swing.JButton reseniaBtn;
     private javax.swing.JButton restauranteBtn;
