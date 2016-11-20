@@ -7,7 +7,7 @@ public class Restaurante implements Comparable<Restaurante>, Serializable{
     //ATRIBUTOS
     private String nombre;
     private String direccion;
-    String tiposComida;
+    private String tiposComida;
     private String horarios;
  
     //constructores

@@ -5,7 +5,6 @@ import java.text.ParseException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
-import javax.swing.text.MaskFormatter;
 
 public class EditarRestaurante extends javax.swing.JFrame {
 
@@ -21,7 +20,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
         txtNombreR = new javax.swing.JTextField();
         lblNombreR = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        btnEditarRestaurante = new javax.swing.JButton();
+        btnGuardarEditarRestaurante = new javax.swing.JButton();
         txtDireccion = new javax.swing.JTextField();
         lblDireccionR1 = new javax.swing.JLabel();
         lblDireccionR2 = new javax.swing.JLabel();
@@ -47,11 +46,11 @@ public class EditarRestaurante extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setText("Editar datos");
 
-        btnEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/save_16.png"))); // NOI18N
-        btnEditarRestaurante.setText("Guardar ");
-        btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/save_16.png"))); // NOI18N
+        btnGuardarEditarRestaurante.setText("Guardar ");
+        btnGuardarEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarRestauranteActionPerformed(evt);
+                btnGuardarEditarRestauranteActionPerformed(evt);
             }
         });
 
@@ -74,11 +73,6 @@ public class EditarRestaurante extends javax.swing.JFrame {
 
         txtHorariosDe.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         txtHorariosDe.setToolTipText("hh:mm");
-        txtHorariosDe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHorariosDeActionPerformed(evt);
-            }
-        });
 
         lblDe.setText("De: ");
 
@@ -90,11 +84,6 @@ public class EditarRestaurante extends javax.swing.JFrame {
 
         txtHorariosHasta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         txtHorariosHasta.setToolTipText("hh:mm");
-        txtHorariosHasta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHorariosHastaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,7 +128,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(201, 201, 201)
-                        .addComponent(btnEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(259, 259, 259)
                         .addComponent(lblTitulo)))
@@ -179,72 +168,71 @@ public class EditarRestaurante extends javax.swing.JFrame {
                             .addComponent(lblHorarioHasta)
                             .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRestauranteActionPerformed
+    private void btnGuardarEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEditarRestauranteActionPerformed
         String nombre, direccion, tipoComida;
         nombre = txtNombreR.getText();
         direccion = txtDireccion.getText();
         tipoComida = txtTipoComida.getText();
+        //Armo el string de horarios en base a los combos de dias y los horarios
         String horarios = "De " + cmbHorariosDe.getSelectedItem().toString()
                 + " a " + cmbHorariosHasta.getSelectedItem().toString() + " - "
                 + txtHorariosDe.getText() + " a " + txtHorariosDe.getText();
 
         if (nombre.length() == 0 || direccion.length() == 0 || tipoComida.length() == 0
                 || txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {
+            //si algun dato esta vacio
             JOptionPane.showMessageDialog(this, "Debe completar todos los datos",
                     "Campos Obligatorios", ERROR_MESSAGE);
-        } else if (!stringCorrecto(nombre, "nombre")) {
-            JOptionPane.showMessageDialog(this, "El nombre es Incorrecto "
-                    + "(el mismo no puede ser vacio ni mayor a 30 caracteres)",
-                    "Nombre Incorrecto", ERROR_MESSAGE);
-            txtNombreR.selectAll();
-            txtNombreR.requestFocusInWindow();
-        } else//nombre correcto
-        if (!stringCorrecto(direccion, "direccion")) {
-            JOptionPane.showMessageDialog(this, "La direccion es Incorrecto",
-                    "Direccion Incorrecta", ERROR_MESSAGE);
-            txtDireccion.selectAll();
-            txtDireccion.requestFocusInWindow();
-        } else if (!stringCorrecto(tipoComida, "tipoComida")) {
-            JOptionPane.showMessageDialog(this, "El tipo de comida es "
-                    + "Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)",
-                    "Nombre Incorrecto", ERROR_MESSAGE);
-            txtTipoComida.selectAll();
-            txtTipoComida.requestFocusInWindow();
-        } else if (txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {
-            JOptionPane.showMessageDialog(this, "El formato de hora es hh:mm"
-                    + "(siendo hh la hora y mm los minutos)",
-                    "Horario Incorrecto", ERROR_MESSAGE);
-        } else {//todos los datos bien
+        } 
+        else{ 
+            if (!stringCorrecto(nombre, "nombre")) { //nombre incorrecto
+                JOptionPane.showMessageDialog(this, "El nombre es Incorrecto "
+                        + "(el mismo no puede ser vacio ni mayor a 30 caracteres)",
+                        "Nombre Incorrecto", ERROR_MESSAGE);
+                txtNombreR.selectAll();
+                txtNombreR.requestFocusInWindow();
+            } 
+            else{//nombre correcto
+                if (!stringCorrecto(direccion, "direccion")) { //direccion incorrecta
+                    JOptionPane.showMessageDialog(this, "La direccion es Incorrecto",
+                            "Direccion Incorrecta", ERROR_MESSAGE);
+                    txtDireccion.selectAll();
+                    txtDireccion.requestFocusInWindow();
+                } else if (!stringCorrecto(tipoComida, "tipoComida")) { //tipo comida incorrecta
+                    JOptionPane.showMessageDialog(this, "El tipo de comida es "
+                            + "Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)",
+                            "Nombre Incorrecto", ERROR_MESSAGE);
+                    txtTipoComida.selectAll();
+                    txtTipoComida.requestFocusInWindow();
+                } else if (txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {
+                    JOptionPane.showMessageDialog(this, "El formato de hora es hh:mm"
+                            + "(siendo hh la hora y mm los minutos)",
+                            "Horario Incorrecto", ERROR_MESSAGE);
+                } else {//todos los datos bien
+                    sis.getRestaurante().setNombre(nombre);
+                    sis.getRestaurante().setDireccion(direccion);
+                    sis.getRestaurante().setHorarios(horarios);
+                    sis.getRestaurante().setTiposComida(tipoComida);
 
-            sis.getRestaurante().setNombre(nombre);
-            sis.getRestaurante().setDireccion(direccion);
-            sis.getRestaurante().setHorarios(horarios);
-            sis.getRestaurante().setTiposComida(tipoComida);
-
-            JOptionPane.showMessageDialog(null, "Se edito exitosamente el restaurante",
-                    "Modifcación exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Se edito exitosamente el restaurante",
+                            "Modifcación exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                   // PanelRestaurantes.
+                }
+            }//Else de nombre correcto
         }
-        this.dispose();
-    }//GEN-LAST:event_btnEditarRestauranteActionPerformed
-
-    private void txtHorariosHastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorariosHastaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHorariosHastaActionPerformed
-
-    private void txtHorariosDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorariosDeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHorariosDeActionPerformed
+    }//GEN-LAST:event_btnGuardarEditarRestauranteActionPerformed
 
     Sistema sis = new Sistema();
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEditarRestaurante;
+    private javax.swing.JButton btnGuardarEditarRestaurante;
     private javax.swing.JComboBox<String> cmbHorariosDe;
     private javax.swing.JComboBox<String> cmbHorariosHasta;
     private javax.swing.JLabel lblDe;
@@ -262,17 +250,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
     private javax.swing.JTextField txtTipoComida;
     // End of variables declaration//GEN-END:variables
 
-    public MaskFormatter Mascara(String Mascara) {
-        MaskFormatter F_Mascara = new MaskFormatter();
-        try {
-            F_Mascara.setMask(Mascara); //Atribui a mascara
-            F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento 
-        } catch (Exception excecao) {
-        }
-        return F_Mascara;
-    }
-
-    public boolean stringCorrecto(String s, String tipo) {
+public boolean stringCorrecto(String s, String tipo) {
         /*Esta funcion valida si el string que se pasa por parametro segun el tipo
         es o no valido. Y retorna un booleano segun sea o no valido*/
         boolean esCorrecto = false;
@@ -281,7 +259,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
             if (s.charAt(0) == ' ' || s.isEmpty()) {
                 espaciosVacios = true;
             }
-            if (s.equals("") || espaciosVacios || s.length() > 10) {
+            if (s.equals("") || espaciosVacios) {
                 //el string esta vacio o empieza con espacio
                 if (tipo.toUpperCase().equals("nombre".toUpperCase())
                         || (tipo.toUpperCase().equals("alias".toUpperCase()))) {

@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InicioUI.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Interfaz</a> &gt; <span class="el_source">InicioUI.java</span></div><h1>InicioUI.java</h1><pre class="source lang-java linenums">/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package barreiralarrañaga.Interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InicioUI.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Interfaz</a> &gt; <span class="el_source">InicioUI.java</span></div><h1>InicioUI.java</h1><pre class="source lang-java linenums">package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Sistema;
 import java.io.FileNotFoundException;
@@ -11,213 +6,187 @@ import java.io.IOException;
 
 import javax.swing.border.Border;
 
-/**
- *
- * @author Juan
- */
 public class InicioUI extends javax.swing.JFrame {
 
     Sistema elSis;
     Border bor;
 
-<span class="nc" id="L23">    public InicioUI(Sistema unSis) throws ClassNotFoundException {</span>
+<span class="nc" id="L14">    public InicioUI(Sistema unSis) throws ClassNotFoundException {</span>
 
-<span class="nc" id="L25">        initComponents();</span>
+<span class="nc" id="L16">        initComponents();</span>
 
-<span class="nc" id="L27">        paneInterior.setVisible(false);</span>
+<span class="nc" id="L18">        paneInterior.setVisible(false);</span>
         //seteo icono de form
 
-<span class="nc" id="L30">        elSis = unSis;</span>
+<span class="nc" id="L21">        elSis = unSis;</span>
         try {
-<span class="nc" id="L32">            elSis = elSis.persistirLeer();</span>
+<span class="nc" id="L23">            elSis = elSis.persistirLeer();</span>
 
-<span class="nc" id="L34">        } catch (FileNotFoundException e) {</span>
-<span class="nc" id="L35">            System.out.println(&quot;1&quot; + e.getMessage());</span>
-<span class="nc" id="L36">        } catch (IOException e) {</span>
-<span class="nc" id="L37">            System.out.println(&quot;2&quot; + e.getMessage());</span>
-<span class="nc" id="L38">        }</span>
-<span class="nc" id="L39">        addWindowListener(new java.awt.event.WindowAdapter() {</span>
+<span class="nc" id="L25">        } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L26">            System.out.println(&quot;1&quot; + e.getMessage());</span>
+<span class="nc" id="L27">        } catch (IOException e) {</span>
+<span class="nc" id="L28">            System.out.println(&quot;2&quot; + e.getMessage());</span>
+<span class="nc" id="L29">        }</span>
+<span class="nc" id="L30">        addWindowListener(new java.awt.event.WindowAdapter() {</span>
             @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 try {
-<span class="nc" id="L43">                    elSis.persistirGuardar(elSis);</span>
-<span class="nc" id="L44">System.out.println(&quot;Guardado con Exito!&quot;);</span>
-<span class="nc" id="L45">                } catch (IOException ex) {</span>
-<span class="nc" id="L46">                }</span>
-
-<span class="nc" id="L48">            }</span>
+<span class="nc" id="L34">                    elSis.persistirGuardar(elSis);</span>
+<span class="nc" id="L35">                    System.out.println(&quot;Guardado con Exito!&quot;);</span>
+<span class="nc" id="L36">                } catch (IOException ex) {</span>
+                
+<span class="nc" id="L38">                }</span>
+<span class="nc" id="L39">            }</span>
         });
+<span class="nc" id="L41">    }</span>
 
-<span class="nc" id="L51">    }</span>
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings(&quot;unchecked&quot;)
+     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L62">        restauranteBtn = new javax.swing.JButton();</span>
-<span class="nc" id="L63">        reseniaBtn = new javax.swing.JButton();</span>
-<span class="nc" id="L64">        sorteoBtn = new javax.swing.JButton();</span>
-<span class="nc" id="L65">        salirBtn = new javax.swing.JButton();</span>
-<span class="nc" id="L66">        paneInterior = new javax.swing.JDesktopPane();</span>
-<span class="nc" id="L67">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L47">        restauranteBtn = new javax.swing.JButton();</span>
+<span class="nc" id="L48">        reseniaBtn = new javax.swing.JButton();</span>
+<span class="nc" id="L49">        sorteoBtn = new javax.swing.JButton();</span>
+<span class="nc" id="L50">        salirBtn = new javax.swing.JButton();</span>
+<span class="nc" id="L51">        paneInterior = new javax.swing.JDesktopPane();</span>
+<span class="nc" id="L52">        jLabel1 = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L69">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L70">        setTitle(&quot;Restaurant Coffee Room&quot;);</span>
-<span class="nc" id="L71">        setMaximumSize(new java.awt.Dimension(904, 570));</span>
-<span class="nc" id="L72">        setMinimumSize(new java.awt.Dimension(904, 570));</span>
-<span class="nc" id="L73">        setResizable(false);</span>
-<span class="nc" id="L74">        setSize(new java.awt.Dimension(904, 570));</span>
-<span class="nc" id="L75">        getContentPane().setLayout(null);</span>
+<span class="nc" id="L54">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L55">        setTitle(&quot;Restaurant Coffee Room&quot;);</span>
+<span class="nc" id="L56">        setMaximumSize(new java.awt.Dimension(904, 570));</span>
+<span class="nc" id="L57">        setMinimumSize(new java.awt.Dimension(904, 570));</span>
+<span class="nc" id="L58">        setResizable(false);</span>
+<span class="nc" id="L59">        setSize(new java.awt.Dimension(904, 570));</span>
+<span class="nc" id="L60">        getContentPane().setLayout(null);</span>
 
-<span class="nc" id="L77">        restauranteBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
-<span class="nc" id="L78">        restauranteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconoRestaurant.png&quot;))); // NOI18N</span>
-<span class="nc" id="L79">        restauranteBtn.setBorderPainted(false);</span>
-<span class="nc" id="L80">        restauranteBtn.setContentAreaFilled(false);</span>
-<span class="nc" id="L81">        restauranteBtn.setFocusPainted(false);</span>
-<span class="nc" id="L82">        restauranteBtn.setFocusable(false);</span>
-<span class="nc" id="L83">        restauranteBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L84">        restauranteBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L85">        restauranteBtn.setOpaque(false);</span>
-<span class="nc" id="L86">        restauranteBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L87">        restauranteBtn.setRequestFocusEnabled(false);</span>
-<span class="nc" id="L88">        restauranteBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L62">        restauranteBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
+<span class="nc" id="L63">        restauranteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconoRestaurant.png&quot;))); // NOI18N</span>
+<span class="nc" id="L64">        restauranteBtn.setBorderPainted(false);</span>
+<span class="nc" id="L65">        restauranteBtn.setContentAreaFilled(false);</span>
+<span class="nc" id="L66">        restauranteBtn.setFocusPainted(false);</span>
+<span class="nc" id="L67">        restauranteBtn.setFocusable(false);</span>
+<span class="nc" id="L68">        restauranteBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L69">        restauranteBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L70">        restauranteBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L71">        restauranteBtn.setRequestFocusEnabled(false);</span>
+<span class="nc" id="L72">        restauranteBtn.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L90">                restauranteBtnActionPerformed(evt);</span>
-<span class="nc" id="L91">            }</span>
+<span class="nc" id="L74">                restauranteBtnActionPerformed(evt);</span>
+<span class="nc" id="L75">            }</span>
         });
-<span class="nc" id="L93">        getContentPane().add(restauranteBtn);</span>
-<span class="nc" id="L94">        restauranteBtn.setBounds(10, 30, 180, 120);</span>
+<span class="nc" id="L77">        getContentPane().add(restauranteBtn);</span>
+<span class="nc" id="L78">        restauranteBtn.setBounds(10, 30, 180, 120);</span>
 
-<span class="nc" id="L96">        reseniaBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
-<span class="nc" id="L97">        reseniaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconoResenia.png&quot;))); // NOI18N</span>
-<span class="nc" id="L98">        reseniaBtn.setBorderPainted(false);</span>
-<span class="nc" id="L99">        reseniaBtn.setContentAreaFilled(false);</span>
-<span class="nc" id="L100">        reseniaBtn.setDefaultCapable(false);</span>
-<span class="nc" id="L101">        reseniaBtn.setFocusPainted(false);</span>
-<span class="nc" id="L102">        reseniaBtn.setFocusable(false);</span>
-<span class="nc" id="L103">        reseniaBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L104">        reseniaBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L105">        reseniaBtn.setOpaque(false);</span>
-<span class="nc" id="L106">        reseniaBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L107">        reseniaBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L80">        reseniaBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
+<span class="nc" id="L81">        reseniaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconoResenia.png&quot;))); // NOI18N</span>
+<span class="nc" id="L82">        reseniaBtn.setBorderPainted(false);</span>
+<span class="nc" id="L83">        reseniaBtn.setContentAreaFilled(false);</span>
+<span class="nc" id="L84">        reseniaBtn.setDefaultCapable(false);</span>
+<span class="nc" id="L85">        reseniaBtn.setFocusPainted(false);</span>
+<span class="nc" id="L86">        reseniaBtn.setFocusable(false);</span>
+<span class="nc" id="L87">        reseniaBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L88">        reseniaBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L89">        reseniaBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L90">        reseniaBtn.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L109">                reseniaBtnActionPerformed(evt);</span>
-<span class="nc" id="L110">            }</span>
+<span class="nc" id="L92">                reseniaBtnActionPerformed(evt);</span>
+<span class="nc" id="L93">            }</span>
         });
-<span class="nc" id="L112">        getContentPane().add(reseniaBtn);</span>
-<span class="nc" id="L113">        reseniaBtn.setBounds(10, 150, 179, 127);</span>
+<span class="nc" id="L95">        getContentPane().add(reseniaBtn);</span>
+<span class="nc" id="L96">        reseniaBtn.setBounds(10, 150, 179, 127);</span>
 
-<span class="nc" id="L115">        sorteoBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
-<span class="nc" id="L116">        sorteoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconSorteos.png&quot;))); // NOI18N</span>
-<span class="nc" id="L117">        sorteoBtn.setBorderPainted(false);</span>
-<span class="nc" id="L118">        sorteoBtn.setContentAreaFilled(false);</span>
-<span class="nc" id="L119">        sorteoBtn.setDefaultCapable(false);</span>
-<span class="nc" id="L120">        sorteoBtn.setFocusPainted(false);</span>
-<span class="nc" id="L121">        sorteoBtn.setFocusable(false);</span>
-<span class="nc" id="L122">        sorteoBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L123">        sorteoBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L124">        sorteoBtn.setOpaque(false);</span>
-<span class="nc" id="L125">        sorteoBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L126">        sorteoBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L98">        sorteoBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
+<span class="nc" id="L99">        sorteoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconSorteos.png&quot;))); // NOI18N</span>
+<span class="nc" id="L100">        sorteoBtn.setBorderPainted(false);</span>
+<span class="nc" id="L101">        sorteoBtn.setContentAreaFilled(false);</span>
+<span class="nc" id="L102">        sorteoBtn.setDefaultCapable(false);</span>
+<span class="nc" id="L103">        sorteoBtn.setFocusPainted(false);</span>
+<span class="nc" id="L104">        sorteoBtn.setFocusable(false);</span>
+<span class="nc" id="L105">        sorteoBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L106">        sorteoBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L107">        sorteoBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L108">        sorteoBtn.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L128">                sorteoBtnActionPerformed(evt);</span>
+<span class="nc" id="L110">                sorteoBtnActionPerformed(evt);</span>
+<span class="nc" id="L111">            }</span>
+        });
+<span class="nc" id="L113">        getContentPane().add(sorteoBtn);</span>
+<span class="nc" id="L114">        sorteoBtn.setBounds(10, 280, 180, 120);</span>
+
+<span class="nc" id="L116">        salirBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
+<span class="nc" id="L117">        salirBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconSalir.png&quot;))); // NOI18N</span>
+<span class="nc" id="L118">        salirBtn.setBorderPainted(false);</span>
+<span class="nc" id="L119">        salirBtn.setContentAreaFilled(false);</span>
+<span class="nc" id="L120">        salirBtn.setDefaultCapable(false);</span>
+<span class="nc" id="L121">        salirBtn.setFocusPainted(false);</span>
+<span class="nc" id="L122">        salirBtn.setFocusable(false);</span>
+<span class="nc" id="L123">        salirBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L124">        salirBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L125">        salirBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
+<span class="nc" id="L126">        salirBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L128">                salirBtnActionPerformed(evt);</span>
 <span class="nc" id="L129">            }</span>
         });
-<span class="nc" id="L131">        getContentPane().add(sorteoBtn);</span>
-<span class="nc" id="L132">        sorteoBtn.setBounds(10, 280, 180, 120);</span>
+<span class="nc" id="L131">        getContentPane().add(salirBtn);</span>
+<span class="nc" id="L132">        salirBtn.setBounds(10, 400, 180, 120);</span>
 
-<span class="nc" id="L134">        salirBtn.setBackground(new java.awt.Color(220, 234, 255));</span>
-<span class="nc" id="L135">        salirBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/iconSalir.png&quot;))); // NOI18N</span>
-<span class="nc" id="L136">        salirBtn.setBorderPainted(false);</span>
-<span class="nc" id="L137">        salirBtn.setContentAreaFilled(false);</span>
-<span class="nc" id="L138">        salirBtn.setDefaultCapable(false);</span>
-<span class="nc" id="L139">        salirBtn.setFocusPainted(false);</span>
-<span class="nc" id="L140">        salirBtn.setFocusable(false);</span>
-<span class="nc" id="L141">        salirBtn.setMaximumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L142">        salirBtn.setMinimumSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L143">        salirBtn.setPreferredSize(new java.awt.Dimension(180, 120));</span>
-<span class="nc" id="L144">        salirBtn.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L146">                salirBtnActionPerformed(evt);</span>
-<span class="nc" id="L147">            }</span>
-        });
-<span class="nc" id="L149">        getContentPane().add(salirBtn);</span>
-<span class="nc" id="L150">        salirBtn.setBounds(10, 400, 180, 120);</span>
+<span class="nc" id="L134">        paneInterior.setForeground(new java.awt.Color(60, 63, 65));</span>
+<span class="nc" id="L135">        paneInterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L136">        paneInterior.setDragMode(javax.swing.JDesktopPane.OUTLINE_DRAG_MODE);</span>
+<span class="nc" id="L137">        paneInterior.setMaximumSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L138">        paneInterior.setMinimumSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L139">        paneInterior.setOpaque(false);</span>
+<span class="nc" id="L140">        paneInterior.setLayout(new java.awt.GridLayout(1, 2));</span>
+<span class="nc" id="L141">        getContentPane().add(paneInterior);</span>
+<span class="nc" id="L142">        paneInterior.setBounds(200, 0, 700, 560);</span>
 
-<span class="nc" id="L152">        paneInterior.setForeground(new java.awt.Color(60, 63, 65));</span>
-<span class="nc" id="L153">        paneInterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
-<span class="nc" id="L154">        paneInterior.setDragMode(javax.swing.JDesktopPane.OUTLINE_DRAG_MODE);</span>
-<span class="nc" id="L155">        paneInterior.setMaximumSize(new java.awt.Dimension(683, 548));</span>
-<span class="nc" id="L156">        paneInterior.setMinimumSize(new java.awt.Dimension(683, 548));</span>
-<span class="nc" id="L157">        paneInterior.setOpaque(false);</span>
-<span class="nc" id="L158">        paneInterior.setLayout(new java.awt.GridLayout(1, 2));</span>
-<span class="nc" id="L159">        getContentPane().add(paneInterior);</span>
-<span class="nc" id="L160">        paneInterior.setBounds(200, 0, 700, 560);</span>
+<span class="nc" id="L144">        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/fondoTest.png&quot;))); // NOI18N</span>
+<span class="nc" id="L145">        getContentPane().add(jLabel1);</span>
+<span class="nc" id="L146">        jLabel1.setBounds(-10, 0, 960, 560);</span>
 
-<span class="nc" id="L162">        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/fondoTest.png&quot;))); // NOI18N</span>
-<span class="nc" id="L163">        getContentPane().add(jLabel1);</span>
-<span class="nc" id="L164">        jLabel1.setBounds(-10, 0, 960, 560);</span>
-
-<span class="nc" id="L166">        pack();</span>
-<span class="nc" id="L167">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L148">        pack();</span>
+<span class="nc" id="L149">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void sorteoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sorteoBtnActionPerformed
-
-<span class="nc" id="L171">        paneInterior.removeAll();</span>
-<span class="nc" id="L172">        paneInterior.setVisible(true);</span>
-<span class="nc" id="L173">        PanelSorteo sort = new PanelSorteo(elSis);</span>
-<span class="nc" id="L174">        paneInterior.add(sort);</span>
-<span class="nc" id="L175">        paneInterior.revalidate();</span>
-<span class="nc" id="L176">        paneInterior.repaint();</span>
-<span class="nc" id="L177">    }//GEN-LAST:event_sorteoBtnActionPerformed</span>
+<span class="nc" id="L152">        paneInterior.removeAll();</span>
+<span class="nc" id="L153">        paneInterior.setVisible(true);</span>
+<span class="nc" id="L154">        PanelSorteo sort = new PanelSorteo(elSis);</span>
+<span class="nc" id="L155">        paneInterior.add(sort);</span>
+<span class="nc" id="L156">        paneInterior.revalidate();</span>
+<span class="nc" id="L157">        paneInterior.repaint();</span>
+<span class="nc" id="L158">    }//GEN-LAST:event_sorteoBtnActionPerformed</span>
 
     private void reseniaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reseniaBtnActionPerformed
-<span class="nc" id="L180">        paneInterior.setVisible(true);</span>
-<span class="nc" id="L181">        paneInterior.removeAll();</span>
-<span class="nc" id="L182">        PanelResenias pRes = new PanelResenias(elSis);</span>
-<span class="nc" id="L183">        paneInterior.add(pRes);</span>
-<span class="nc" id="L184">        paneInterior.revalidate();</span>
-<span class="nc" id="L185">        paneInterior.repaint();</span>
-
-<span class="nc" id="L187">    }//GEN-LAST:event_reseniaBtnActionPerformed</span>
+<span class="nc" id="L161">        paneInterior.setVisible(true);</span>
+<span class="nc" id="L162">        paneInterior.removeAll();</span>
+<span class="nc" id="L163">        PanelResenias pRes = new PanelResenias(elSis);</span>
+<span class="nc" id="L164">        paneInterior.add(pRes);</span>
+<span class="nc" id="L165">        paneInterior.revalidate();</span>
+<span class="nc" id="L166">        paneInterior.repaint();</span>
+<span class="nc" id="L167">    }//GEN-LAST:event_reseniaBtnActionPerformed</span>
 
     private void restauranteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restauranteBtnActionPerformed
-<span class="nc" id="L190">        paneInterior.removeAll();</span>
-<span class="nc" id="L191">        paneInterior.setVisible(true);</span>
-<span class="nc" id="L192">        PanelRestaurantes pRestau = new PanelRestaurantes(elSis);</span>
-<span class="nc" id="L193">        paneInterior.add(pRestau);</span>
-<span class="nc" id="L194">        paneInterior.revalidate();</span>
-<span class="nc" id="L195">        paneInterior.repaint();</span>
-
-
-<span class="nc" id="L198">    }//GEN-LAST:event_restauranteBtnActionPerformed</span>
+<span class="nc" id="L170">        paneInterior.removeAll();</span>
+<span class="nc" id="L171">        paneInterior.setVisible(true);</span>
+<span class="nc" id="L172">        PanelRestaurantes pRestau = new PanelRestaurantes(elSis);</span>
+<span class="nc" id="L173">        paneInterior.add(pRestau);</span>
+<span class="nc" id="L174">        paneInterior.revalidate();</span>
+<span class="nc" id="L175">        paneInterior.repaint();</span>
+<span class="nc" id="L176">    }//GEN-LAST:event_restauranteBtnActionPerformed</span>
 
     private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
         try {
-
-<span class="nc" id="L203">            elSis.persistirGuardar(elSis);</span>
-<span class="nc" id="L204">           dispose();</span>
+           //al salir se persiste sistema
+<span class="nc" id="L181">            elSis.persistirGuardar(elSis);</span>
+<span class="nc" id="L182">           dispose();</span>
            
-<span class="nc" id="L206">        } catch (IOException ex) {</span>
-<span class="nc" id="L207">            System.out.println(ex.getMessage());</span>
-<span class="nc" id="L208">        }</span>
+<span class="nc" id="L184">        } catch (IOException ex) {</span>
+<span class="nc" id="L185">            System.out.println(ex.getMessage());</span>
+<span class="nc" id="L186">        }</span>
 
-<span class="nc" id="L210">        System.exit(0);</span>
-<span class="nc" id="L211">    }//GEN-LAST:event_salirBtnActionPerformed</span>
-
-    /*
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewUITest().setVisible(true);
-            }
-        });
-    }*/
+<span class="nc" id="L188">        System.exit(0);</span>
+<span class="nc" id="L189">    }//GEN-LAST:event_salirBtnActionPerformed</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

@@ -97,66 +97,61 @@ public class Sistema extends Observable implements Serializable {
 <span class="fc" id="L97">        return sisRetorno;</span>
     }
 
-    public void leerTXT(File nombreArchivo) throws IOException {
-<span class="nc" id="L101">        Persistencia.ArchivoLectura.leerArchivo(nombreArchivo);</span>
-<span class="nc" id="L102">        Persistencia.ArchivoLectura.cerrar();</span>
-<span class="nc" id="L103">    }</span>
-
     public ArrayList&lt;Cliente&gt; sortear() {
         /*Esta funcion realiza el sorte, y devuelve una lista con los ganadores 
         del mismo.*/
-<span class="fc" id="L108">        ArrayList&lt;Cliente&gt; ganadoresDeSorteo = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L109">        int contador = 0;</span>
+<span class="fc" id="L103">        ArrayList&lt;Cliente&gt; ganadoresDeSorteo = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L104">        int contador = 0;</span>
 
-<span class="nc bnc" id="L111" title="All 4 branches missed.">        while (contador &lt; sorteoActual.getCantidadPremios() &amp;&amp; contador &lt;= sorteoActual.getParticipantes().size()) {</span>
-<span class="nc" id="L112">            int number = (int) (Math.random() * sorteoActual.getParticipantes().size());</span>
+<span class="nc bnc" id="L106" title="All 4 branches missed.">        while (contador &lt; sorteoActual.getCantidadPremios() &amp;&amp; contador &lt;= sorteoActual.getParticipantes().size()) {</span>
+<span class="nc" id="L107">            int number = (int) (Math.random() * sorteoActual.getParticipantes().size());</span>
 
             //Chequeo que el ganador no este mas de una vez en la lista.
-<span class="nc bnc" id="L115" title="All 2 branches missed.">            if (!ganadoresDeSorteo.contains(sorteoActual.getParticipantes().get(number))) {</span>
-<span class="nc" id="L116">                ganadoresDeSorteo.add(sorteoActual.getParticipantes().get(number));</span>
-<span class="nc" id="L117">                sorteoActual.getParticipantes().remove(number);</span>
-<span class="nc" id="L118">                contador++;</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            if (!ganadoresDeSorteo.contains(sorteoActual.getParticipantes().get(number))) {</span>
+<span class="nc" id="L111">                ganadoresDeSorteo.add(sorteoActual.getParticipantes().get(number));</span>
+<span class="nc" id="L112">                sorteoActual.getParticipantes().remove(number);</span>
+<span class="nc" id="L113">                contador++;</span>
             } else {
-<span class="nc" id="L120">                sorteoActual.getParticipantes().remove(number);</span>
+<span class="nc" id="L115">                sorteoActual.getParticipantes().remove(number);</span>
             }
-<span class="nc" id="L122">        }</span>
-<span class="nc" id="L123">        return ganadoresDeSorteo;</span>
+<span class="nc" id="L117">        }</span>
+<span class="nc" id="L118">        return ganadoresDeSorteo;</span>
     }
 
     public double getPromedioEval() {
         //Retorna el promedio de evaluaciones del restaurante
-<span class="fc" id="L128">        int cantidadEval = evaluaciones.size();</span>
-<span class="fc" id="L129">        double prom = 0;</span>
-<span class="pc bpc" id="L130" title="1 of 2 branches missed.">        if (cantidadEval &gt; 0) {</span>
-<span class="nc bnc" id="L131" title="All 2 branches missed.">            for (int i = 0; i &lt; cantidadEval; i++) {</span>
-<span class="nc" id="L132">                prom = prom + evaluaciones.get(i).getEstrellas();</span>
+<span class="fc" id="L123">        int cantidadEval = evaluaciones.size();</span>
+<span class="fc" id="L124">        double prom = 0;</span>
+<span class="pc bpc" id="L125" title="1 of 2 branches missed.">        if (cantidadEval &gt; 0) {</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">            for (int i = 0; i &lt; cantidadEval; i++) {</span>
+<span class="nc" id="L127">                prom = prom + evaluaciones.get(i).getEstrellas();</span>
             }
-<span class="nc" id="L134">            prom = prom / cantidadEval;</span>
+<span class="nc" id="L129">            prom = prom / cantidadEval;</span>
         }
-<span class="fc" id="L136">        return prom;</span>
+<span class="fc" id="L131">        return prom;</span>
     }
 
     public void updateObserver() {
-<span class="fc" id="L140">        setChanged();</span>
-<span class="fc" id="L141">        notifyObservers();</span>
-<span class="fc" id="L142">    }</span>
+<span class="fc" id="L135">        setChanged();</span>
+<span class="fc" id="L136">        notifyObservers();</span>
+<span class="fc" id="L137">    }</span>
 
     public void agregarEditarRestaurante(Restaurante miRestaurante) {
         /*Recibe un Restaurante por parametro y actualiza en el sistema por el mismo*/
-<span class="fc" id="L146">        this.setRestaurante(miRestaurante);</span>
-<span class="fc" id="L147">        updateObserver();</span>
-<span class="fc" id="L148">    }</span>
+<span class="fc" id="L141">        this.setRestaurante(miRestaurante);</span>
+<span class="fc" id="L142">        updateObserver();</span>
+<span class="fc" id="L143">    }</span>
 
     public ArrayList&lt;Cliente&gt; getParticipantesSorteo() {
         /*Retorna la lista de participantes del mismo*/
-<span class="fc" id="L152">        ArrayList&lt;Cliente&gt; participantes = new ArrayList&lt;&gt;();</span>
-<span class="pc bpc" id="L153" title="1 of 2 branches missed.">        for (int i = 0; i &lt; this.getEvaluaciones().size(); i++) {</span>
-<span class="nc" id="L154">            Evaluacion aux = getEvaluaciones().get(i);</span>
-<span class="nc bnc" id="L155" title="All 4 branches missed.">            if (!aux.getResenia().isEmpty() &amp;&amp; !aux.getCliente().getNombreCliente().isEmpty()) {</span>
-<span class="nc" id="L156">                participantes.add(aux.getCliente());</span>
+<span class="fc" id="L147">        ArrayList&lt;Cliente&gt; participantes = new ArrayList&lt;&gt;();</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        for (int i = 0; i &lt; this.getEvaluaciones().size(); i++) {</span>
+<span class="nc" id="L149">            Evaluacion aux = getEvaluaciones().get(i);</span>
+<span class="nc bnc" id="L150" title="All 4 branches missed.">            if (!aux.getResenia().isEmpty() &amp;&amp; !aux.getCliente().getNombreCliente().isEmpty()) {</span>
+<span class="nc" id="L151">                participantes.add(aux.getCliente());</span>
             }
         }
-<span class="fc" id="L159">        return participantes;</span>
+<span class="fc" id="L154">        return participantes;</span>
     }  
 
 }

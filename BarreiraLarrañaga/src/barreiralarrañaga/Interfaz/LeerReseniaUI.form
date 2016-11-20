@@ -69,7 +69,7 @@
               <EmptySpace pref="13" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblNombreClieTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lblNombre" alignment="0" min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
@@ -152,9 +152,6 @@
           <Image iconType="3" name="/barreiralarra&#xf1;aga/Interfaz/img/star.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStarOneActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnStarOne1">
       <Properties>
@@ -181,9 +178,6 @@
           <Image iconType="3" name="/barreiralarra&#xf1;aga/Interfaz/img/star.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStarOne1ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnStarOne3">
       <Properties>
@@ -210,9 +204,6 @@
           <Image iconType="3" name="/barreiralarra&#xf1;aga/Interfaz/img/star.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStarOne3ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnStarOne2">
       <Properties>
@@ -239,9 +230,6 @@
           <Image iconType="3" name="/barreiralarra&#xf1;aga/Interfaz/img/star.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStarOne2ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnStarOne4">
       <Properties>
@@ -268,9 +256,6 @@
           <Image iconType="3" name="/barreiralarra&#xf1;aga/Interfaz/img/star.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStarOne4ActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>

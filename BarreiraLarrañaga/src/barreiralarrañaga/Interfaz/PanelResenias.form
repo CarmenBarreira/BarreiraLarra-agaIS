@@ -30,9 +30,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTextoResenia3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTextoResenia2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTextoResenia1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="jPanel1" min="-2" pref="511" max="-2" attributes="0"/>
@@ -54,11 +54,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="83" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTextoResenia1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTextoResenia2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTextoResenia3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="25" max="32767" attributes="0"/>
@@ -86,7 +86,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblNombreCliente2" min="-2" pref="72" max="-2" attributes="0"/>
+                          <Component id="lblPuntuacion" min="-2" pref="72" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnStarOne" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -100,7 +100,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="lblNombreCliente1" min="-2" pref="72" max="-2" attributes="0"/>
+                          <Component id="lblNombreCliente" min="-2" pref="72" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="txtNombreCliente" min="-2" pref="154" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -126,7 +126,7 @@
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="lblResenia" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace pref="650" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -135,10 +135,10 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtNombreCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblNombreCliente1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="lblNombreCliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="lblCorreoCliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="txtCorreoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -155,7 +155,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblNombreCliente2" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="lblPuntuacion" min="-2" pref="25" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -169,7 +169,7 @@
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="lblResenia" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace pref="127" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -186,17 +186,11 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="(Opcional)"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCorreoClienteActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreCliente">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="(Opcional)"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreClienteActionPerformed"/>
-          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -363,34 +357,34 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStarThreeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblNombreCliente2">
+        <Component class="javax.swing.JLabel" name="lblPuntuacion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Puntuaci&#xf3;n"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblNombreCliente1">
+        <Component class="javax.swing.JLabel" name="lblNombreCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nombre: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lblResenia">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rese&#xf1;a: "/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lblTextoResenia1">
       <Properties>
         <Property name="text" type="java.lang.String" value="              Le agradecemos por habernos visitado. Para mejorar la atencion y a la calidad del servicio"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lblTextoResenia2">
       <Properties>
         <Property name="text" type="java.lang.String" value="le pedimos que nos deje su rese&#xf1;a. Completando esta misma con su nombre y correo electronico "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lblTextoResenia3">
       <Properties>
         <Property name="text" type="java.lang.String" value="participa usted en los frecuentes sorteos del establecimiento.  No se lo puede perder!"/>
       </Properties>

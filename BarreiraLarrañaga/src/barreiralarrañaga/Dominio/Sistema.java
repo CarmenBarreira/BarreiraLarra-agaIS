@@ -2,7 +2,6 @@ package barreiralarrañaga.Dominio;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -91,15 +90,9 @@ public class Sistema extends Observable implements Serializable {
         } catch (FileNotFoundException e) {
             System.out.println("1L-" + e.getMessage());
         } catch (IOException e) {
-            System.out.println("2L-"
-                    + "-" + e.getMessage());
+            System.out.println("2L-" + e.getMessage());
         }
         return sisRetorno;
-    }
-
-    public void leerTXT(File nombreArchivo) throws IOException {
-        Persistencia.ArchivoLectura.leerArchivo(nombreArchivo);
-        Persistencia.ArchivoLectura.cerrar();
     }
 
     public ArrayList<Cliente> sortear() {

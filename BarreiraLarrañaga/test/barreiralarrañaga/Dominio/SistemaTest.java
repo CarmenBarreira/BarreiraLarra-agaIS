@@ -151,14 +151,6 @@ public class SistemaTest {
     }
 
     @Test
-    public void testLeerTXT() throws Exception {
-        System.out.println("leerTXT");
-        File nombreArchivo= null;
-        Sistema instance = new Sistema();
-        instance.leerTXT(nombreArchivo);
-    }
-
-    @Test
     public void testSortear() {
         System.out.println("sortear");
         Sistema instance = new Sistema();
