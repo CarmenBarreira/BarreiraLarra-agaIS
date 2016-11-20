@@ -46,6 +46,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Modificar Restaurante IS");
 
+        btnEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/save_16.png"))); // NOI18N
         btnEditarRestaurante.setText("Guardar ");
         btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +56,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
 
         lblDireccionR1.setText("Horarios: ");
 
-        lblDireccionR2.setText("Tipo de comida: ");
+        lblDireccionR2.setText("Tipo/s de comida/s: ");
 
         jLabel4.setFont(jLabel4.getFont());
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -145,9 +146,9 @@ public class EditarRestaurante extends javax.swing.JFrame {
                             .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -211,7 +212,9 @@ public class EditarRestaurante extends javax.swing.JFrame {
                             "Horario Incorrecto", ERROR_MESSAGE);
                        }
                        else{//todos los datos bien
-                           aux = new Restaurante(nombre, direccion, tipoComida, horarios);                             
+                           aux = new Restaurante(nombre, direccion, tipoComida, horarios);   
+                           JOptionPane.showMessageDialog(null, "Se edito exitosamente el restaurante",  
+                                   "Modifcación exitosa", JOptionPane.INFORMATION_MESSAGE);
                        }
                    }
                 } 

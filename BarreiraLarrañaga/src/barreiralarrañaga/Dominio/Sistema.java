@@ -10,8 +10,6 @@ public class Sistema extends Observable implements Serializable {
     private ArrayList<Evaluacion> evaluaciones;
     private ArrayList<Sorteo> sorteos;
   
-     
-
     public Sistema() {
         restaurante = new Restaurante();
         evaluaciones = new ArrayList<Evaluacion>();

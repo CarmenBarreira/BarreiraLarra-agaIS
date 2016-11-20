@@ -3,6 +3,9 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -49,7 +52,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                       <Component id="jLabel1" min="-2" pref="254" max="-2" attributes="0"/>
-                                      <EmptySpace pref="229" max="32767" attributes="0"/>
+                                      <EmptySpace pref="195" max="32767" attributes="0"/>
                                       <Component id="btnEditarRestaurante" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -76,7 +79,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnEditarRestaurante" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnEditarRestaurante" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -304,6 +307,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEditarRestaurante">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/barreiralarra&#xf1;aga/Interfaz/img/editar.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Editar Restaurante"/>
       </Properties>
       <Events>

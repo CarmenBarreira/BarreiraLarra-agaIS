@@ -1,5 +1,7 @@
 package barreiralarrañaga.Dominio;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 
@@ -13,14 +15,14 @@ public class Evaluacion {
         cliente = new Cliente();
         resenia = "Sin resenia";
         estrellas = 0;
-        fechaEvaluacion= Date.from(Instant.MIN);
+       fechaEvaluacion= Date.from(Instant.MIN);
     }
     
     public Evaluacion(Cliente clie,  int calif, String reseniaIngresada) {
         cliente = clie;
         resenia = reseniaIngresada;
         estrellas = calif;
-        fechaEvaluacion= Date.from(Instant.MIN);
+      //  fechaEvaluacion= Date.from(Instant.MIN);
     }
     
     public String getResenia() {

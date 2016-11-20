@@ -1,13 +1,22 @@
 package barreiralarrañaga.Dominio;
 
-import java.util.Collections;
-
 public class Cliente {
 
     private int idCliente;
     private String nombreCliente;
     private String emailCliente;
 
+    public Cliente() {
+        idCliente = -1;
+        nombreCliente = "Sin nombre";
+        emailCliente = "Sin email";
+    }
+
+    public Cliente(int elIdCliente, String elNombreCliente, String elEmailCliente) {
+        this.idCliente = elIdCliente;
+        this.nombreCliente = elNombreCliente;
+        this.emailCliente = elEmailCliente;
+    }
    
     public int getIdCliente() {
         return idCliente;
