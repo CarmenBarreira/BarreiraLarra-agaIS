@@ -14,12 +14,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
-/**
- *
- * @author Juan
- */
 public final class PanelRestaurantes extends javax.swing.JPanel {
 
     private final Sistema elSis;

@@ -28,6 +28,7 @@ public class PanelResenias extends javax.swing.JPanel {
 
     /**
      * Creates new form reseniaPanel
+     * @param sis
      */
     public PanelResenias(Sistema sis) {
         initComponents();
