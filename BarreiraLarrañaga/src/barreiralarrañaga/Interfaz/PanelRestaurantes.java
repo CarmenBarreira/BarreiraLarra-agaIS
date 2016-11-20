@@ -5,22 +5,16 @@
  */
 package barreiralarrañaga.Interfaz;
 
-import barreiralarrañaga.Dominio.Cliente;
 import barreiralarrañaga.Dominio.Evaluacion;
 import barreiralarrañaga.Dominio.Sistema;
-import barreiralarrañaga.Interfaz.EditarRestaurante;
 
 import java.awt.Rectangle;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.ERROR_MESSAGE;
+
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -40,55 +34,55 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
         elSis = sis;
         cargarLista();
         double eval = elSis.getPromedioEval();
-lblPromedioTitulo.setVisible(true);
+        lblPromedioTitulo.setVisible(true);
         if (eval > 0) {
-      
-            
-           lblPromedio.setText((new DecimalFormat("##.##").format(eval)));
+
+            lblPromedio.setText((new DecimalFormat("##.##").format(eval)));
             promedioMuestra(eval);
-        } 
+        }
 
     }
-private void promedioMuestra(double eval){
-if(eval<=2){
-    btnStarOne.setSelected(true);
- btnStarOne1.setSelected(false);
-  btnStarOne2.setSelected(false);
-   btnStarOne3.setSelected(false);
-    btnStarOne4.setSelected(false);
-}
-if(eval>=2 && eval<3){
-    btnStarOne.setSelected(true);
- btnStarOne1.setSelected(true);
-  btnStarOne2.setSelected(false);
-   btnStarOne3.setSelected(false);
-    btnStarOne4.setSelected(false);
-}
 
-if(eval>=3 && eval<4){
-    btnStarOne.setSelected(true);
- btnStarOne1.setSelected(true);
-  btnStarOne2.setSelected(true);
-   btnStarOne3.setSelected(false);
-    btnStarOne4.setSelected(false);
-}
-if(eval>=4 && eval<5){
-    btnStarOne.setSelected(true);
- btnStarOne1.setSelected(true);
-  btnStarOne2.setSelected(true);
-   btnStarOne3.setSelected(true);
-    btnStarOne4.setSelected(false);
-}
-if(eval==5){
-    btnStarOne.setSelected(true);
- btnStarOne1.setSelected(true);
-  btnStarOne2.setSelected(true);
-   btnStarOne3.setSelected(true);
-    btnStarOne4.setSelected(true);
-}
+    private void promedioMuestra(double eval) {
+        if (eval <= 2) {
+            btnStarOne.setSelected(true);
+            btnStarOne1.setSelected(false);
+            btnStarOne2.setSelected(false);
+            btnStarOne3.setSelected(false);
+            btnStarOne4.setSelected(false);
+        }
+        if (eval >= 2 && eval < 3) {
+            btnStarOne.setSelected(true);
+            btnStarOne1.setSelected(true);
+            btnStarOne2.setSelected(false);
+            btnStarOne3.setSelected(false);
+            btnStarOne4.setSelected(false);
+        }
 
+        if (eval >= 3 && eval < 4) {
+            btnStarOne.setSelected(true);
+            btnStarOne1.setSelected(true);
+            btnStarOne2.setSelected(false);
+            btnStarOne3.setSelected(true);
+            btnStarOne4.setSelected(false);
+        }
+        if (eval >= 4 && eval < 5) {
+            btnStarOne.setSelected(true);
+            btnStarOne1.setSelected(true);
+            btnStarOne2.setSelected(true);
+            btnStarOne3.setSelected(true);
+            btnStarOne4.setSelected(false);
+        }
+        if (eval == 5) {
+            btnStarOne.setSelected(true);
+            btnStarOne1.setSelected(true);
+            btnStarOne2.setSelected(true);
+            btnStarOne3.setSelected(true);
+            btnStarOne4.setSelected(true);
+        }
 
-}
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -161,8 +155,24 @@ if(eval==5){
             new String [] {
                 "Cliente", "Calificacion", "Reseña", "Correo Electronico"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaResenias.setColumnSelectionAllowed(true);
+        tablaResenias.getTableHeader().setReorderingAllowed(false);
+        tablaResenias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaReseniasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaResenias);
+        tablaResenias.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         lblPromedioTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblPromedioTitulo.setText("Promedio:");
@@ -353,7 +363,7 @@ if(eval==5){
 
     private void btnStarOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOneActionPerformed
 
-   
+
     }//GEN-LAST:event_btnStarOneActionPerformed
 
     private void btnStarOne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOne1ActionPerformed
@@ -371,6 +381,15 @@ if(eval==5){
     private void btnStarOne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOne4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnStarOne4ActionPerformed
+
+    private void tablaReseniasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaReseniasMouseClicked
+        int index = tablaResenias.getSelectedRow();
+
+   
+        Evaluacion ev = elSis.getEvaluaciones().get(index);
+        LeerReseniaUI le = new LeerReseniaUI(ev);
+        le.setVisible(true);
+    }//GEN-LAST:event_tablaReseniasMouseClicked
 
     public void cargarLista() {
         borrarCacheTabla();

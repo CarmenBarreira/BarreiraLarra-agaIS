@@ -5,10 +5,12 @@
  */
 package barreiralarrañaga.Interfaz;
 
+import barreiralarrañaga.Dominio.Evaluacion;
 import barreiralarrañaga.Dominio.Sistema;
 import barreiralarrañaga.Dominio.Sorteo;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 public class PanelSorteo extends javax.swing.JPanel {
 
@@ -18,11 +20,16 @@ public class PanelSorteo extends javax.swing.JPanel {
      * Creates new form sorteoUI
      */
     public PanelSorteo(Sistema sis) {
+
         initComponents();
         unSis = sis;
-        if (unSis.getSorteoActual() != null && unSis.getParticipantesSorteo().size()>0) {
-            btnSortear.setEnabled(true);
+        btnSortear.setEnabled(false);
+        if (unSis.getSorteoActual() != null) {
             lblSorteoActual.setText(unSis.getSorteoActual().getNombre());
+            if (unSis.getParticipantesSorteo().size() > 0) {
+                btnSortear.setEnabled(true);
+            }
+
         } else {
             btnSortear.setEnabled(false);
         }
@@ -88,6 +95,11 @@ public class PanelSorteo extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tablaSorteos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaSorteosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaSorteos);
 
         lblSorteo.setText("Sorteo Actual: ");
@@ -149,6 +161,14 @@ public class PanelSorteo extends javax.swing.JPanel {
         resultados.setVisible(true);
         btnSortear.setEnabled(false);
     }//GEN-LAST:event_btnSortearActionPerformed
+
+    private void tablaSorteosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSorteosMouseClicked
+        int index = tablaSorteos.getSelectedRow();
+
+        Sorteo ev = unSis.getSorteos().get(index);
+        ResultadosSorteoDetallado resultado = new ResultadosSorteoDetallado(ev);
+        resultado.setVisible(true);
+    }//GEN-LAST:event_tablaSorteosMouseClicked
     public void cargarLista() {
         borrarCacheTabla();
         DefaultTableModel modelo = (DefaultTableModel) tablaSorteos.getModel();

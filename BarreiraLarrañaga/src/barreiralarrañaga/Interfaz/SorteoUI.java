@@ -8,6 +8,7 @@ package barreiralarrañaga.Interfaz;
 import barreiralarrañaga.Dominio.Cliente;
 import barreiralarrañaga.Dominio.Sistema;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Juan
  */
 public class SorteoUI extends javax.swing.JFrame {
-    
+
     Sistema unSis;
     ArrayList<Cliente> arrayGanadores;
 
@@ -25,35 +26,39 @@ public class SorteoUI extends javax.swing.JFrame {
     public SorteoUI(Sistema sis) {
         unSis = sis;
         initComponents();
-        
+
+        Date date = new Date();
+        ArrayList<Cliente> partAux = (ArrayList<Cliente>) unSis.getParticipantesSorteo().clone();
         unSis.getSorteoActual().setParticipantes(unSis.getParticipantesSorteo());
         unSis.getSorteoActual().setCantidadParticipantes(unSis.getSorteoActual().getParticipantes().size());
         arrayGanadores = unSis.sortear();
         unSis.getSorteoActual().setGanadores(arrayGanadores);
         lblLoadNombreSorteo.setText(unSis.getSorteoActual().getNombre());
         lblLoadDesc.setText(unSis.getSorteoActual().getPremio());
-        lblLoadPart.setText(""+unSis.getSorteoActual().getCantidadParticipantes());
+        lblLoadPart.setText("" + unSis.getSorteoActual().getCantidadParticipantes());
+        unSis.getSorteoActual().setParticipantes(partAux);
+        unSis.getSorteoActual().setFecha(date);
         cargarLista();
-        
+
         unSis.getSorteos().add(unSis.getSorteoActual());
         unSis.setSorteoActual(null);
     }
-    
+
     public void cargarLista() {
         borrarCacheTabla();
         DefaultTableModel modelo = (DefaultTableModel) tablaGanadores.getModel();
         ArrayList<Cliente> clientesTabla = arrayGanadores;
         for (int i = 0; i < clientesTabla.size(); i++) {
-            
+
             modelo.addRow(new Object[][]{{null, null, null, null, null, null}});
             tablaGanadores.setValueAt(i + 1, i, 0);
             tablaGanadores.setValueAt(clientesTabla.get(i).getNombreCliente(), i, 1);
             tablaGanadores.setValueAt(clientesTabla.get(i).getEmailCliente(), i, 2);
-            
+
         }
-        
+
     }
-    
+
     private void borrarCacheTabla() {
         DefaultTableModel modelo = (DefaultTableModel) tablaGanadores.getModel();
         int filas = tablaGanadores.getRowCount();

@@ -1,8 +1,16 @@
 package barreiralarrañaga.Dominio;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Observable;
 
 public class Sistema extends Observable implements Serializable {
@@ -14,31 +22,69 @@ public class Sistema extends Observable implements Serializable {
 
     public Sistema() {
         restaurante = new Restaurante();
-        evaluaciones = new ArrayList<Evaluacion>();
+        evaluaciones = new ArrayList<>();
         sorteoActual = null;
-        sorteos = new ArrayList<Sorteo>();
+        sorteos = new ArrayList<>();
+    }
+
+    public void persistirGuardar(Sistema sis) throws IOException {
+
+        FileOutputStream f = new FileOutputStream("archivo");
+        BufferedOutputStream b = new BufferedOutputStream(f);
+        ObjectOutputStream s = new ObjectOutputStream(b);
+        try {
+            s.writeObject(sis);
+            s.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("1G-" + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("2G-"
+                    + "-" + e.getMessage());
+        }
+
+    }
+
+    public Sistema persistirLeer() throws IOException, ClassNotFoundException {
+        FileInputStream ff = new FileInputStream("archivo");
+        BufferedInputStream bb = new BufferedInputStream(ff);
+        ObjectInputStream ss = new ObjectInputStream(bb);
+        Sistema sisRetorno = new Sistema();
+        try {
+            sisRetorno = (Sistema) ss.readObject();
+            ss.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("1L-" + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("2L-"
+                    + "-" + e.getMessage());
+        }
+
+        return sisRetorno;
+    }
+
+    public void leerTXT(File nombreArchivo) throws IOException {
+        Persistencia.ArchivoLectura.leerArchivo(nombreArchivo);
+        Persistencia.ArchivoLectura.cerrar();
     }
 
     public ArrayList<Cliente> sortear() {
         ArrayList<Cliente> ganadoresDeSorteo = new ArrayList<>();
         int contador = 0;
-       
-        
-        while (contador < sorteoActual.getCantidadPremios() && contador<= sorteoActual.getParticipantes().size()) {
+
+        while (contador < sorteoActual.getCantidadPremios() && contador <= sorteoActual.getParticipantes().size()) {
             int number = (int) (Math.random() * sorteoActual.getParticipantes().size());
-    
+
             //Chequeo que el ganador no este mas de una vez en la lista.
-            
             if (!ganadoresDeSorteo.contains(sorteoActual.getParticipantes().get(number))) {
                 ganadoresDeSorteo.add(sorteoActual.getParticipantes().get(number));
                 sorteoActual.getParticipantes().remove(number);
                 contador++;
-            }else{
-            sorteoActual.getParticipantes().remove(number);
+            } else {
+                sorteoActual.getParticipantes().remove(number);
             }
 
         }
-        
+
         return ganadoresDeSorteo;
 
     }

@@ -1,30 +1,34 @@
 package barreiralarrañaga.Dominio;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
 
-public class Evaluacion {
+public class Evaluacion implements Serializable{
+
     private Cliente cliente;
-    private String resenia; 
+    private String resenia;
     private int estrellas;
-    private Date fechaEvaluacion; 
+    private Date fechaEvaluacion;
 
     public Evaluacion() {
         cliente = new Cliente();
-        resenia = "Sin resenia";
+        resenia = "Sin reseña";
         estrellas = 0;
-       fechaEvaluacion= Date.from(Instant.MIN);
+        fechaEvaluacion = Date.from(Instant.MIN);
     }
-    
-    public Evaluacion(Cliente clie,  int calif, String reseniaIngresada) {
+
+    public Evaluacion(Cliente clie, int calif, String reseniaIngresada) {
         cliente = clie;
         resenia = reseniaIngresada;
+        if (reseniaIngresada.equals("")) {
+            resenia = "Sin Reseña";
+        }
+
         estrellas = calif;
-      //  fechaEvaluacion= Date.from(Instant.MIN);
+
     }
-    
+
     public String getResenia() {
         return resenia;
     }
@@ -45,12 +49,10 @@ public class Evaluacion {
         return cliente;
     }
 
-    
     public void setCliente(Cliente elCliente) {
         this.cliente = elCliente;
     }
 
-    
     public Date getFechaEvaluacion() {
         return fechaEvaluacion;
     }
@@ -58,5 +60,5 @@ public class Evaluacion {
     public void setFechaEvaluacion(Date laFechaEvaluacion) {
         this.fechaEvaluacion = laFechaEvaluacion;
     }
-      
+
 }

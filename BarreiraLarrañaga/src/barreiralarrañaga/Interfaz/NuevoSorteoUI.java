@@ -41,7 +41,8 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
         lblNombre = new javax.swing.JLabel();
         lblDesc = new javax.swing.JLabel();
         txtNombreSorteo = new javax.swing.JTextField();
-        txtFieldDescPremio = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -54,37 +55,43 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
             }
         });
 
+        LblNuevoSorteo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LblNuevoSorteo.setText("Nuevo Sorteo");
 
         lblNombre.setText("Nombre de sorteo:");
 
         lblDesc.setText("Descripcion de premio:");
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblGanadores)
-                                .addComponent(lblDesc)
-                                .addComponent(lblNombre))
-                            .addGap(28, 28, 28)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNombreSorteo)
-                                .addComponent(txtFieldDescPremio, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnCrear)
-                            .addGap(36, 36, 36)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(LblNuevoSorteo)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblDesc)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblNombre)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNombreSorteo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(LblNuevoSorteo))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblGanadores)
+                                .addGap(28, 28, 28)
+                                .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,16 +103,16 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                     .addComponent(lblNombre)
                     .addComponent(txtNombreSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDesc)
-                    .addComponent(txtFieldDescPremio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(lblDesc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblGanadores)
                     .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnCrear)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,13 +123,13 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
         int resp = 0;
         if (!txtNombreSorteo.getText().isEmpty()) {
             if (valueSpinner > 0) {
-                if (!txtFieldDescPremio.getText().isEmpty()) {
+                if (!jTextArea1.getText().isEmpty()) {
 
                     if (sis.getSorteoActual() != null) {
                         resp = JOptionPane.showConfirmDialog(this, "Esta seguro que quiere sobreescribir el sorteo actual?", "Sorteo en marcha", JOptionPane.YES_NO_OPTION);
                     }
                     if (resp == 0) {
-                        Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(), txtFieldDescPremio.getText(), valueSpinner);
+                        Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(), jTextArea1.getText(), valueSpinner);
                         sis.setSorteoActual(sorteoActual);
                         this.dispose();
                     } else if (resp == 1) {
@@ -150,11 +157,12 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LblNuevoSorteo;
     private javax.swing.JButton btnCrear;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblDesc;
     private javax.swing.JLabel lblGanadores;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JSpinner spinnerGanadores;
-    private javax.swing.JTextField txtFieldDescPremio;
     private javax.swing.JTextField txtNombreSorteo;
     // End of variables declaration//GEN-END:variables
 }

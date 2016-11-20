@@ -7,8 +7,15 @@ package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Sistema;
 import java.awt.Color;
+import java.awt.Image;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 import javax.swing.BorderFactory;
+import javax.swing.JFrame;
 import javax.swing.border.Border;
 
 /**
@@ -16,19 +23,37 @@ import javax.swing.border.Border;
  * @author Juan
  */
 public class InicioUI extends javax.swing.JFrame {
-    
 
-    Sistema sis;
+    Sistema elSis;
     Border bor;
 
-    /**
-     * Creates new form NewUITest
-     */
-    public InicioUI(Sistema unSis) {
+    public InicioUI(Sistema unSis) throws ClassNotFoundException {
+
         initComponents();
 
-         paneInterior.setVisible(false);
-        sis = unSis;
+        paneInterior.setVisible(false);
+        //seteo icono de form
+
+        elSis = unSis;
+        try {
+            elSis = elSis.persistirLeer();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("1" + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("2" + e.getMessage());
+        }
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                try {
+                    elSis.persistirGuardar(elSis);
+System.out.println("Guardado con Exito!");
+                } catch (IOException ex) {
+                }
+
+            }
+        });
 
     }
 
@@ -149,19 +174,19 @@ public class InicioUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sorteoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sorteoBtnActionPerformed
-        
+
         paneInterior.removeAll();
         paneInterior.setVisible(true);
-        PanelSorteo sort = new PanelSorteo(sis);
+        PanelSorteo sort = new PanelSorteo(elSis);
         paneInterior.add(sort);
         paneInterior.revalidate();
         paneInterior.repaint();
     }//GEN-LAST:event_sorteoBtnActionPerformed
 
     private void reseniaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reseniaBtnActionPerformed
-          paneInterior.setVisible(true);
+        paneInterior.setVisible(true);
         paneInterior.removeAll();
-        PanelResenias pRes = new PanelResenias(sis);
+        PanelResenias pRes = new PanelResenias(elSis);
         paneInterior.add(pRes);
         paneInterior.revalidate();
         paneInterior.repaint();
@@ -170,16 +195,25 @@ public class InicioUI extends javax.swing.JFrame {
 
     private void restauranteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restauranteBtnActionPerformed
         paneInterior.removeAll();
-           paneInterior.setVisible(true);
-        PanelRestaurantes pRestau = new PanelRestaurantes(sis);
+        paneInterior.setVisible(true);
+        PanelRestaurantes pRestau = new PanelRestaurantes(elSis);
         paneInterior.add(pRestau);
         paneInterior.revalidate();
         paneInterior.repaint();
-        
+
 
     }//GEN-LAST:event_restauranteBtnActionPerformed
 
     private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
+        try {
+
+            elSis.persistirGuardar(elSis);
+           dispose();
+           
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
         System.exit(0);
     }//GEN-LAST:event_salirBtnActionPerformed
 

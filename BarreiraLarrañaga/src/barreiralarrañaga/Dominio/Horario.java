@@ -1,6 +1,8 @@
 package barreiralarrañaga.Dominio;
 
-public class Horario {
+import java.io.Serializable;
+
+public class Horario implements Serializable{
     private String dia; 
     private String horaInicio; 
     private String horaFin;  

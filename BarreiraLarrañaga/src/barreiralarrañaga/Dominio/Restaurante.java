@@ -1,8 +1,9 @@
 package barreiralarrañaga.Dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Restaurante implements Comparable<Restaurante>{
+public class Restaurante implements Comparable<Restaurante>, Serializable{
 
     //ATRIBUTOS
     private String nombre;

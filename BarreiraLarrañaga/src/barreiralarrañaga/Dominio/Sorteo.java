@@ -1,9 +1,10 @@
 package barreiralarrañaga.Dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Date;
 
-public class Sorteo {
+public class Sorteo implements Serializable {
 
     private ArrayList<Cliente> ganadores;
     private String premio;
@@ -11,6 +12,7 @@ public class Sorteo {
     private ArrayList<Cliente> participantes;
     private String nombre;
     private int cantidadParticipantes;
+    private Date fecha;
 
     public Sorteo() {
         nombre = "";
@@ -91,6 +93,20 @@ public class Sorteo {
      */
     public void setCantidadParticipantes(int cantidadParticipantes) {
         this.cantidadParticipantes = cantidadParticipantes;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public Date getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
 }
