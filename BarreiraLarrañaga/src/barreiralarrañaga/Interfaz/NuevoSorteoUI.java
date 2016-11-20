@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Sistema;
@@ -110,31 +106,31 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
     private void btnFieldCantidadGanadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFieldCantidadGanadoresActionPerformed
 
         int valueSpinner = (Integer) spinnerGanadores.getValue();
-        if (valueSpinner>0) {
+        if (valueSpinner > 0) {
             if (!txtFieldDescPremio.getText().isEmpty() /*HAY QUE REVISAR QUE LA CANTIDAD DE GANADORES NO SEA MAYOR A LA DEPARTICIPANTES, O SI? */) {
                 Sorteo sorteoActual = new Sorteo(txtFieldDescPremio.getText(), valueSpinner);
                 sis.setSorteoActual(sorteoActual);
+
     }//GEN-LAST:event_btnFieldCantidadGanadoresActionPerformed
-            else{
-            
-       
+            else {
+                JOptionPane.showMessageDialog(this, "Ingrese una descripcion para el premio", "Premio Invalido", JOptionPane.ERROR_MESSAGE);
+
             }
-        
-        }else{
-        
-       // PONER MENSAJE DE ERROR
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Se necesita al menos un ganador", "Cantidad de ganadores invalida", JOptionPane.ERROR_MESSAGE);
+
         }
     }
     private void txtFieldDescPremioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDescPremioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldDescPremioActionPerformed
 
-
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-      /*
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
            
