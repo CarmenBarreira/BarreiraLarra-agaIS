@@ -2,7 +2,6 @@
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,136 +21,135 @@ public class Sistema extends Observable implements Serializable {
     private Sorteo sorteoActual;
 
     //Constructor
-<span class="fc" id="L25">    public Sistema() {</span>
-<span class="fc" id="L26">        restaurante = new Restaurante();</span>
-<span class="fc" id="L27">        evaluaciones = new ArrayList&lt;Evaluacion&gt;();</span>
-<span class="fc" id="L28">        sorteoActual = null;</span>
-<span class="fc" id="L29">        sorteos = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L24">    public Sistema() {</span>
+<span class="fc" id="L25">        restaurante = new Restaurante();</span>
+<span class="fc" id="L26">        evaluaciones = new ArrayList&lt;Evaluacion&gt;();</span>
+<span class="fc" id="L27">        sorteoActual = null;</span>
+<span class="fc" id="L28">        sorteos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L29">    }</span>
 
     //get's y set's
     
     public Restaurante getRestaurante() {
-<span class="fc" id="L35">        return this.restaurante;</span>
+<span class="fc" id="L34">        return this.restaurante;</span>
     }
 
     public ArrayList&lt;Evaluacion&gt; getEvaluaciones() {
-<span class="fc" id="L39">        return this.evaluaciones;</span>
+<span class="fc" id="L38">        return this.evaluaciones;</span>
     }
     
     public void setRestaurante(Restaurante miRestaurante) {
-<span class="fc" id="L43">        this.restaurante = miRestaurante;</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L42">        this.restaurante = miRestaurante;</span>
+<span class="fc" id="L43">    }</span>
 
     public void setEvaluaciones(ArrayList&lt;Evaluacion&gt; lasEvaluaciones) {
-<span class="fc" id="L47">        this.evaluaciones = lasEvaluaciones;</span>
-<span class="fc" id="L48">    }</span>
+<span class="fc" id="L46">        this.evaluaciones = lasEvaluaciones;</span>
+<span class="fc" id="L47">    }</span>
     
     public void setSorteos(ArrayList&lt;Sorteo&gt; losSorteos) {
-<span class="fc" id="L51">        this.sorteos = losSorteos;</span>
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L50">        this.sorteos = losSorteos;</span>
+<span class="fc" id="L51">    }</span>
     
     public ArrayList&lt;Sorteo&gt; getSorteos() {
-<span class="fc" id="L55">        return this.sorteos;</span>
+<span class="fc" id="L54">        return this.sorteos;</span>
     }
     
     public Sorteo getSorteoActual() {
-<span class="fc" id="L59">        return this.sorteoActual;</span>
+<span class="fc" id="L58">        return this.sorteoActual;</span>
     }
 
     public void setSorteoActual(Sorteo elSorteoActual) {
-<span class="fc" id="L63">        this.sorteoActual = elSorteoActual;</span>
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L62">        this.sorteoActual = elSorteoActual;</span>
+<span class="fc" id="L63">    }</span>
     
     public void persistirGuardar(Sistema sis) throws IOException {
         //Esta funcion persiste los datos
-<span class="fc" id="L68">        FileOutputStream f = new FileOutputStream(&quot;archivo&quot;);</span>
-<span class="fc" id="L69">        BufferedOutputStream b = new BufferedOutputStream(f);</span>
-<span class="fc" id="L70">        ObjectOutputStream s = new ObjectOutputStream(b);</span>
+<span class="fc" id="L67">        FileOutputStream f = new FileOutputStream(&quot;archivo&quot;);</span>
+<span class="fc" id="L68">        BufferedOutputStream b = new BufferedOutputStream(f);</span>
+<span class="fc" id="L69">        ObjectOutputStream s = new ObjectOutputStream(b);</span>
         try {
-<span class="fc" id="L72">            s.writeObject(sis);</span>
-<span class="fc" id="L73">            s.close();</span>
-<span class="nc" id="L74">        } catch (FileNotFoundException e) {</span>
-<span class="nc" id="L75">            System.out.println(&quot;1G-&quot; + e.getMessage());</span>
-<span class="nc" id="L76">        } catch (IOException e) {</span>
-<span class="nc" id="L77">            System.out.println(&quot;2G-&quot;</span>
-<span class="nc" id="L78">                    + &quot;-&quot; + e.getMessage());</span>
-<span class="pc" id="L79">        }</span>
-<span class="fc" id="L80">    }</span>
+<span class="fc" id="L71">            s.writeObject(sis);</span>
+<span class="fc" id="L72">            s.close();</span>
+<span class="nc" id="L73">        } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L74">            System.out.println(&quot;1G-&quot; + e.getMessage());</span>
+<span class="nc" id="L75">        } catch (IOException e) {</span>
+<span class="nc" id="L76">            System.out.println(&quot;2G-&quot;</span>
+<span class="nc" id="L77">                    + &quot;-&quot; + e.getMessage());</span>
+<span class="pc" id="L78">        }</span>
+<span class="fc" id="L79">    }</span>
 
     public Sistema persistirLeer() throws IOException, ClassNotFoundException {
         //Carga los datos al sistema
-<span class="fc" id="L84">        FileInputStream ff = new FileInputStream(&quot;archivo&quot;);</span>
-<span class="fc" id="L85">        BufferedInputStream bb = new BufferedInputStream(ff);</span>
-<span class="fc" id="L86">        ObjectInputStream ss = new ObjectInputStream(bb);</span>
-<span class="fc" id="L87">        Sistema sisRetorno = new Sistema();</span>
+<span class="fc" id="L83">        FileInputStream ff = new FileInputStream(&quot;archivo&quot;);</span>
+<span class="fc" id="L84">        BufferedInputStream bb = new BufferedInputStream(ff);</span>
+<span class="fc" id="L85">        ObjectInputStream ss = new ObjectInputStream(bb);</span>
+<span class="fc" id="L86">        Sistema sisRetorno = new Sistema();</span>
         try {
-<span class="fc" id="L89">            sisRetorno = (Sistema) ss.readObject();</span>
-<span class="fc" id="L90">            ss.close();</span>
-<span class="nc" id="L91">        } catch (FileNotFoundException e) {</span>
-<span class="nc" id="L92">            System.out.println(&quot;1L-&quot; + e.getMessage());</span>
-<span class="nc" id="L93">        } catch (IOException e) {</span>
-<span class="nc" id="L94">            System.out.println(&quot;2L-&quot;</span>
-<span class="nc" id="L95">                    + &quot;-&quot; + e.getMessage());</span>
-<span class="pc" id="L96">        }</span>
-<span class="fc" id="L97">        return sisRetorno;</span>
+<span class="fc" id="L88">            sisRetorno = (Sistema) ss.readObject();</span>
+<span class="fc" id="L89">            ss.close();</span>
+<span class="nc" id="L90">        } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L91">            System.out.println(&quot;1L-&quot; + e.getMessage());</span>
+<span class="nc" id="L92">        } catch (IOException e) {</span>
+<span class="nc" id="L93">            System.out.println(&quot;2L-&quot; + e.getMessage());</span>
+<span class="pc" id="L94">        }</span>
+<span class="fc" id="L95">        return sisRetorno;</span>
     }
 
     public ArrayList&lt;Cliente&gt; sortear() {
         /*Esta funcion realiza el sorte, y devuelve una lista con los ganadores 
         del mismo.*/
-<span class="fc" id="L103">        ArrayList&lt;Cliente&gt; ganadoresDeSorteo = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L104">        int contador = 0;</span>
+<span class="fc" id="L101">        ArrayList&lt;Cliente&gt; ganadoresDeSorteo = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L102">        int contador = 0;</span>
 
-<span class="nc bnc" id="L106" title="All 4 branches missed.">        while (contador &lt; sorteoActual.getCantidadPremios() &amp;&amp; contador &lt;= sorteoActual.getParticipantes().size()) {</span>
-<span class="nc" id="L107">            int number = (int) (Math.random() * sorteoActual.getParticipantes().size());</span>
+<span class="nc bnc" id="L104" title="All 4 branches missed.">        while (contador &lt; sorteoActual.getCantidadPremios() &amp;&amp; contador &lt;= sorteoActual.getParticipantes().size()) {</span>
+<span class="nc" id="L105">            int number = (int) (Math.random() * sorteoActual.getParticipantes().size());</span>
 
             //Chequeo que el ganador no este mas de una vez en la lista.
-<span class="nc bnc" id="L110" title="All 2 branches missed.">            if (!ganadoresDeSorteo.contains(sorteoActual.getParticipantes().get(number))) {</span>
-<span class="nc" id="L111">                ganadoresDeSorteo.add(sorteoActual.getParticipantes().get(number));</span>
-<span class="nc" id="L112">                sorteoActual.getParticipantes().remove(number);</span>
-<span class="nc" id="L113">                contador++;</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">            if (!ganadoresDeSorteo.contains(sorteoActual.getParticipantes().get(number))) {</span>
+<span class="nc" id="L109">                ganadoresDeSorteo.add(sorteoActual.getParticipantes().get(number));</span>
+<span class="nc" id="L110">                sorteoActual.getParticipantes().remove(number);</span>
+<span class="nc" id="L111">                contador++;</span>
             } else {
-<span class="nc" id="L115">                sorteoActual.getParticipantes().remove(number);</span>
+<span class="nc" id="L113">                sorteoActual.getParticipantes().remove(number);</span>
             }
-<span class="nc" id="L117">        }</span>
-<span class="nc" id="L118">        return ganadoresDeSorteo;</span>
+<span class="nc" id="L115">        }</span>
+<span class="nc" id="L116">        return ganadoresDeSorteo;</span>
     }
 
     public double getPromedioEval() {
         //Retorna el promedio de evaluaciones del restaurante
-<span class="fc" id="L123">        int cantidadEval = evaluaciones.size();</span>
-<span class="fc" id="L124">        double prom = 0;</span>
-<span class="pc bpc" id="L125" title="1 of 2 branches missed.">        if (cantidadEval &gt; 0) {</span>
-<span class="nc bnc" id="L126" title="All 2 branches missed.">            for (int i = 0; i &lt; cantidadEval; i++) {</span>
-<span class="nc" id="L127">                prom = prom + evaluaciones.get(i).getEstrellas();</span>
+<span class="fc" id="L121">        int cantidadEval = evaluaciones.size();</span>
+<span class="fc" id="L122">        double prom = 0;</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">        if (cantidadEval &gt; 0) {</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">            for (int i = 0; i &lt; cantidadEval; i++) {</span>
+<span class="fc" id="L125">                prom = prom + evaluaciones.get(i).getEstrellas();</span>
             }
-<span class="nc" id="L129">            prom = prom / cantidadEval;</span>
+<span class="fc" id="L127">            prom = prom / cantidadEval;</span>
         }
-<span class="fc" id="L131">        return prom;</span>
+<span class="fc" id="L129">        return prom;</span>
     }
 
     public void updateObserver() {
-<span class="fc" id="L135">        setChanged();</span>
-<span class="fc" id="L136">        notifyObservers();</span>
-<span class="fc" id="L137">    }</span>
+<span class="fc" id="L133">        setChanged();</span>
+<span class="fc" id="L134">        notifyObservers();</span>
+<span class="fc" id="L135">    }</span>
 
     public void agregarEditarRestaurante(Restaurante miRestaurante) {
         /*Recibe un Restaurante por parametro y actualiza en el sistema por el mismo*/
-<span class="fc" id="L141">        this.setRestaurante(miRestaurante);</span>
-<span class="fc" id="L142">        updateObserver();</span>
-<span class="fc" id="L143">    }</span>
+<span class="fc" id="L139">        this.setRestaurante(miRestaurante);</span>
+<span class="fc" id="L140">        updateObserver();</span>
+<span class="fc" id="L141">    }</span>
 
     public ArrayList&lt;Cliente&gt; getParticipantesSorteo() {
         /*Retorna la lista de participantes del mismo*/
-<span class="fc" id="L147">        ArrayList&lt;Cliente&gt; participantes = new ArrayList&lt;&gt;();</span>
-<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        for (int i = 0; i &lt; this.getEvaluaciones().size(); i++) {</span>
-<span class="nc" id="L149">            Evaluacion aux = getEvaluaciones().get(i);</span>
-<span class="nc bnc" id="L150" title="All 4 branches missed.">            if (!aux.getResenia().isEmpty() &amp;&amp; !aux.getCliente().getNombreCliente().isEmpty()) {</span>
-<span class="nc" id="L151">                participantes.add(aux.getCliente());</span>
+<span class="fc" id="L145">        ArrayList&lt;Cliente&gt; participantes = new ArrayList&lt;&gt;();</span>
+<span class="pc bpc" id="L146" title="1 of 2 branches missed.">        for (int i = 0; i &lt; this.getEvaluaciones().size(); i++) {</span>
+<span class="nc" id="L147">            Evaluacion aux = getEvaluaciones().get(i);</span>
+<span class="nc bnc" id="L148" title="All 4 branches missed.">            if (!aux.getResenia().isEmpty() &amp;&amp; !aux.getCliente().getNombreCliente().isEmpty()) {</span>
+<span class="nc" id="L149">                participantes.add(aux.getCliente());</span>
             }
         }
-<span class="fc" id="L154">        return participantes;</span>
+<span class="fc" id="L152">        return participantes;</span>
     }  
 
 }

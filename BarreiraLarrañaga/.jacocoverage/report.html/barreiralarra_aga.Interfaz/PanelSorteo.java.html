@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelSorteo.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Interfaz</a> &gt; <span class="el_source">PanelSorteo.java</span></div><h1>PanelSorteo.java</h1><pre class="source lang-java linenums">package barreiralarrañaga.Interfaz;
 
+import barreiralarrañaga.Dominio.Cliente;
 import barreiralarrañaga.Dominio.Sistema;
 import barreiralarrañaga.Dominio.Sorteo;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 
 public class PanelSorteo extends javax.swing.JPanel {
@@ -11,57 +20,57 @@ public class PanelSorteo extends javax.swing.JPanel {
     Sistema unSis;
 
     
-<span class="nc" id="L14">    public PanelSorteo(Sistema sis) {</span>
+<span class="nc" id="L23">    public PanelSorteo(Sistema sis) {</span>
 
-<span class="nc" id="L16">        initComponents();</span>
-<span class="nc" id="L17">        unSis = sis;</span>
-<span class="nc" id="L18">        btnSortear.setEnabled(false);</span>
-<span class="nc bnc" id="L19" title="All 2 branches missed.">        if (unSis.getSorteoActual() != null) {</span>
-<span class="nc" id="L20">            lblSorteoActual.setText(unSis.getSorteoActual().getNombre());</span>
-<span class="nc bnc" id="L21" title="All 2 branches missed.">            if (unSis.getParticipantesSorteo().size() &gt; 0) {</span>
-<span class="nc" id="L22">                btnSortear.setEnabled(true);</span>
+<span class="nc" id="L25">        initComponents();</span>
+<span class="nc" id="L26">        unSis = sis;</span>
+<span class="nc" id="L27">        btnSortear.setEnabled(false);</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (unSis.getSorteoActual() != null) {</span>
+<span class="nc" id="L29">            lblSorteoActual.setText(unSis.getSorteoActual().getNombre());</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            if (unSis.getParticipantesSorteo().size() &gt; 0) {</span>
+<span class="nc" id="L31">                btnSortear.setEnabled(true);</span>
             }
         } else {
-<span class="nc" id="L25">            btnSortear.setEnabled(false);</span>
+<span class="nc" id="L34">            btnSortear.setEnabled(false);</span>
         }
-<span class="nc" id="L27">        cargarLista();</span>
-<span class="nc" id="L28">    }</span>
+<span class="nc" id="L36">        cargarLista();</span>
+<span class="nc" id="L37">    }</span>
 
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L34">        btnTitulo = new javax.swing.JLabel();</span>
-<span class="nc" id="L35">        btnNuevoSorteo = new javax.swing.JButton();</span>
-<span class="nc" id="L36">        btnSortear = new javax.swing.JButton();</span>
-<span class="nc" id="L37">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L38">        tablaSorteos = new javax.swing.JTable();</span>
-<span class="nc" id="L39">        lblSorteo = new javax.swing.JLabel();</span>
-<span class="nc" id="L40">        lblSorteoActual = new javax.swing.JLabel();</span>
+<span class="nc" id="L43">        btnTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L44">        btnNuevoSorteo = new javax.swing.JButton();</span>
+<span class="nc" id="L45">        btnSortear = new javax.swing.JButton();</span>
+<span class="nc" id="L46">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L47">        tablaSorteos = new javax.swing.JTable();</span>
+<span class="nc" id="L48">        lblSorteo = new javax.swing.JLabel();</span>
+<span class="nc" id="L49">        lblSorteoActual = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L42">        setMaximumSize(new java.awt.Dimension(683, 548));</span>
-<span class="nc" id="L43">        setMinimumSize(new java.awt.Dimension(683, 548));</span>
-<span class="nc" id="L44">        setOpaque(false);</span>
-<span class="nc" id="L45">        setPreferredSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L51">        setMaximumSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L52">        setMinimumSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L53">        setOpaque(false);</span>
+<span class="nc" id="L54">        setPreferredSize(new java.awt.Dimension(683, 548));</span>
 
-<span class="nc" id="L47">        btnTitulo.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 48)); // NOI18N</span>
-<span class="nc" id="L48">        btnTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/sorteosTitulo.png&quot;))); // NOI18N</span>
+<span class="nc" id="L56">        btnTitulo.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 48)); // NOI18N</span>
+<span class="nc" id="L57">        btnTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/sorteosTitulo.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L50">        btnNuevoSorteo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/nuevoSorteoIcon.png&quot;))); // NOI18N</span>
-<span class="nc" id="L51">        btnNuevoSorteo.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L59">        btnNuevoSorteo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/nuevoSorteoIcon.png&quot;))); // NOI18N</span>
+<span class="nc" id="L60">        btnNuevoSorteo.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L53">                btnNuevoSorteoActionPerformed(evt);</span>
-<span class="nc" id="L54">            }</span>
+<span class="nc" id="L62">                btnNuevoSorteoActionPerformed(evt);</span>
+<span class="nc" id="L63">            }</span>
         });
 
-<span class="nc" id="L57">        btnSortear.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/sortearIcon.png&quot;))); // NOI18N</span>
-<span class="nc" id="L58">        btnSortear.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L66">        btnSortear.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/sortearIcon.png&quot;))); // NOI18N</span>
+<span class="nc" id="L67">        btnSortear.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L60">                btnSortearActionPerformed(evt);</span>
-<span class="nc" id="L61">            }</span>
+<span class="nc" id="L69">                btnSortearActionPerformed(evt);</span>
+<span class="nc" id="L70">            }</span>
         });
 
-<span class="nc" id="L64">        tablaSorteos.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L73">        tablaSorteos.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -71,112 +80,112 @@ public class PanelSorteo extends javax.swing.JPanel {
             new String [] {
                 &quot;Nombre&quot;, &quot;Descripcion&quot;, &quot;Ganadores&quot;, &quot;Participantes&quot;
             }
-<span class="nc" id="L74">        ) {</span>
-<span class="nc" id="L75">            boolean[] canEdit = new boolean [] {</span>
+<span class="nc" id="L83">        ) {</span>
+<span class="nc" id="L84">            boolean[] canEdit = new boolean [] {</span>
                 false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-<span class="nc" id="L80">                return canEdit [columnIndex];</span>
+<span class="nc" id="L89">                return canEdit [columnIndex];</span>
             }
         });
-<span class="nc" id="L83">        tablaSorteos.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L92">        tablaSorteos.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L85">                tablaSorteosMouseClicked(evt);</span>
-<span class="nc" id="L86">            }</span>
+<span class="nc" id="L94">                tablaSorteosMouseClicked(evt);</span>
+<span class="nc" id="L95">            }</span>
         });
-<span class="nc" id="L88">        jScrollPane1.setViewportView(tablaSorteos);</span>
+<span class="nc" id="L97">        jScrollPane1.setViewportView(tablaSorteos);</span>
 
-<span class="nc" id="L90">        lblSorteo.setText(&quot;Sorteo Actual: &quot;);</span>
+<span class="nc" id="L99">        lblSorteo.setText(&quot;Sorteo Actual: &quot;);</span>
 
-<span class="nc" id="L92">        lblSorteoActual.setText(&quot;No hay sorteos activos.&quot;);</span>
+<span class="nc" id="L101">        lblSorteoActual.setText(&quot;No hay sorteos activos.&quot;);</span>
 
-<span class="nc" id="L94">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L95">        this.setLayout(layout);</span>
-<span class="nc" id="L96">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L97">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L98">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L99">                .addGap(16, 16, 16)</span>
-<span class="nc" id="L100">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L101">                    .addComponent(btnNuevoSorteo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L102">                    .addComponent(btnSortear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L103">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L104">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L105">                .addContainerGap(8, Short.MAX_VALUE))</span>
-<span class="nc" id="L106">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L107">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L108">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L109">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L110">                        .addComponent(btnTitulo)</span>
-<span class="nc" id="L111">                        .addGap(139, 139, 139))</span>
-<span class="nc" id="L112">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L113">                        .addComponent(lblSorteo)</span>
-<span class="nc" id="L114">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L115">                        .addComponent(lblSorteoActual)</span>
-<span class="nc" id="L116">                        .addGap(224, 224, 224))))</span>
+<span class="nc" id="L103">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L104">        this.setLayout(layout);</span>
+<span class="nc" id="L105">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L106">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L107">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L108">                .addGap(16, 16, 16)</span>
+<span class="nc" id="L109">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L110">                    .addComponent(btnNuevoSorteo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L111">                    .addComponent(btnSortear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L112">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L113">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L114">                .addContainerGap(8, Short.MAX_VALUE))</span>
+<span class="nc" id="L115">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L116">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L117">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L118">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L119">                        .addComponent(btnTitulo)</span>
+<span class="nc" id="L120">                        .addGap(139, 139, 139))</span>
+<span class="nc" id="L121">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L122">                        .addComponent(lblSorteo)</span>
+<span class="nc" id="L123">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L124">                        .addComponent(lblSorteoActual)</span>
+<span class="nc" id="L125">                        .addGap(224, 224, 224))))</span>
         );
-<span class="nc" id="L118">        layout.setVerticalGroup(</span>
-<span class="nc" id="L119">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L120">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L121">                .addGap(25, 25, 25)</span>
-<span class="nc" id="L122">                .addComponent(btnTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L123">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L124">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L125">                    .addComponent(lblSorteo)</span>
-<span class="nc" id="L126">                    .addComponent(lblSorteoActual))</span>
-<span class="nc" id="L127">                .addGap(41, 41, 41)</span>
-<span class="nc" id="L128">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L129">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L130">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L131">                        .addGap(36, 36, 36)</span>
-<span class="nc" id="L132">                        .addComponent(btnNuevoSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L133">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L134">                        .addComponent(btnSortear, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L135">                .addContainerGap(152, Short.MAX_VALUE))</span>
+<span class="nc" id="L127">        layout.setVerticalGroup(</span>
+<span class="nc" id="L128">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L129">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L130">                .addGap(25, 25, 25)</span>
+<span class="nc" id="L131">                .addComponent(btnTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L132">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L133">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L134">                    .addComponent(lblSorteo)</span>
+<span class="nc" id="L135">                    .addComponent(lblSorteoActual))</span>
+<span class="nc" id="L136">                .addGap(41, 41, 41)</span>
+<span class="nc" id="L137">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L138">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L139">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L140">                        .addGap(36, 36, 36)</span>
+<span class="nc" id="L141">                        .addComponent(btnNuevoSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L142">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L143">                        .addComponent(btnSortear, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L144">                .addContainerGap(152, Short.MAX_VALUE))</span>
         );
-<span class="nc" id="L137">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L146">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnNuevoSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoSorteoActionPerformed
-<span class="nc" id="L140">        NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis);</span>
-<span class="nc" id="L141">        nuevoSorteo.setVisible(true);</span>
-<span class="nc" id="L142">    }//GEN-LAST:event_btnNuevoSorteoActionPerformed</span>
+<span class="nc" id="L149">        NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis);</span>
+<span class="nc" id="L150">        nuevoSorteo.setVisible(true);</span>
+        
+<span class="nc" id="L152">    }//GEN-LAST:event_btnNuevoSorteoActionPerformed</span>
 
     private void btnSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortearActionPerformed
-<span class="nc" id="L145">        SorteoUI resultados = new SorteoUI(unSis);</span>
-<span class="nc" id="L146">        resultados.setVisible(true);</span>
-<span class="nc" id="L147">        btnSortear.setEnabled(false);</span>
-<span class="nc" id="L148">    }//GEN-LAST:event_btnSortearActionPerformed</span>
+<span class="nc" id="L155">        SorteoUI resultados = new SorteoUI(unSis);</span>
+<span class="nc" id="L156">        resultados.setVisible(true);</span>
+<span class="nc" id="L157">        btnSortear.setEnabled(false);</span>
+<span class="nc" id="L158">    }//GEN-LAST:event_btnSortearActionPerformed</span>
 
     private void tablaSorteosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSorteosMouseClicked
-<span class="nc" id="L151">        int index = tablaSorteos.getSelectedRow();</span>
+<span class="nc" id="L161">        int index = tablaSorteos.getSelectedRow();</span>
 
-<span class="nc" id="L153">        Sorteo ev = unSis.getSorteos().get(index);</span>
-<span class="nc" id="L154">        ResultadosSorteoDetallado resultado = new ResultadosSorteoDetallado(ev);</span>
-<span class="nc" id="L155">        resultado.setVisible(true);</span>
-<span class="nc" id="L156">    }//GEN-LAST:event_tablaSorteosMouseClicked</span>
+<span class="nc" id="L163">        Sorteo ev = unSis.getSorteos().get(index);</span>
+<span class="nc" id="L164">        ResultadosSorteoDetallado resultado = new ResultadosSorteoDetallado(ev);</span>
+<span class="nc" id="L165">        resultado.setVisible(true);</span>
+<span class="nc" id="L166">    }//GEN-LAST:event_tablaSorteosMouseClicked</span>
     public void cargarLista() {
-<span class="nc" id="L158">        borrarCacheTabla();</span>
-<span class="nc" id="L159">        DefaultTableModel modelo = (DefaultTableModel) tablaSorteos.getModel();</span>
-<span class="nc" id="L160">        ArrayList&lt;Sorteo&gt; sorteoTabla = unSis.getSorteos();</span>
-<span class="nc bnc" id="L161" title="All 2 branches missed.">        for (int i = 0; i &lt; sorteoTabla.size(); i++) {</span>
-<span class="nc" id="L162">            Sorteo sor = sorteoTabla.get(i);</span>
-<span class="nc" id="L163">            modelo.addRow(new Object[][]{{null, null, null, null, null, null}});</span>
-<span class="nc" id="L164">            tablaSorteos.setValueAt(sor.getNombre(), i, 0);</span>
-<span class="nc" id="L165">            tablaSorteos.setValueAt(sor.getPremio(), i, 1);</span>
-<span class="nc" id="L166">            tablaSorteos.setValueAt(sor.getGanadores().size(), i, 2);</span>
-<span class="nc" id="L167">            tablaSorteos.setValueAt(sor.getCantidadParticipantes(), i, 3);</span>
+<span class="nc" id="L168">        borrarCacheTabla();</span>
+<span class="nc" id="L169">        DefaultTableModel modelo = (DefaultTableModel) tablaSorteos.getModel();</span>
+<span class="nc" id="L170">        ArrayList&lt;Sorteo&gt; sorteoTabla = unSis.getSorteos();</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">        for (int i = 0; i &lt; sorteoTabla.size(); i++) {</span>
+<span class="nc" id="L172">            Sorteo sor = sorteoTabla.get(i);</span>
+<span class="nc" id="L173">            modelo.addRow(new Object[][]{{null, null, null, null, null, null}});</span>
+<span class="nc" id="L174">            tablaSorteos.setValueAt(sor.getNombre(), i, 0);</span>
+<span class="nc" id="L175">            tablaSorteos.setValueAt(sor.getPremio(), i, 1);</span>
+<span class="nc" id="L176">            tablaSorteos.setValueAt(sor.getGanadores().size(), i, 2);</span>
+<span class="nc" id="L177">            tablaSorteos.setValueAt(sor.getCantidadParticipantes(), i, 3);</span>
         }
-
-<span class="nc" id="L170">    }</span>
+<span class="nc" id="L179">    }</span>
 
     private void borrarCacheTabla() {
-<span class="nc" id="L173">        DefaultTableModel modelo = (DefaultTableModel) tablaSorteos.getModel();</span>
-<span class="nc" id="L174">        int filas = tablaSorteos.getRowCount();</span>
-<span class="nc bnc" id="L175" title="All 2 branches missed.">        for (int i = 0; i &lt; filas; i++) {</span>
-<span class="nc" id="L176">            modelo.removeRow(0);</span>
+<span class="nc" id="L182">        DefaultTableModel modelo = (DefaultTableModel) tablaSorteos.getModel();</span>
+<span class="nc" id="L183">        int filas = tablaSorteos.getRowCount();</span>
+<span class="nc bnc" id="L184" title="All 2 branches missed.">        for (int i = 0; i &lt; filas; i++) {</span>
+<span class="nc" id="L185">            modelo.removeRow(0);</span>
         }
-<span class="nc" id="L178">    }</span>
-
+<span class="nc" id="L187">    }</span>
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNuevoSorteo;
     private javax.swing.JButton btnSortear;

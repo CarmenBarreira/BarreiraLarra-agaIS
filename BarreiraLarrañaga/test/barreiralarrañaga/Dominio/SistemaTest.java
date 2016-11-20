@@ -1,6 +1,5 @@
 package barreiralarrañaga.Dominio;
 
-import java.io.File;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,7 +35,7 @@ public class SistemaTest {
     public void testGetRestaurante() {
         System.out.println("getRestaurante");
         Sistema instance = new Sistema();
-        Restaurante expResult = new Restaurante();
+        Restaurante expResult = new Sistema().getRestaurante();
         Restaurante result = instance.getRestaurante();
         assertEquals(expResult, result);
     }
@@ -46,7 +45,7 @@ public class SistemaTest {
     public void testGetEvaluaciones() {
         System.out.println("getEvaluaciones");
         Sistema instance = new Sistema();
-        ArrayList<Evaluacion> expResult = new ArrayList<Evaluacion>();
+        ArrayList<Evaluacion> expResult = new Sistema().getEvaluaciones();
         ArrayList<Evaluacion> result = instance.getEvaluaciones();
         assertEquals(expResult, result);
     }
@@ -87,25 +86,27 @@ public class SistemaTest {
     public void testGetParticipantesSorteo() {
         System.out.println("getParticipantesSorteo");
         Sistema instance = new Sistema();
-        ArrayList<Cliente> expResult = null;
+        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
         ArrayList<Cliente> result = instance.getParticipantesSorteo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of getSorteos method, of class Sistema.
-     */
+    
+    @Test
+    public void testGetParticipantesSorteo1() {
+        System.out.println("getParticipantesSorteo");
+        Sistema instance = new Sistema();
+        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
+        ArrayList<Cliente> result = instance.getParticipantesSorteo();
+        assertEquals(expResult, result);
+    }
+   
     @Test
     public void testGetSorteos() {
         System.out.println("getSorteos");
         Sistema instance = new Sistema();
-        ArrayList<Sorteo> expResult = null;
+        ArrayList<Sorteo> expResult = new ArrayList<Sorteo>();
         ArrayList<Sorteo> result = instance.getSorteos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     @Test
@@ -120,7 +121,7 @@ public class SistemaTest {
     public void testGetSorteoActual() {
         System.out.println("getSorteoActual");
         Sistema instance = new Sistema();
-        Sorteo expResult = null;
+        Sorteo expResult = new Sistema().getSorteoActual();
         Sorteo result = instance.getSorteoActual();
         assertEquals(expResult, result);
     }
@@ -128,7 +129,7 @@ public class SistemaTest {
     @Test
     public void testSetSorteoActual() {
         System.out.println("setSorteoActual");
-        Sorteo elSorteoActual = null;
+        Sorteo elSorteoActual = new Sorteo();
         Sistema instance = new Sistema();
         instance.setSorteoActual(elSorteoActual);
     }
@@ -145,7 +146,7 @@ public class SistemaTest {
     public void testPersistirLeer() throws Exception {
         System.out.println("persistirLeer");
         Sistema instance = new Sistema();
-        Sistema expResult = new Sistema();
+        Sistema expResult = new Sistema().persistirLeer();
         Sistema result = instance.persistirLeer();
         assertEquals(expResult, result);
     }
@@ -153,19 +154,27 @@ public class SistemaTest {
     @Test
     public void testSortear() {
         System.out.println("sortear");
-        Sistema instance = new Sistema();
-        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
+        Sistema instance = new Sistema();        
+        ArrayList<Cliente> expResult = new Sistema().sortear();
         ArrayList<Cliente> result = instance.sortear();
         assertEquals(expResult, result);
-    }
-
+    }    
+    
     @Test
     public void testGetPromedioEval() {
         System.out.println("getPromedioEval");
         Sistema instance = new Sistema();
         double expResult = 0;
         double result = instance.getPromedioEval();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 0);
     }
-    
+    @Test
+    public void testGetPromedioEval1() {
+        System.out.println("getPromedioEval");
+        Sistema instance = new Sistema();
+        instance.getEvaluaciones().add(new Evaluacion());
+        double expResult = 0;
+        double result = instance.getPromedioEval();
+        assertEquals(expResult, result, 0);
+    }
 }

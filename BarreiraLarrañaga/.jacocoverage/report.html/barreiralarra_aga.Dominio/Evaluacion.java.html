@@ -20,47 +20,53 @@ public class Evaluacion implements Serializable{
        // fechaEvaluacion = Date.from(Instant.MIN);
 <span class="fc" id="L21">    }</span>
 
-<span class="nc" id="L23">    public Evaluacion(Cliente clie, int calif, String reseniaIngresada) {</span>
-<span class="nc" id="L24">        cliente = clie;</span>
-<span class="nc" id="L25">        resenia = reseniaIngresada;</span>
-<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (reseniaIngresada.equals(&quot;&quot;)) {</span>
+<span class="fc" id="L23">    public Evaluacion(Cliente clie, int calif, String reseniaIngresada) {</span>
+<span class="fc" id="L24">        cliente = clie;</span>
+<span class="fc" id="L25">        resenia = reseniaIngresada;</span>
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if (reseniaIngresada.equals(&quot;&quot;)) {</span>
 <span class="nc" id="L27">            resenia = &quot;Sin Reseña&quot;;</span>
         }
-<span class="nc" id="L29">        estrellas = calif;</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        estrellas = calif;</span>
+<span class="fc" id="L30">    }</span>
 
     //get's y set's
     public String getResenia() {
-<span class="nc" id="L34">        return this.resenia;</span>
+<span class="fc" id="L34">        return this.resenia;</span>
     }
 
     public int getEstrellas() {
-<span class="nc" id="L38">        return this.estrellas;</span>
+<span class="fc" id="L38">        return this.estrellas;</span>
     }
 
     public void setResenia(String laResenia) {
-<span class="nc" id="L42">        this.resenia = laResenia;</span>
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L42">        this.resenia = laResenia;</span>
+<span class="fc" id="L43">    }</span>
 
     public void setEstrellas(int lasEstrellas) {
-<span class="nc" id="L46">        this.estrellas = lasEstrellas;</span>
-<span class="nc" id="L47">    }</span>
+<span class="fc" id="L46">        this.estrellas = lasEstrellas;</span>
+<span class="fc" id="L47">    }</span>
 
     public Cliente getCliente() {
-<span class="nc" id="L50">        return this.cliente;</span>
+<span class="fc" id="L50">        return this.cliente;</span>
     }
 
     public void setCliente(Cliente elCliente) {
-<span class="nc" id="L54">        this.cliente = elCliente;</span>
-<span class="nc" id="L55">    }</span>
+<span class="fc" id="L54">        this.cliente = elCliente;</span>
+<span class="fc" id="L55">    }</span>
 
     public Date getFechaEvaluacion() {
-<span class="nc" id="L58">        return this.fechaEvaluacion;</span>
+<span class="fc" id="L58">        return this.fechaEvaluacion;</span>
     }
 
     public void setFechaEvaluacion(Date laFechaEvaluacion) {
-<span class="nc" id="L62">        this.fechaEvaluacion = laFechaEvaluacion;</span>
-<span class="nc" id="L63">    }</span>
+<span class="fc" id="L62">        this.fechaEvaluacion = laFechaEvaluacion;</span>
+<span class="fc" id="L63">    }</span>
 
+    
+     @Override
+    public boolean equals(Object o) {
+<span class="fc" id="L68">        Evaluacion aux = (Evaluacion) o;</span>
+<span class="pc bpc" id="L69" title="2 of 6 branches missed.">        return this.cliente.equals(aux.getCliente()) &amp;&amp; this.estrellas == aux.getEstrellas() &amp;&amp; this.resenia.equals(aux.getResenia());</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

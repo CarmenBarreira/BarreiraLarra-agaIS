@@ -76,7 +76,7 @@ public class SorteoTest {
     public void testGetParticipantes() {
         System.out.println("getParticipantes");
         Sorteo instance = new Sorteo();
-        ArrayList<Cliente> expResult = null;
+        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
         ArrayList<Cliente> result = instance.getParticipantes();
         assertEquals(expResult, result);
     }

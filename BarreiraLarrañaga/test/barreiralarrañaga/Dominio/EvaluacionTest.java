@@ -21,7 +21,7 @@ public class EvaluacionTest {
        resenia = "Sin reseña";
        estrellas = 0;
        Evaluacion instance = new Evaluacion();
-       Evaluacion expResul = new Evaluacion();
+       Evaluacion expResul = new Evaluacion(new Cliente(), 0, "Sin reseña");
        assertEquals(expResul, instance);
     }
     
@@ -54,6 +54,14 @@ public class EvaluacionTest {
     public void testGetEstrellas() {
         System.out.println("getEstrellas");
         Evaluacion instance = new Evaluacion();
+        int expResult = 0;
+        int result = instance.getEstrellas();
+        assertEquals(expResult, result);
+    }
+    
+    public void testGetEstrellas2() {
+        System.out.println("getEstrellas");
+        Evaluacion instance = new Evaluacion(new Cliente(), 0, "");
         int expResult = 0;
         int result = instance.getEstrellas();
         assertEquals(expResult, result);
@@ -99,21 +107,35 @@ public class EvaluacionTest {
         Date expResult = null;
         Date result = instance.getFechaEvaluacion();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setFechaEvaluacion method, of class Evaluacion.
-     */
+   
     @Test
     public void testSetFechaEvaluacion() {
         System.out.println("setFechaEvaluacion");
         Date laFechaEvaluacion = null;
         Evaluacion instance = new Evaluacion();
         instance.setFechaEvaluacion(laFechaEvaluacion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+
+    
+    @Test
+    public void testEquals() {
+        System.out.println("equals");
+        Evaluacion o = new Evaluacion();
+        Evaluacion instance = new Evaluacion();
+        boolean expResult = true;
+        boolean result = instance.equals(o);
+        assertEquals(expResult, result);
     }
     
+    @Test
+    public void testEquals2() {
+        System.out.println("equals");
+        Evaluacion o = new Evaluacion();
+        Evaluacion instance = new Evaluacion(new Cliente(), 2, "Sin Reseña");
+        boolean expResult = false;
+        boolean result = instance.equals(o);
+        assertEquals(expResult, result);
+    }
 }

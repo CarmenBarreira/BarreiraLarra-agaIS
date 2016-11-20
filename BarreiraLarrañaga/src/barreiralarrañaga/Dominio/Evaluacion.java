@@ -62,4 +62,10 @@ public class Evaluacion implements Serializable{
         this.fechaEvaluacion = laFechaEvaluacion;
     }
 
+    
+     @Override
+    public boolean equals(Object o) {
+        Evaluacion aux = (Evaluacion) o;
+        return this.cliente.equals(aux.getCliente()) && this.estrellas == aux.getEstrellas() && this.resenia.equals(aux.getResenia());
+    }
 }

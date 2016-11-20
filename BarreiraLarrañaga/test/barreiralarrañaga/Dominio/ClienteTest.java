@@ -21,8 +21,7 @@ public class ClienteTest {
         Cliente instance = new Cliente();
         Cliente expResul = new Cliente();
         assertEquals(expResul, instance);
-    }
-    
+    }  
     
       
     @BeforeClass
