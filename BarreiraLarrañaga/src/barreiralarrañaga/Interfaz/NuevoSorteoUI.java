@@ -5,7 +5,6 @@
  */
 package barreiralarrañaga.Interfaz;
 
-import barreiralarrañaga.Dominio.MetodosControl;
 import barreiralarrañaga.Dominio.Sistema;
 import barreiralarrañaga.Dominio.Sorteo;
 import javax.swing.JOptionPane;
