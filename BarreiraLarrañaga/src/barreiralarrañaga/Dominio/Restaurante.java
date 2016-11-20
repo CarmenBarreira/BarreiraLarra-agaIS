@@ -7,21 +7,25 @@ public class Restaurante implements Comparable<Restaurante>{
     //ATRIBUTOS
     private String nombre;
     private String direccion;
-    private ArrayList<String> tiposComida;
+    String tiposComida;
+    private String horarios;
  
-
+    //constructores
     public Restaurante() {
         this.nombre = "Sin nombre";
         this.direccion = "Sin direccion";
-        this.tiposComida = new ArrayList<String>();       
+        this.tiposComida = "Sin tipo comida";    
+        this.horarios = "Sin horario";
     }
 
-    public Restaurante(String nombre, String direccion, String tipoComida) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.tiposComida = new ArrayList<String>();
+    public Restaurante(String elNombre, String laDireccion, String losTiposComida, String losHorarios) {
+        this.nombre = elNombre;
+        this.direccion = laDireccion;
+        this.tiposComida = losTiposComida;
+        this.horarios = losHorarios;
     }
     
+    //get's y set's
     public void setNombre(String elNombre) {
         this.nombre = elNombre;
     }
@@ -38,6 +42,19 @@ public class Restaurante implements Comparable<Restaurante>{
         return direccion;
     }
 
+    public String getHorarios() {
+        return horarios;
+    }
+
+    public void setTiposComida(String losTiposComida) {
+        this.tiposComida = losTiposComida;
+    }
+
+    public void setHorarios(String losHorarios) {
+        this.horarios = losHorarios;
+    }
+
+    
     @Override
     public int compareTo(Restaurante o) {
         return this.getNombre().compareTo(o.getNombre());

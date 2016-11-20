@@ -1,53 +1,45 @@
 package barreiralarrañaga.Dominio;
 
-import java.util.Collections;
-
 public class Cliente {
 
     private int idCliente;
     private String nombreCliente;
     private String emailCliente;
 
-    /**
-     * @return the idCliente
-     */
+    public Cliente() {
+        idCliente = -1;
+        nombreCliente = "Sin nombre";
+        emailCliente = "Sin email";
+    }
+
+    public Cliente(int elIdCliente, String elNombreCliente, String elEmailCliente) {
+        this.idCliente = elIdCliente;
+        this.nombreCliente = elNombreCliente;
+        this.emailCliente = elEmailCliente;
+    }
+   
     public int getIdCliente() {
         return idCliente;
     }
 
-    /**
-     * @param idCliente the idCliente to set
-     */
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setIdCliente(int elIdCliente) {
+        this.idCliente = elIdCliente;
     }
 
-    /**
-     * @return the nombreCliente
-     */
     public String getNombreCliente() {
         return nombreCliente;
     }
 
-    /**
-     * @param nombreCliente the nombreCliente to set
-     */
-    public void setNombreCliente(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
+    public void setNombreCliente(String elNombreCliente) {
+        this.nombreCliente = elNombreCliente;
     }
 
-    /**
-     * @return the emailCliente
-     */
     public String getEmailCliente() {
         return emailCliente;
     }
 
-    /**
-     * @param emailCliente the emailCliente to set
-     */
-    public void setEmailCliente(String emailCliente) {
-        this.emailCliente = emailCliente;
+    public void setEmailCliente(String elEmailCliente) {
+        this.emailCliente = elEmailCliente;
     }
 
     @Override

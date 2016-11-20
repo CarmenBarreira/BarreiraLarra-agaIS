@@ -1,7 +1,12 @@
 package barreiralarrañaga.Interfaz;
 
+import barreiralarrañaga.Dominio.Cliente;
+import barreiralarrañaga.Dominio.Evaluacion;
 import barreiralarrañaga.Dominio.Sistema;
 import java.awt.Rectangle;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -41,6 +46,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
         btnEditarRestaurante = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         jLabel1.setText("Restaurante IS");
@@ -149,6 +155,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
 
         lblDireccionRestaurante1.setText("Cuareim 1451");
 
+        btnEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/editar.png"))); // NOI18N
         btnEditarRestaurante.setText("Editar Restaurante");
         btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +189,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(58, 58, 58)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                                         .addComponent(btnEditarRestaurante))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,7 +206,7 @@ public class MenuRestaurantes extends javax.swing.JFrame{
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnEditarRestaurante)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDirMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,14 +245,35 @@ public class MenuRestaurantes extends javax.swing.JFrame{
         resenia= txtResenia.getText();
         cantEstrellas = Integer.parseInt(cmbEstrellas.getSelectedItem().toString());       
         
-        if(validaEmail(email)==false ){
-             JOptionPane.showMessageDialog(this, "El correo ingresado es Incorrecto", "Email Incorrecta", ERROR_MESSAGE);        
+        if(validaEmail(email)==false && email.length() != 0 ){
+             JOptionPane.showMessageDialog(this, "El correo ingresado es Incorrecto", "Email Incorrecto", ERROR_MESSAGE);        
+        }
+        else{
+            Evaluacion evaluacion;// = new Evaluacion(clie, WIDTH, resenia)
+           // int id = elSis.getSorteoActual().getParticipantes().size();
+            int id = 0; 
+             Cliente c;
+            if(nombre.length() != 0 && email.length() != 0){                
+               c = new Cliente(id, nombre, email);
+            }
+            else{
+                c = new Cliente();
+            }
+            evaluacion = new Evaluacion(c, cantEstrellas, resenia);
+            JOptionPane.showMessageDialog(null, "Gracias por la votación! Es muy importante para nosotros su opinión!",  
+                "Evalución ingresada exitosa", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
         
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRestauranteActionPerformed
-            EditarRestaurante editRest = new EditarRestaurante(elSis);
+            EditarRestaurante editRest = null;
+        try {
+            editRest = new EditarRestaurante(elSis);
+        } catch (ParseException ex) {
+            Logger.getLogger(MenuRestaurantes.class.getName()).log(Level.SEVERE, null, ex);
+        }
             Rectangle rct = editRest.getGraphicsConfiguration().getBounds();
             editRest.setLocation((rct.width - editRest.getWidth()) / 2,
                     (rct.height - editRest.getHeight()) / 2);

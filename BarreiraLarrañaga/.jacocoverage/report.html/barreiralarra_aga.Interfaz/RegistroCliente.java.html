@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RegistroCliente.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Interfaz</a> &gt; <span class="el_source">RegistroCliente.java</span></div><h1>RegistroCliente.java</h1><pre class="source lang-java linenums">package barreiralarrañaga.Interfaz;
+
+import barreiralarrañaga.Dominio.Sistema;
+
+public class RegistroCliente extends javax.swing.JFrame {
+
+<span class="nc" id="L7">    public RegistroCliente(Sistema sis) {</span>
+<span class="nc" id="L8">        initComponents();</span>
+<span class="nc" id="L9">        elSis = sis;</span>
+<span class="nc" id="L10">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L16">        lblNuevoCliente = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L18">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L19">        setTitle(&quot;Nuevo Cliente&quot;);</span>
+
+<span class="nc" id="L21">        lblNuevoCliente.setFont(new java.awt.Font(&quot;Tahoma&quot;, 3, 14)); // NOI18N</span>
+<span class="nc" id="L22">        lblNuevoCliente.setText(&quot;Nuevo Cliente&quot;);</span>
+
+<span class="nc" id="L24">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L25">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L26">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L27">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L28">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L29">                .addGap(100, 100, 100)</span>
+<span class="nc" id="L30">                .addComponent(lblNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L31">                .addContainerGap(161, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L33">        layout.setVerticalGroup(</span>
+<span class="nc" id="L34">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L35">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L36">                .addGap(40, 40, 40)</span>
+<span class="nc" id="L37">                .addComponent(lblNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L38">                .addContainerGap(234, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L41">        pack();</span>
+<span class="nc" id="L42">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    /**
+     * @param args the command line arguments
+     */
+  /*  public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //&lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot; Look and feel setting code (optional) &quot;&gt;
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+      /*  try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if (&quot;Nimbus&quot;.equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(RegistroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(RegistroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(RegistroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(RegistroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //&lt;/editor-fold&gt;
+
+        /* Create and display the form */
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new RegistroCliente().setVisible(true);
+            }
+        });
+    }*/
+    private Sistema elSis;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblNuevoCliente;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
