@@ -3,15 +3,19 @@ package barreiralarrañaga.Dominio;
 import java.io.Serializable;
 
 public class Horario implements Serializable{
+    
+    //Atributos
     private String dia; 
     private String horaInicio; 
     private String horaFin;  
 
+    //Constructores
     public Horario() {
         this.dia = "";
         this.horaInicio = "";
         this.horaFin = "";    
     }  
+    
     
     public Horario(String elDia, String laHoraInicio, String laHoraFin) {
         this.dia = elDia;
@@ -19,16 +23,17 @@ public class Horario implements Serializable{
         this.horaFin = laHoraFin;
     }
 
+    //get's y set's
     public String getDia() {
-        return dia;
+        return this.dia;
     }
 
     public String getHoraInicio() {
-        return horaInicio;
+        return this.horaInicio;
     }
 
     public String getHoraFin() {
-        return horaFin;
+        return this.horaFin;
     }
 
     public void setDia(String elDia) {
@@ -41,8 +46,7 @@ public class Horario implements Serializable{
 
     public void setHoraFin(String laHoraFin) {
         this.horaFin = laHoraFin;
-    }
-    
+    }   
     
     
 }

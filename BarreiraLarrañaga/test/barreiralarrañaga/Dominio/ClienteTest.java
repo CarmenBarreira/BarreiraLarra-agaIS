@@ -42,25 +42,6 @@ public class ClienteTest {
     }
 
     @Test
-    public void testGetIdCliente() {
-        System.out.println("getIdCliente");
-        Cliente instance = new Cliente();
-        int expResult = -1;
-        int result = instance.getIdCliente();
-        assertEquals(expResult, result);
-    }
-
-    
-    @Test
-    public void testSetIdCliente() {
-        System.out.println("setIdCliente");
-        int elIdCliente = -1;
-        Cliente instance = new Cliente();
-        instance.setIdCliente(elIdCliente);
-       
-    }
-
-    @Test
     public void testGetNombreCliente() {
         System.out.println("getNombreCliente");
         Cliente instance = new Cliente();

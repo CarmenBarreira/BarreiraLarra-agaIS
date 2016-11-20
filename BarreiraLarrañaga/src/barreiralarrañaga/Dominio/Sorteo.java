@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Sorteo implements Serializable {
-
+    //Atributos
     private ArrayList<Cliente> ganadores;
     private String premio;
     private int cantidadPremios;
@@ -14,23 +14,25 @@ public class Sorteo implements Serializable {
     private int cantidadParticipantes;
     private Date fecha;
 
+    //Constructores
     public Sorteo() {
         nombre = "";
-        ganadores = new ArrayList<>();
+        ganadores = new ArrayList<Cliente>();
         premio = "Premio sin definir.";
         cantidadPremios = 0;
         cantidadParticipantes = 0;
+        participantes = new ArrayList<Cliente>();
     }
 
     public Sorteo(String nombreSorteo, String premioParam, int cantidadPremiosParam) {
         cantidadPremios = cantidadPremiosParam;
         premio = premioParam;
         nombre = nombreSorteo;
-
     }
 
+    //get´s y set´s
     public String getPremio() {
-        return premio;
+        return this.premio;
     }
 
     public void setPremio(String elPremio) {
@@ -38,7 +40,7 @@ public class Sorteo implements Serializable {
     }
 
     public int getCantidadPremios() {
-        return cantidadPremios;
+        return this.cantidadPremios;
     }
 
     public void setCantidadPremios(int laCantidadPremios) {
@@ -46,67 +48,43 @@ public class Sorteo implements Serializable {
     }
 
     public ArrayList<Cliente> getParticipantes() {
-        return participantes;
+        return this.participantes;
     }
 
     public void setParticipantes(ArrayList<Cliente> losParticipantes) {
         this.participantes = losParticipantes;
     }
 
-    /**
-     * @return the nombre
-     */
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String elNombre) {
+        this.nombre = elNombre;
     }
 
-    /**
-     * @return the ganadores
-     */
     public ArrayList<Cliente> getGanadores() {
-        return ganadores;
+        return this.ganadores;
     }
 
-    /**
-     * @param ganadores the ganadores to set
-     */
-    public void setGanadores(ArrayList<Cliente> ganadores) {
-        this.ganadores = ganadores;
+    public void setGanadores(ArrayList<Cliente> losGanadores) {
+        this.ganadores = losGanadores;
     }
 
-    /**
-     * @return the cantidadParticipantes
-     */
     public int getCantidadParticipantes() {
-        return cantidadParticipantes;
+        return this.cantidadParticipantes;
     }
 
-    /**
-     * @param cantidadParticipantes the cantidadParticipantes to set
-     */
-    public void setCantidadParticipantes(int cantidadParticipantes) {
-        this.cantidadParticipantes = cantidadParticipantes;
+    public void setCantidadParticipantes(int laCantidadParticipantes) {
+        this.cantidadParticipantes = laCantidadParticipantes;
     }
 
-    /**
-     * @return the fecha
-     */
     public Date getFecha() {
-        return fecha;
+        return this.fecha;
     }
-
-    /**
-     * @param fecha the fecha to set
-     */
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    
+    public void setFecha(Date laFecha) {
+        this.fecha = laFecha;
     }
 
 }

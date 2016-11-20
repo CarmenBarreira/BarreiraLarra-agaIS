@@ -1,63 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Evaluacion.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Dominio</a> &gt; <span class="el_source">Evaluacion.java</span></div><h1>Evaluacion.java</h1><pre class="source lang-java linenums">package barreiralarrañaga.Dominio;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
 
-public class Evaluacion {
-    private Cliente cliente;
-    private String resenia; 
-    private int estrellas;
-    private Date fechaEvaluacion; 
+public class Evaluacion implements Serializable{
 
-<span class="nc" id="L14">    public Evaluacion() {</span>
-<span class="nc" id="L15">        cliente = new Cliente();</span>
-<span class="nc" id="L16">        resenia = &quot;Sin resenia&quot;;</span>
-<span class="nc" id="L17">        estrellas = 0;</span>
-<span class="nc" id="L18">       fechaEvaluacion= Date.from(Instant.MIN);</span>
-<span class="nc" id="L19">    }</span>
-    
-<span class="nc" id="L21">    public Evaluacion(Cliente clie,  int calif, String reseniaIngresada) {</span>
-<span class="nc" id="L22">        cliente = clie;</span>
-<span class="nc" id="L23">        resenia = reseniaIngresada;</span>
-<span class="nc" id="L24">        estrellas = calif;</span>
-      //  fechaEvaluacion= Date.from(Instant.MIN);
-<span class="nc" id="L26">    }</span>
-    
+    //Atributos
+    private Cliente cliente;
+    private String resenia;
+    private int estrellas;
+    private Date fechaEvaluacion;
+
+    //Constructores
+<span class="fc" id="L16">    public Evaluacion() {</span>
+<span class="fc" id="L17">        cliente = new Cliente();</span>
+<span class="fc" id="L18">        resenia = &quot;Sin reseña&quot;;</span>
+<span class="fc" id="L19">        estrellas = 0;</span>
+       // fechaEvaluacion = Date.from(Instant.MIN);
+<span class="fc" id="L21">    }</span>
+
+<span class="nc" id="L23">    public Evaluacion(Cliente clie, int calif, String reseniaIngresada) {</span>
+<span class="nc" id="L24">        cliente = clie;</span>
+<span class="nc" id="L25">        resenia = reseniaIngresada;</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (reseniaIngresada.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L27">            resenia = &quot;Sin Reseña&quot;;</span>
+        }
+<span class="nc" id="L29">        estrellas = calif;</span>
+<span class="nc" id="L30">    }</span>
+
+    //get's y set's
     public String getResenia() {
-<span class="nc" id="L29">        return resenia;</span>
+<span class="nc" id="L34">        return this.resenia;</span>
     }
 
     public int getEstrellas() {
-<span class="nc" id="L33">        return estrellas;</span>
+<span class="nc" id="L38">        return this.estrellas;</span>
     }
 
     public void setResenia(String laResenia) {
-<span class="nc" id="L37">        this.resenia = laResenia;</span>
-<span class="nc" id="L38">    }</span>
+<span class="nc" id="L42">        this.resenia = laResenia;</span>
+<span class="nc" id="L43">    }</span>
 
     public void setEstrellas(int lasEstrellas) {
-<span class="nc" id="L41">        this.estrellas = lasEstrellas;</span>
-<span class="nc" id="L42">    }</span>
+<span class="nc" id="L46">        this.estrellas = lasEstrellas;</span>
+<span class="nc" id="L47">    }</span>
 
     public Cliente getCliente() {
-<span class="nc" id="L45">        return cliente;</span>
+<span class="nc" id="L50">        return this.cliente;</span>
     }
 
-    
     public void setCliente(Cliente elCliente) {
-<span class="nc" id="L50">        this.cliente = elCliente;</span>
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L54">        this.cliente = elCliente;</span>
+<span class="nc" id="L55">    }</span>
 
-    
     public Date getFechaEvaluacion() {
-<span class="nc" id="L55">        return fechaEvaluacion;</span>
+<span class="nc" id="L58">        return this.fechaEvaluacion;</span>
     }
 
     public void setFechaEvaluacion(Date laFechaEvaluacion) {
-<span class="nc" id="L59">        this.fechaEvaluacion = laFechaEvaluacion;</span>
-<span class="nc" id="L60">    }</span>
-      
+<span class="nc" id="L62">        this.fechaEvaluacion = laFechaEvaluacion;</span>
+<span class="nc" id="L63">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

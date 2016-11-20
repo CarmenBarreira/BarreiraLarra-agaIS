@@ -6,16 +6,18 @@ import java.util.Date;
 
 public class Evaluacion implements Serializable{
 
+    //Atributos
     private Cliente cliente;
     private String resenia;
     private int estrellas;
     private Date fechaEvaluacion;
 
+    //Constructores
     public Evaluacion() {
         cliente = new Cliente();
         resenia = "Sin reseña";
         estrellas = 0;
-        fechaEvaluacion = Date.from(Instant.MIN);
+       // fechaEvaluacion = Date.from(Instant.MIN);
     }
 
     public Evaluacion(Cliente clie, int calif, String reseniaIngresada) {
@@ -24,17 +26,16 @@ public class Evaluacion implements Serializable{
         if (reseniaIngresada.equals("")) {
             resenia = "Sin Reseña";
         }
-
         estrellas = calif;
-
     }
 
+    //get's y set's
     public String getResenia() {
-        return resenia;
+        return this.resenia;
     }
 
     public int getEstrellas() {
-        return estrellas;
+        return this.estrellas;
     }
 
     public void setResenia(String laResenia) {
@@ -46,7 +47,7 @@ public class Evaluacion implements Serializable{
     }
 
     public Cliente getCliente() {
-        return cliente;
+        return this.cliente;
     }
 
     public void setCliente(Cliente elCliente) {
@@ -54,7 +55,7 @@ public class Evaluacion implements Serializable{
     }
 
     public Date getFechaEvaluacion() {
-        return fechaEvaluacion;
+        return this.fechaEvaluacion;
     }
 
     public void setFechaEvaluacion(Date laFechaEvaluacion) {

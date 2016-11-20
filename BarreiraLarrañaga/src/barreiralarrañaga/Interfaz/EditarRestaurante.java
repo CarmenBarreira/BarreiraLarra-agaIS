@@ -232,7 +232,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Se edito exitosamente el restaurante",
                     "Modifcación exitosa", JOptionPane.INFORMATION_MESSAGE);
         }
-
+        this.dispose();
     }//GEN-LAST:event_btnEditarRestauranteActionPerformed
 
     private void txtHorariosHastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorariosHastaActionPerformed

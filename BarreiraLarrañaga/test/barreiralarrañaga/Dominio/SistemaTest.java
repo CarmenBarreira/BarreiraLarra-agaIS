@@ -1,5 +1,6 @@
 package barreiralarrañaga.Dominio;
 
+import java.io.File;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -30,85 +31,58 @@ public class SistemaTest {
     @After
     public void tearDown() {
     }
-
     
     @Test
     public void testGetRestaurante() {
         System.out.println("getRestaurante");
         Sistema instance = new Sistema();
-        Restaurante expResult = restaurante;;
+        Restaurante expResult = new Restaurante();
         Restaurante result = instance.getRestaurante();
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of getEvaluaciones method, of class Sistema.
-     */
+    
     @Test
     public void testGetEvaluaciones() {
         System.out.println("getEvaluaciones");
         Sistema instance = new Sistema();
-        ArrayList<Evaluacion> expResult = null;
+        ArrayList<Evaluacion> expResult = new ArrayList<Evaluacion>();
         ArrayList<Evaluacion> result = instance.getEvaluaciones();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setRestaurante method, of class Sistema.
-     */
     @Test
     public void testSetRestaurante() {
         System.out.println("setRestaurante");
-        Restaurante miRestaurante = null;
+        Restaurante miRestaurante = new Restaurante();
         Sistema instance = new Sistema();
         instance.setRestaurante(miRestaurante);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setEvaluaciones method, of class Sistema.
-     */
+    
     @Test
     public void testSetEvaluaciones() {
         System.out.println("setEvaluaciones");
-        ArrayList<Evaluacion> lasEvaluaciones = null;
+        ArrayList<Evaluacion> lasEvaluaciones = new ArrayList<Evaluacion>();
         Sistema instance = new Sistema();
         instance.setEvaluaciones(lasEvaluaciones);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of updateObserver method, of class Sistema.
-     */
     @Test
     public void testUpdateObserver() {
         System.out.println("updateObserver");
         Sistema instance = new Sistema();
         instance.updateObserver();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of agregarEditarRestaurante method, of class Sistema.
-     */
     @Test
     public void testAgregarEditarRestaurante() {
         System.out.println("agregarEditarRestaurante");
-        Restaurante miRestaurante = null;
+        Restaurante miRestaurante = new Restaurante();
         Sistema instance = new Sistema();
         instance.agregarEditarRestaurante(miRestaurante);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getParticipantesSorteo method, of class Sistema.
-     */
     @Test
     public void testGetParticipantesSorteo() {
         System.out.println("getParticipantesSorteo");
@@ -134,22 +108,14 @@ public class SistemaTest {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setSorteos method, of class Sistema.
-     */
     @Test
     public void testSetSorteos() {
         System.out.println("setSorteos");
-        ArrayList<Sorteo> losSorteos = null;
+        ArrayList<Sorteo> losSorteos = new ArrayList<>();
         Sistema instance = new Sistema();
         instance.setSorteos(losSorteos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getSorteoActual method, of class Sistema.
-     */
     @Test
     public void testGetSorteoActual() {
         System.out.println("getSorteoActual");
@@ -157,19 +123,57 @@ public class SistemaTest {
         Sorteo expResult = null;
         Sorteo result = instance.getSorteoActual();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setSorteoActual method, of class Sistema.
-     */
     @Test
     public void testSetSorteoActual() {
         System.out.println("setSorteoActual");
-        Sorteo elSorteoActual = new Sorteo();
+        Sorteo elSorteoActual = null;
         Sistema instance = new Sistema();
         instance.setSorteoActual(elSorteoActual);
+    }
+
+    @Test
+    public void testPersistirGuardar() throws Exception {
+        System.out.println("persistirGuardar");
+        Sistema sis = new Sistema();
+        Sistema instance = new Sistema();
+        instance.persistirGuardar(sis);
+    }
+
+    @Test
+    public void testPersistirLeer() throws Exception {
+        System.out.println("persistirLeer");
+        Sistema instance = new Sistema();
+        Sistema expResult = new Sistema();
+        Sistema result = instance.persistirLeer();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testLeerTXT() throws Exception {
+        System.out.println("leerTXT");
+        File nombreArchivo= null;
+        Sistema instance = new Sistema();
+        instance.leerTXT(nombreArchivo);
+    }
+
+    @Test
+    public void testSortear() {
+        System.out.println("sortear");
+        Sistema instance = new Sistema();
+        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
+        ArrayList<Cliente> result = instance.sortear();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testGetPromedioEval() {
+        System.out.println("getPromedioEval");
+        Sistema instance = new Sistema();
+        double expResult = 0;
+        double result = instance.getPromedioEval();
+        assertEquals(expResult, result, 0.0);
     }
     
 }

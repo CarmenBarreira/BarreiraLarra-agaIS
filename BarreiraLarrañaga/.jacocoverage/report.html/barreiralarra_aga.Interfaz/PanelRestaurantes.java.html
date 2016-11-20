@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRestaurantes.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Interfaz</a> &gt; <span class="el_source">PanelRestaurantes.java</span></div><h1>PanelRestaurantes.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package barreiralarrañaga.Interfaz;
+
+import barreiralarrañaga.Dominio.Evaluacion;
+import barreiralarrañaga.Dominio.Sistema;
+
+import java.awt.Rectangle;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+/**
+ *
+ * @author Juan
+ */
+public final class PanelRestaurantes extends javax.swing.JPanel {
+
+    private final Sistema elSis;
+
+    /**
+     * Creates new form panelRestaurantes
+     *
+     * @param sis
+     */
+<span class="nc" id="L32">    public PanelRestaurantes(Sistema sis) {</span>
+<span class="nc" id="L33">        initComponents();</span>
+<span class="nc" id="L34">        elSis = sis;</span>
+<span class="nc" id="L35">        cargarLista();</span>
+<span class="nc" id="L36">        double eval = elSis.getPromedioEval();</span>
+<span class="nc" id="L37">        lblPromedioTitulo.setVisible(true);</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (eval &gt; 0) {</span>
+
+<span class="nc" id="L40">            lblPromedio.setText((new DecimalFormat(&quot;##.##&quot;).format(eval)));</span>
+<span class="nc" id="L41">            promedioMuestra(eval);</span>
+        }
+
+<span class="nc" id="L44">    }</span>
+
+    private void promedioMuestra(double eval) {
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        if (eval &lt;= 2) {</span>
+<span class="nc" id="L48">            btnStarOne.setSelected(true);</span>
+<span class="nc" id="L49">            btnStarOne1.setSelected(false);</span>
+<span class="nc" id="L50">            btnStarOne2.setSelected(false);</span>
+<span class="nc" id="L51">            btnStarOne3.setSelected(false);</span>
+<span class="nc" id="L52">            btnStarOne4.setSelected(false);</span>
+        }
+<span class="nc bnc" id="L54" title="All 4 branches missed.">        if (eval &gt;= 2 &amp;&amp; eval &lt; 3) {</span>
+<span class="nc" id="L55">            btnStarOne.setSelected(true);</span>
+<span class="nc" id="L56">            btnStarOne1.setSelected(true);</span>
+<span class="nc" id="L57">            btnStarOne2.setSelected(false);</span>
+<span class="nc" id="L58">            btnStarOne3.setSelected(false);</span>
+<span class="nc" id="L59">            btnStarOne4.setSelected(false);</span>
+        }
+
+<span class="nc bnc" id="L62" title="All 4 branches missed.">        if (eval &gt;= 3 &amp;&amp; eval &lt; 4) {</span>
+<span class="nc" id="L63">            btnStarOne.setSelected(true);</span>
+<span class="nc" id="L64">            btnStarOne1.setSelected(true);</span>
+<span class="nc" id="L65">            btnStarOne2.setSelected(false);</span>
+<span class="nc" id="L66">            btnStarOne3.setSelected(true);</span>
+<span class="nc" id="L67">            btnStarOne4.setSelected(false);</span>
+        }
+<span class="nc bnc" id="L69" title="All 4 branches missed.">        if (eval &gt;= 4 &amp;&amp; eval &lt; 5) {</span>
+<span class="nc" id="L70">            btnStarOne.setSelected(true);</span>
+<span class="nc" id="L71">            btnStarOne1.setSelected(true);</span>
+<span class="nc" id="L72">            btnStarOne2.setSelected(true);</span>
+<span class="nc" id="L73">            btnStarOne3.setSelected(true);</span>
+<span class="nc" id="L74">            btnStarOne4.setSelected(false);</span>
+        }
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        if (eval == 5) {</span>
+<span class="nc" id="L77">            btnStarOne.setSelected(true);</span>
+<span class="nc" id="L78">            btnStarOne1.setSelected(true);</span>
+<span class="nc" id="L79">            btnStarOne2.setSelected(true);</span>
+<span class="nc" id="L80">            btnStarOne3.setSelected(true);</span>
+<span class="nc" id="L81">            btnStarOne4.setSelected(true);</span>
+        }
+
+<span class="nc" id="L84">    }</span>
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L95">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L96">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L97">        lblDireccionRestaurante = new javax.swing.JLabel();</span>
+<span class="nc" id="L98">        jLabel9 = new javax.swing.JLabel();</span>
+<span class="nc" id="L99">        lblDireccionRestaurante1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L100">        btnEditarRestaurante = new javax.swing.JButton();</span>
+<span class="nc" id="L101">        lblDirMostrar = new javax.swing.JLabel();</span>
+<span class="nc" id="L102">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L103">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L104">        tablaResenias = new javax.swing.JTable();</span>
+<span class="nc" id="L105">        lblPromedioTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L106">        btnStarOne = new javax.swing.JToggleButton();</span>
+<span class="nc" id="L107">        btnStarOne1 = new javax.swing.JToggleButton();</span>
+<span class="nc" id="L108">        btnStarOne2 = new javax.swing.JToggleButton();</span>
+<span class="nc" id="L109">        btnStarOne3 = new javax.swing.JToggleButton();</span>
+<span class="nc" id="L110">        btnStarOne4 = new javax.swing.JToggleButton();</span>
+<span class="nc" id="L111">        lblPromedio = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L113">        setMaximumSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L114">        setMinimumSize(new java.awt.Dimension(683, 548));</span>
+<span class="nc" id="L115">        setName(&quot;&quot;); // NOI18N</span>
+<span class="nc" id="L116">        setOpaque(false);</span>
+<span class="nc" id="L117">        setPreferredSize(new java.awt.Dimension(683, 548));</span>
+
+<span class="nc" id="L119">        jLabel4.setFont(jLabel4.getFont());</span>
+<span class="nc" id="L120">        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L121">        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg&quot;))); // NOI18N</span>
+<span class="nc" id="L122">        jLabel4.setIconTextGap(6);</span>
+<span class="nc" id="L123">        jLabel4.setMaximumSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L124">        jLabel4.setMinimumSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L125">        jLabel4.setPreferredSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L126">        jLabel4.setVerifyInputWhenFocusTarget(false);</span>
+
+<span class="nc" id="L128">        jLabel5.setText(&quot;Comidas: &quot;);</span>
+
+<span class="nc" id="L130">        lblDireccionRestaurante.setText(&quot;Italiana&quot;);</span>
+
+<span class="nc" id="L132">        jLabel9.setText(&quot;Jueves a Domingos - 10:00 a 00:00&quot;);</span>
+
+<span class="nc" id="L134">        lblDireccionRestaurante1.setText(&quot;Cuareim 1451&quot;);</span>
+
+<span class="nc" id="L136">        btnEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/editar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L137">        btnEditarRestaurante.setText(&quot;Editar Restaurante&quot;);</span>
+<span class="nc" id="L138">        btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L140">                btnEditarRestauranteActionPerformed(evt);</span>
+<span class="nc" id="L141">            }</span>
+        });
+
+<span class="nc" id="L144">        lblDirMostrar.setText(&quot;Direccion: &quot;);</span>
+
+<span class="nc" id="L146">        jLabel3.setText(&quot;Horario: &quot;);</span>
+
+<span class="nc" id="L148">        tablaResenias.setModel(new javax.swing.table.DefaultTableModel(</span>
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                &quot;Cliente&quot;, &quot;Calificacion&quot;, &quot;Reseña&quot;, &quot;Correo Electronico&quot;
+            }
+<span class="nc" id="L158">        ) {</span>
+<span class="nc" id="L159">            boolean[] canEdit = new boolean [] {</span>
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+<span class="nc" id="L164">                return canEdit [columnIndex];</span>
+            }
+        });
+<span class="nc" id="L167">        tablaResenias.setColumnSelectionAllowed(true);</span>
+<span class="nc" id="L168">        tablaResenias.getTableHeader().setReorderingAllowed(false);</span>
+<span class="nc" id="L169">        tablaResenias.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L171">                tablaReseniasMouseClicked(evt);</span>
+<span class="nc" id="L172">            }</span>
+        });
+<span class="nc" id="L174">        jScrollPane1.setViewportView(tablaResenias);</span>
+<span class="nc" id="L175">        tablaResenias.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
+
+<span class="nc" id="L177">        lblPromedioTitulo.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 18)); // NOI18N</span>
+<span class="nc" id="L178">        lblPromedioTitulo.setText(&quot;Promedio:&quot;);</span>
+
+<span class="nc" id="L180">        btnStarOne.setBackground(new java.awt.Color(204, 204, 255));</span>
+<span class="nc" id="L181">        btnStarOne.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L182">        btnStarOne.setBorderPainted(false);</span>
+<span class="nc" id="L183">        btnStarOne.setContentAreaFilled(false);</span>
+<span class="nc" id="L184">        btnStarOne.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L185">        btnStarOne.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L186">        btnStarOne.setEnabled(false);</span>
+<span class="nc" id="L187">        btnStarOne.setFocusPainted(false);</span>
+<span class="nc" id="L188">        btnStarOne.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L189">        btnStarOne.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L190">        btnStarOne.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L192">                btnStarOneActionPerformed(evt);</span>
+<span class="nc" id="L193">            }</span>
+        });
+
+<span class="nc" id="L196">        btnStarOne1.setBackground(new java.awt.Color(204, 204, 255));</span>
+<span class="nc" id="L197">        btnStarOne1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L198">        btnStarOne1.setBorderPainted(false);</span>
+<span class="nc" id="L199">        btnStarOne1.setContentAreaFilled(false);</span>
+<span class="nc" id="L200">        btnStarOne1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L201">        btnStarOne1.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L202">        btnStarOne1.setEnabled(false);</span>
+<span class="nc" id="L203">        btnStarOne1.setFocusPainted(false);</span>
+<span class="nc" id="L204">        btnStarOne1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L205">        btnStarOne1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L206">        btnStarOne1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L208">                btnStarOne1ActionPerformed(evt);</span>
+<span class="nc" id="L209">            }</span>
+        });
+
+<span class="nc" id="L212">        btnStarOne2.setBackground(new java.awt.Color(204, 204, 255));</span>
+<span class="nc" id="L213">        btnStarOne2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L214">        btnStarOne2.setBorderPainted(false);</span>
+<span class="nc" id="L215">        btnStarOne2.setContentAreaFilled(false);</span>
+<span class="nc" id="L216">        btnStarOne2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L217">        btnStarOne2.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L218">        btnStarOne2.setEnabled(false);</span>
+<span class="nc" id="L219">        btnStarOne2.setFocusPainted(false);</span>
+<span class="nc" id="L220">        btnStarOne2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L221">        btnStarOne2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L222">        btnStarOne2.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L224">                btnStarOne2ActionPerformed(evt);</span>
+<span class="nc" id="L225">            }</span>
+        });
+
+<span class="nc" id="L228">        btnStarOne3.setBackground(new java.awt.Color(204, 204, 255));</span>
+<span class="nc" id="L229">        btnStarOne3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L230">        btnStarOne3.setBorderPainted(false);</span>
+<span class="nc" id="L231">        btnStarOne3.setContentAreaFilled(false);</span>
+<span class="nc" id="L232">        btnStarOne3.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L233">        btnStarOne3.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L234">        btnStarOne3.setEnabled(false);</span>
+<span class="nc" id="L235">        btnStarOne3.setFocusPainted(false);</span>
+<span class="nc" id="L236">        btnStarOne3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L237">        btnStarOne3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L238">        btnStarOne3.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L240">                btnStarOne3ActionPerformed(evt);</span>
+<span class="nc" id="L241">            }</span>
+        });
+
+<span class="nc" id="L244">        btnStarOne4.setBackground(new java.awt.Color(204, 204, 255));</span>
+<span class="nc" id="L245">        btnStarOne4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L246">        btnStarOne4.setBorderPainted(false);</span>
+<span class="nc" id="L247">        btnStarOne4.setContentAreaFilled(false);</span>
+<span class="nc" id="L248">        btnStarOne4.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/notPressed.png&quot;))); // NOI18N</span>
+<span class="nc" id="L249">        btnStarOne4.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L250">        btnStarOne4.setEnabled(false);</span>
+<span class="nc" id="L251">        btnStarOne4.setFocusPainted(false);</span>
+<span class="nc" id="L252">        btnStarOne4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L253">        btnStarOne4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/star.png&quot;))); // NOI18N</span>
+<span class="nc" id="L254">        btnStarOne4.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L256">                btnStarOne4ActionPerformed(evt);</span>
+<span class="nc" id="L257">            }</span>
+        });
+
+<span class="nc" id="L260">        lblPromedio.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 24)); // NOI18N</span>
+
+<span class="nc" id="L262">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L263">        this.setLayout(layout);</span>
+<span class="nc" id="L264">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L265">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L266">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L267">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L268">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L269">                        .addGap(63, 63, 63)</span>
+<span class="nc" id="L270">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L271">                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L272">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L273">                                .addGap(22, 22, 22)</span>
+<span class="nc" id="L274">                                .addComponent(lblPromedioTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L275">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L276">                                .addComponent(btnStarOne, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L277">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L278">                                .addComponent(btnStarOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L279">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L280">                                .addComponent(btnStarOne3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L281">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L282">                                .addComponent(btnStarOne2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L283">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L284">                                .addComponent(btnStarOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L285">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L286">                                .addComponent(lblPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L287">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L288">                        .addGap(67, 67, 67)</span>
+<span class="nc" id="L289">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L290">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L291">                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L292">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L293">                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L294">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L295">                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L296">                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L297">                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L298">                                        .addComponent(lblDirMostrar)</span>
+<span class="nc" id="L299">                                        .addGap(4, 4, 4)))</span>
+<span class="nc" id="L300">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L301">                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L302">                                    .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L303">                                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L304">                                        .addGap(15, 15, 15)</span>
+<span class="nc" id="L305">                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L306">                                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L307">                                        .addComponent(lblDireccionRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L308">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)</span>
+<span class="nc" id="L309">                                        .addComponent(btnEditarRestaurante)))))))</span>
+<span class="nc" id="L310">                .addGap(14, 14, 14))</span>
+        );
+<span class="nc" id="L312">        layout.setVerticalGroup(</span>
+<span class="nc" id="L313">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L314">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L315">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L316">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L317">                        .addGap(403, 403, 403)</span>
+<span class="nc" id="L318">                        .addComponent(lblPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L319">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L320">                        .addContainerGap(8, Short.MAX_VALUE)</span>
+<span class="nc" id="L321">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L322">                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L323">                            .addComponent(lblDireccionRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L324">                            .addComponent(btnEditarRestaurante))</span>
+<span class="nc" id="L325">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L326">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L327">                            .addComponent(lblDirMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L328">                            .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L329">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L330">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L331">                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L332">                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L333">                        .addGap(23, 23, 23)</span>
+<span class="nc" id="L334">                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L335">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L336">                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L337">                        .addGap(31, 31, 31)</span>
+<span class="nc" id="L338">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L339">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L340">                                .addComponent(btnStarOne, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L341">                                .addComponent(btnStarOne2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L342">                                .addComponent(btnStarOne3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L343">                                .addComponent(lblPromedioTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L344">                            .addComponent(btnStarOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L345">                            .addComponent(btnStarOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L346">                .addGap(50, 50, 50))</span>
+        );
+<span class="nc" id="L348">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRestauranteActionPerformed
+<span class="nc" id="L351">        EditarRestaurante editRest = null;</span>
+        try {
+<span class="nc" id="L353">            editRest = new EditarRestaurante(elSis);</span>
+<span class="nc" id="L354">        } catch (ParseException ex) {</span>
+
+<span class="nc" id="L356">        }</span>
+<span class="nc" id="L357">        Rectangle rct = editRest.getGraphicsConfiguration().getBounds();</span>
+<span class="nc" id="L358">        editRest.setLocation((rct.width - editRest.getWidth()) / 2,</span>
+<span class="nc" id="L359">                (rct.height - editRest.getHeight()) / 2);</span>
+<span class="nc" id="L360">        editRest.setVisible(true);</span>
+
+<span class="nc" id="L362">    }//GEN-LAST:event_btnEditarRestauranteActionPerformed</span>
+
+    private void btnStarOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOneActionPerformed
+
+
+<span class="nc" id="L367">    }//GEN-LAST:event_btnStarOneActionPerformed</span>
+
+    private void btnStarOne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOne1ActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L371">    }//GEN-LAST:event_btnStarOne1ActionPerformed</span>
+
+    private void btnStarOne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOne2ActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L375">    }//GEN-LAST:event_btnStarOne2ActionPerformed</span>
+
+    private void btnStarOne3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOne3ActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L379">    }//GEN-LAST:event_btnStarOne3ActionPerformed</span>
+
+    private void btnStarOne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarOne4ActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L383">    }//GEN-LAST:event_btnStarOne4ActionPerformed</span>
+
+    private void tablaReseniasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaReseniasMouseClicked
+<span class="nc" id="L386">        int index = tablaResenias.getSelectedRow();</span>
+
+   
+<span class="nc" id="L389">        Evaluacion ev = elSis.getEvaluaciones().get(index);</span>
+<span class="nc" id="L390">        LeerReseniaUI le = new LeerReseniaUI(ev);</span>
+<span class="nc" id="L391">        le.setVisible(true);</span>
+<span class="nc" id="L392">    }//GEN-LAST:event_tablaReseniasMouseClicked</span>
+
+    public void cargarLista() {
+<span class="nc" id="L395">        borrarCacheTabla();</span>
+<span class="nc" id="L396">        DefaultTableModel modelo = (DefaultTableModel) tablaResenias.getModel();</span>
+<span class="nc" id="L397">        ArrayList&lt;Evaluacion&gt; reseniasTabla = elSis.getEvaluaciones();</span>
+<span class="nc bnc" id="L398" title="All 2 branches missed.">        for (int i = 0; i &lt; reseniasTabla.size(); i++) {</span>
+<span class="nc" id="L399">            Evaluacion eva = elSis.getEvaluaciones().get(i);</span>
+<span class="nc" id="L400">            modelo.addRow(new Object[][]{{null, null, null, null, null, null}});</span>
+<span class="nc" id="L401">            tablaResenias.setValueAt(eva.getCliente().getNombreCliente(), i, 0);</span>
+<span class="nc" id="L402">            tablaResenias.setValueAt(eva.getEstrellas(), i, 1);</span>
+<span class="nc" id="L403">            tablaResenias.setValueAt(eva.getResenia(), i, 2);</span>
+<span class="nc" id="L404">            tablaResenias.setValueAt(eva.getCliente().getEmailCliente(), i, 3);</span>
+
+        }
+
+<span class="nc" id="L408">    }</span>
+
+    private void borrarCacheTabla() {
+<span class="nc" id="L411">        DefaultTableModel modelo = (DefaultTableModel) tablaResenias.getModel();</span>
+<span class="nc" id="L412">        int filas = tablaResenias.getRowCount();</span>
+<span class="nc bnc" id="L413" title="All 2 branches missed.">        for (int i = 0; i &lt; filas; i++) {</span>
+<span class="nc" id="L414">            modelo.removeRow(0);</span>
+        }
+<span class="nc" id="L416">    }</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditarRestaurante;
+    private javax.swing.JToggleButton btnStarOne;
+    private javax.swing.JToggleButton btnStarOne1;
+    private javax.swing.JToggleButton btnStarOne2;
+    private javax.swing.JToggleButton btnStarOne3;
+    private javax.swing.JToggleButton btnStarOne4;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblDirMostrar;
+    private javax.swing.JLabel lblDireccionRestaurante;
+    private javax.swing.JLabel lblDireccionRestaurante1;
+    private javax.swing.JLabel lblPromedio;
+    private javax.swing.JLabel lblPromedioTitulo;
+    private javax.swing.JTable tablaResenias;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

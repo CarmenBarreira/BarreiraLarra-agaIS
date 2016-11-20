@@ -1,7 +1,6 @@
 package barreiralarrañaga.Dominio;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Restaurante implements Comparable<Restaurante>, Serializable{
 
@@ -36,15 +35,15 @@ public class Restaurante implements Comparable<Restaurante>, Serializable{
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public String getDireccion() {
-        return direccion;
+        return this.direccion;
     }
 
     public String getHorarios() {
-        return horarios;
+        return this.horarios;
     }
 
     public void setTiposComida(String losTiposComida) {
@@ -60,11 +59,5 @@ public class Restaurante implements Comparable<Restaurante>, Serializable{
     public int compareTo(Restaurante o) {
         return this.getNombre().compareTo(o.getNombre());
     }
-
-    
-
-    
-    
-    
     
 }
