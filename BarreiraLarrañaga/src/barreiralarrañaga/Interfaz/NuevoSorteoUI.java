@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Sistema;
@@ -14,11 +18,11 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
     Sistema sis;
 
     /**
-     * Creates new form NuevoSorteoUI
+     * Creates new form NewSorteoUI
      */
-    public NuevoSorteoUI(Sistema auxSist) {
-        sis = auxSist;
+    public NuevoSorteoUI(Sistema unSis) {
         initComponents();
+        sis = unSis;
     }
 
     /**
@@ -30,120 +34,127 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtFieldDescPremio = new javax.swing.JTextField();
-        btnFieldCantidadGanadores = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        lblGanadores = new javax.swing.JLabel();
         spinnerGanadores = new javax.swing.JSpinner();
+        btnCrear = new javax.swing.JButton();
+        LblNuevoSorteo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblDesc = new javax.swing.JLabel();
+        txtNombreSorteo = new javax.swing.JTextField();
+        txtFieldDescPremio = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Premio");
+        lblGanadores.setText("Cantidad de Ganadores:");
 
-        jLabel2.setText("Numero de ganadores");
-
-        txtFieldDescPremio.setText("jTextField1");
-        txtFieldDescPremio.addActionListener(new java.awt.event.ActionListener() {
+        btnCrear.setText("Crear Sorteo");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFieldDescPremioActionPerformed(evt);
+                btnCrearActionPerformed(evt);
             }
         });
 
-        btnFieldCantidadGanadores.setText("jButton1");
-        btnFieldCantidadGanadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFieldCantidadGanadoresActionPerformed(evt);
-            }
-        });
+        LblNuevoSorteo.setText("Nuevo Sorteo");
 
-        btnCancelar.setText("jButton2");
+        lblNombre.setText("Nombre de sorteo:");
 
-        spinnerGanadores.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        lblDesc.setText("Descripcion de premio:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblGanadores)
+                                .addComponent(lblDesc)
+                                .addComponent(lblNombre))
+                            .addGap(28, 28, 28)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNombreSorteo)
+                                .addComponent(txtFieldDescPremio, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnCrear)
+                            .addGap(36, 36, 36)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFieldDescPremio))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnFieldCantidadGanadores)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelar)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                        .addGap(98, 98, 98)
+                        .addComponent(LblNuevoSorteo)))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtFieldDescPremio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(LblNuevoSorteo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFieldCantidadGanadores)
-                    .addComponent(btnCancelar))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(lblNombre)
+                    .addComponent(txtNombreSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDesc)
+                    .addComponent(txtFieldDescPremio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGanadores)
+                    .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCrear)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnFieldCantidadGanadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFieldCantidadGanadoresActionPerformed
-
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         int valueSpinner = (Integer) spinnerGanadores.getValue();
-        if (valueSpinner > 0) {
-            if (!txtFieldDescPremio.getText().isEmpty() /*HAY QUE REVISAR QUE LA CANTIDAD DE GANADORES NO SEA MAYOR A LA DEPARTICIPANTES, O SI? */) {
-                Sorteo sorteoActual = new Sorteo(txtFieldDescPremio.getText(), valueSpinner);
-                sis.setSorteoActual(sorteoActual);
+        int resp = 0;
+        if (!txtNombreSorteo.getText().isEmpty()) {
+            if (valueSpinner > 0) {
+                if (!txtFieldDescPremio.getText().isEmpty()) {
 
-    }//GEN-LAST:event_btnFieldCantidadGanadoresActionPerformed
-            else {
-                JOptionPane.showMessageDialog(this, "Ingrese una descripcion para el premio", "Premio Invalido", JOptionPane.ERROR_MESSAGE);
+                    if (sis.getSorteoActual() != null) {
+                        resp = JOptionPane.showConfirmDialog(this, "Esta seguro que quiere sobreescribir el sorteo actual?", "Sorteo en marcha", JOptionPane.YES_NO_OPTION);
+                    }
+                    if (resp == 0) {
+                        Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(), txtFieldDescPremio.getText(), valueSpinner);
+                        sis.setSorteoActual(sorteoActual);
+                        this.dispose();
+                    } else if (resp == 1) {
+                        this.dispose();
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Ingrese una descripcion para el premio", "Premio Invalido", JOptionPane.ERROR_MESSAGE);
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Se necesita al menos un ganador", "Cantidad de ganadores invalida", JOptionPane.ERROR_MESSAGE);
 
             }
-
         } else {
-            JOptionPane.showMessageDialog(this, "Se necesita al menos un ganador", "Cantidad de ganadores invalida", JOptionPane.ERROR_MESSAGE);
-
+            JOptionPane.showMessageDialog(this, "Ingrese un nombre para el sorteo", "Nombre Invalido", JOptionPane.ERROR_MESSAGE);
         }
-    }
-    private void txtFieldDescPremioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDescPremioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldDescPremioActionPerformed
+    }//GEN-LAST:event_btnCrearActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /*
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-           
-            }
-        });*/
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnFieldCantidadGanadores;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel LblNuevoSorteo;
+    private javax.swing.JButton btnCrear;
+    private javax.swing.JLabel lblDesc;
+    private javax.swing.JLabel lblGanadores;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JSpinner spinnerGanadores;
     private javax.swing.JTextField txtFieldDescPremio;
+    private javax.swing.JTextField txtNombreSorteo;
     // End of variables declaration//GEN-END:variables
 }

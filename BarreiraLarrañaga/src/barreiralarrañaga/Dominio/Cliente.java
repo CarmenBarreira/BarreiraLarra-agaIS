@@ -2,28 +2,18 @@ package barreiralarrañaga.Dominio;
 
 public class Cliente {
 
-    private int idCliente;
     private String nombreCliente;
     private String emailCliente;
 
     public Cliente() {
-        idCliente = -1;
         nombreCliente = "Sin nombre";
         emailCliente = "Sin email";
     }
 
-    public Cliente(int elIdCliente, String elNombreCliente, String elEmailCliente) {
-        this.idCliente = elIdCliente;
+    public Cliente(String elNombreCliente, String elEmailCliente) {
+
         this.nombreCliente = elNombreCliente;
         this.emailCliente = elEmailCliente;
-    }
-   
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(int elIdCliente) {
-        this.idCliente = elIdCliente;
     }
 
     public String getNombreCliente() {
@@ -45,7 +35,7 @@ public class Cliente {
     @Override
     public boolean equals(Object o) {
         Cliente aux = (Cliente) o;
-        return this.idCliente == aux.getIdCliente();
+        return this.emailCliente.equals(aux.getEmailCliente());
 
     }
 

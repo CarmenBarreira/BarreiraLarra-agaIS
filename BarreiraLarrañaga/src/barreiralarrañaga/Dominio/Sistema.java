@@ -2,6 +2,7 @@ package barreiralarrañaga.Dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Observable;
 
 public class Sistema extends Observable implements Serializable {
@@ -9,10 +10,50 @@ public class Sistema extends Observable implements Serializable {
     private Restaurante restaurante;
     private ArrayList<Evaluacion> evaluaciones;
     private ArrayList<Sorteo> sorteos;
-  
+    private Sorteo sorteoActual;
+
     public Sistema() {
         restaurante = new Restaurante();
         evaluaciones = new ArrayList<Evaluacion>();
+        sorteoActual = null;
+        sorteos = new ArrayList<Sorteo>();
+    }
+
+    public ArrayList<Cliente> sortear() {
+        ArrayList<Cliente> ganadoresDeSorteo = new ArrayList<>();
+        int contador = 0;
+       
+        
+        while (contador < sorteoActual.getCantidadPremios() && contador<= sorteoActual.getParticipantes().size()) {
+            int number = (int) (Math.random() * sorteoActual.getParticipantes().size());
+    
+            //Chequeo que el ganador no este mas de una vez en la lista.
+            
+            if (!ganadoresDeSorteo.contains(sorteoActual.getParticipantes().get(number))) {
+                ganadoresDeSorteo.add(sorteoActual.getParticipantes().get(number));
+                sorteoActual.getParticipantes().remove(number);
+                contador++;
+            }else{
+            sorteoActual.getParticipantes().remove(number);
+            }
+
+        }
+        
+        return ganadoresDeSorteo;
+
+    }
+
+    public double getPromedioEval() {
+        int cantidadEval = evaluaciones.size();
+        double prom = 0;
+        if (cantidadEval > 0) {
+            for (int i = 0; i < cantidadEval; i++) {
+                prom = prom + evaluaciones.get(i).getEstrellas();
+
+            }
+            prom = prom / cantidadEval;
+        }
+        return prom;
     }
 
     public Restaurante getRestaurante() {
@@ -59,15 +100,21 @@ public class Sistema extends Observable implements Serializable {
 
     public void setSorteos(ArrayList<Sorteo> losSorteos) {
         this.sorteos = losSorteos;
-        
+
     }
 
+    /**
+     * @return the sorteoActual
+     */
     public Sorteo getSorteoActual() {
-        return sorteos.get(0);
+        return sorteoActual;
     }
 
-    public void setSorteoActual(Sorteo elSorteoActual) {
-        this.sorteos.add(0, elSorteoActual);
+    /**
+     * @param sorteoActual the sorteoActual to set
+     */
+    public void setSorteoActual(Sorteo sorteoActual) {
+        this.sorteoActual = sorteoActual;
     }
 
 }
