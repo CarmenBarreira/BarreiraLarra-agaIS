@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package barreiralarrañaga.Dominio;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- *
- * @author Juan
- */
 public class Sorteo {
 
     private Cliente[] ganadores;
@@ -56,60 +47,39 @@ public class Sorteo {
 
     }
 
-    /**
-     * @return the ganadores
-     */
     public Cliente[] getGanadores() {
         return ganadores;
     }
 
-    /**
-     * @param ganadores the ganadores to set
-     */
-    public void setGanadores(Cliente[] ganadores) {
-        this.ganadores = ganadores;
+    
+    public void setGanadores(Cliente[] losGanadores) {
+        this.ganadores = losGanadores;
     }
 
-    /**
-     * @return the premio
-     */
     public String getPremio() {
         return premio;
     }
 
-    /**
-     * @param premio the premio to set
-     */
-    public void setPremio(String premio) {
-        this.premio = premio;
+    
+    public void setPremio(String elPremio) {
+        this.premio = elPremio;
     }
 
-    /**
-     * @return the cantidadPremios
-     */
     public int getCantidadPremios() {
         return cantidadPremios;
     }
 
-    /**
-     * @param cantidadPremios the cantidadPremios to set
-     */
-    public void setCantidadPremios(int cantidadPremios) {
-        this.cantidadPremios = cantidadPremios;
+    public void setCantidadPremios(int laCantidadPremios) {
+        this.cantidadPremios = laCantidadPremios;
     }
 
-    /**
-     * @return the participantes
-     */
+    
     public ArrayList<Cliente> getParticipantes() {
         return participantes;
     }
 
-    /**
-     * @param participantes the participantes to set
-     */
-    public void setParticipantes(ArrayList<Cliente> participantes) {
-        this.participantes = participantes;
+    public void setParticipantes(ArrayList<Cliente> losParticipantes) {
+        this.participantes = losParticipantes;
     }
 
 }

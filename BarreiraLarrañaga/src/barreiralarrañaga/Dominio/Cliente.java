@@ -8,46 +8,29 @@ public class Cliente {
     private String nombreCliente;
     private String emailCliente;
 
-    /**
-     * @return the idCliente
-     */
+   
     public int getIdCliente() {
         return idCliente;
     }
 
-    /**
-     * @param idCliente the idCliente to set
-     */
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setIdCliente(int elIdCliente) {
+        this.idCliente = elIdCliente;
     }
 
-    /**
-     * @return the nombreCliente
-     */
     public String getNombreCliente() {
         return nombreCliente;
     }
 
-    /**
-     * @param nombreCliente the nombreCliente to set
-     */
-    public void setNombreCliente(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
+    public void setNombreCliente(String elNombreCliente) {
+        this.nombreCliente = elNombreCliente;
     }
 
-    /**
-     * @return the emailCliente
-     */
     public String getEmailCliente() {
         return emailCliente;
     }
 
-    /**
-     * @param emailCliente the emailCliente to set
-     */
-    public void setEmailCliente(String emailCliente) {
-        this.emailCliente = emailCliente;
+    public void setEmailCliente(String elEmailCliente) {
+        this.emailCliente = elEmailCliente;
     }
 
     @Override

@@ -2,6 +2,9 @@ package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Sistema;
 import java.awt.Rectangle;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -245,7 +248,12 @@ public class MenuRestaurantes extends javax.swing.JFrame{
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRestauranteActionPerformed
-            EditarRestaurante editRest = new EditarRestaurante(elSis);
+            EditarRestaurante editRest = null;
+        try {
+            editRest = new EditarRestaurante(elSis);
+        } catch (ParseException ex) {
+            Logger.getLogger(MenuRestaurantes.class.getName()).log(Level.SEVERE, null, ex);
+        }
             Rectangle rct = editRest.getGraphicsConfiguration().getBounds();
             editRest.setLocation((rct.width - editRest.getWidth()) / 2,
                     (rct.height - editRest.getHeight()) / 2);

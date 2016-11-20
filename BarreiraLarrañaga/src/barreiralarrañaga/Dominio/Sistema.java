@@ -10,8 +10,7 @@ public class Sistema extends Observable implements Serializable {
     private ArrayList<Evaluacion> evaluaciones;
     private ArrayList<Sorteo> sorteos;
   
-   
-    
+     
 
     public Sistema() {
         restaurante = new Restaurante();
@@ -56,33 +55,21 @@ public class Sistema extends Observable implements Serializable {
         return participantes;
     }
 
-    /**
-     * @return the sorteos
-     */
     public ArrayList<Sorteo> getSorteos() {
         return sorteos;
     }
 
-    /**
-     * @param sorteos the sorteos to set
-     */
-    public void setSorteos(ArrayList<Sorteo> sorteos) {
-        this.sorteos = sorteos;
+    public void setSorteos(ArrayList<Sorteo> losSorteos) {
+        this.sorteos = losSorteos;
         
     }
 
-    /**
-     * @return the sorteoActual
-     */
     public Sorteo getSorteoActual() {
         return sorteos.get(0);
     }
 
-    /**
-     * @param sorteoActual the sorteoActual to set
-     */
-    public void setSorteoActual(Sorteo sorteoActual) {
-        this.sorteos.add(0, sorteoActual);
+    public void setSorteoActual(Sorteo elSorteoActual) {
+        this.sorteos.add(0, elSorteoActual);
     }
 
 }
