@@ -44,7 +44,7 @@ public class ClienteTest {
     @Test
     public void testGetNombreCliente() {
         System.out.println("getNombreCliente");
-        Cliente instance = new Cliente();
+        Cliente instance = new Cliente("Sin nombre", "Sin email");
         String expResult = "Sin nombre";
         String result = instance.getNombreCliente();
         assertEquals(expResult, result);

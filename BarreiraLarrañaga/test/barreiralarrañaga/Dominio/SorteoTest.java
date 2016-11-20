@@ -58,7 +58,7 @@ public class SorteoTest {
     @Test
     public void testGetCantidadPremios() {
         System.out.println("getCantidadPremios");
-        Sorteo instance = new Sorteo();
+        Sorteo instance = new Sorteo("", "Premio sin definir.", 0);
         int expResult = 0;
         int result = instance.getCantidadPremios();
         assertEquals(expResult, result);

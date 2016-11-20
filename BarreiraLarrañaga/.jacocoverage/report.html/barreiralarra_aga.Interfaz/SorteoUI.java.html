@@ -15,57 +15,58 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Juan
  */
-public class SorteoUI extends javax.swing.JFrame {
+public final class SorteoUI extends javax.swing.JFrame {
 
     Sistema unSis;
     ArrayList&lt;Cliente&gt; arrayGanadores;
 
     /**
      * Creates new form SorteoUI
+     * @param sis
      */
-<span class="nc" id="L26">    public SorteoUI(Sistema sis) {</span>
-<span class="nc" id="L27">        unSis = sis;</span>
-<span class="nc" id="L28">        initComponents();</span>
+<span class="nc" id="L27">    public SorteoUI(Sistema sis) {</span>
+<span class="nc" id="L28">        unSis = sis;</span>
+<span class="nc" id="L29">        initComponents();</span>
 
-<span class="nc" id="L30">        Date date = new Date();</span>
-<span class="nc" id="L31">        ArrayList&lt;Cliente&gt; partAux = (ArrayList&lt;Cliente&gt;) unSis.getParticipantesSorteo().clone();</span>
-<span class="nc" id="L32">        unSis.getSorteoActual().setParticipantes(unSis.getParticipantesSorteo());</span>
-<span class="nc" id="L33">        unSis.getSorteoActual().setCantidadParticipantes(unSis.getSorteoActual().getParticipantes().size());</span>
-<span class="nc" id="L34">        arrayGanadores = unSis.sortear();</span>
-<span class="nc" id="L35">        unSis.getSorteoActual().setGanadores(arrayGanadores);</span>
-<span class="nc" id="L36">        lblLoadNombreSorteo.setText(unSis.getSorteoActual().getNombre());</span>
-<span class="nc" id="L37">        lblLoadDesc.setText(unSis.getSorteoActual().getPremio());</span>
-<span class="nc" id="L38">        lblLoadPart.setText(&quot;&quot; + unSis.getSorteoActual().getCantidadParticipantes());</span>
-<span class="nc" id="L39">        unSis.getSorteoActual().setParticipantes(partAux);</span>
-<span class="nc" id="L40">        unSis.getSorteoActual().setFecha(date);</span>
-<span class="nc" id="L41">        cargarLista();</span>
+<span class="nc" id="L31">        Date date = new Date();</span>
+<span class="nc" id="L32">        ArrayList&lt;Cliente&gt; partAux = (ArrayList&lt;Cliente&gt;) unSis.getParticipantesSorteo().clone();</span>
+<span class="nc" id="L33">        unSis.getSorteoActual().setParticipantes(unSis.getParticipantesSorteo());</span>
+<span class="nc" id="L34">        unSis.getSorteoActual().setCantidadParticipantes(unSis.getSorteoActual().getParticipantes().size());</span>
+<span class="nc" id="L35">        arrayGanadores = unSis.sortear();</span>
+<span class="nc" id="L36">        unSis.getSorteoActual().setGanadores(arrayGanadores);</span>
+<span class="nc" id="L37">        lblLoadNombreSorteo.setText(unSis.getSorteoActual().getNombre());</span>
+<span class="nc" id="L38">        lblLoadDesc.setText(unSis.getSorteoActual().getPremio());</span>
+<span class="nc" id="L39">        lblLoadPart.setText(&quot;&quot; + unSis.getSorteoActual().getCantidadParticipantes());</span>
+<span class="nc" id="L40">        unSis.getSorteoActual().setParticipantes(partAux);</span>
+<span class="nc" id="L41">        unSis.getSorteoActual().setFecha(date);</span>
+<span class="nc" id="L42">        cargarLista();</span>
 
-<span class="nc" id="L43">        unSis.getSorteos().add(unSis.getSorteoActual());</span>
-<span class="nc" id="L44">        unSis.setSorteoActual(null);</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L44">        unSis.getSorteos().add(unSis.getSorteoActual());</span>
+<span class="nc" id="L45">        unSis.setSorteoActual(null);</span>
+<span class="nc" id="L46">    }</span>
 
     public void cargarLista() {
-<span class="nc" id="L48">        borrarCacheTabla();</span>
-<span class="nc" id="L49">        DefaultTableModel modelo = (DefaultTableModel) tablaGanadores.getModel();</span>
-<span class="nc" id="L50">        ArrayList&lt;Cliente&gt; clientesTabla = arrayGanadores;</span>
-<span class="nc bnc" id="L51" title="All 2 branches missed.">        for (int i = 0; i &lt; clientesTabla.size(); i++) {</span>
+<span class="nc" id="L49">        borrarCacheTabla();</span>
+<span class="nc" id="L50">        DefaultTableModel modelo = (DefaultTableModel) tablaGanadores.getModel();</span>
+<span class="nc" id="L51">        ArrayList&lt;Cliente&gt; clientesTabla = arrayGanadores;</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        for (int i = 0; i &lt; clientesTabla.size(); i++) {</span>
 
-<span class="nc" id="L53">            modelo.addRow(new Object[][]{{null, null, null, null, null, null}});</span>
-<span class="nc" id="L54">            tablaGanadores.setValueAt(i + 1, i, 0);</span>
-<span class="nc" id="L55">            tablaGanadores.setValueAt(clientesTabla.get(i).getNombreCliente(), i, 1);</span>
-<span class="nc" id="L56">            tablaGanadores.setValueAt(clientesTabla.get(i).getEmailCliente(), i, 2);</span>
+<span class="nc" id="L54">            modelo.addRow(new Object[][]{{null, null, null, null, null, null}});</span>
+<span class="nc" id="L55">            tablaGanadores.setValueAt(i + 1, i, 0);</span>
+<span class="nc" id="L56">            tablaGanadores.setValueAt(clientesTabla.get(i).getNombreCliente(), i, 1);</span>
+<span class="nc" id="L57">            tablaGanadores.setValueAt(clientesTabla.get(i).getEmailCliente(), i, 2);</span>
 
         }
 
-<span class="nc" id="L60">    }</span>
+<span class="nc" id="L61">    }</span>
 
     private void borrarCacheTabla() {
-<span class="nc" id="L63">        DefaultTableModel modelo = (DefaultTableModel) tablaGanadores.getModel();</span>
-<span class="nc" id="L64">        int filas = tablaGanadores.getRowCount();</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        for (int i = 0; i &lt; filas; i++) {</span>
-<span class="nc" id="L66">            modelo.removeRow(0);</span>
+<span class="nc" id="L64">        DefaultTableModel modelo = (DefaultTableModel) tablaGanadores.getModel();</span>
+<span class="nc" id="L65">        int filas = tablaGanadores.getRowCount();</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        for (int i = 0; i &lt; filas; i++) {</span>
+<span class="nc" id="L67">            modelo.removeRow(0);</span>
         }
-<span class="nc" id="L68">    }</span>
+<span class="nc" id="L69">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,30 +77,30 @@ public class SorteoUI extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L79">        lblResultados = new javax.swing.JLabel();</span>
-<span class="nc" id="L80">        lblGanadores = new javax.swing.JLabel();</span>
-<span class="nc" id="L81">        lblDesc = new javax.swing.JLabel();</span>
-<span class="nc" id="L82">        lblParticipantes = new javax.swing.JLabel();</span>
-<span class="nc" id="L83">        tblPane = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L84">        tablaGanadores = new javax.swing.JTable();</span>
-<span class="nc" id="L85">        btnSalir = new javax.swing.JButton();</span>
-<span class="nc" id="L86">        lblNombre = new javax.swing.JLabel();</span>
-<span class="nc" id="L87">        lblLoadNombreSorteo = new javax.swing.JLabel();</span>
-<span class="nc" id="L88">        lblLoadPart = new javax.swing.JLabel();</span>
-<span class="nc" id="L89">        lblLoadDesc = new javax.swing.JLabel();</span>
+<span class="nc" id="L80">        lblResultados = new javax.swing.JLabel();</span>
+<span class="nc" id="L81">        lblGanadores = new javax.swing.JLabel();</span>
+<span class="nc" id="L82">        lblDesc = new javax.swing.JLabel();</span>
+<span class="nc" id="L83">        lblParticipantes = new javax.swing.JLabel();</span>
+<span class="nc" id="L84">        tblPane = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L85">        tablaGanadores = new javax.swing.JTable();</span>
+<span class="nc" id="L86">        btnSalir = new javax.swing.JButton();</span>
+<span class="nc" id="L87">        lblNombre = new javax.swing.JLabel();</span>
+<span class="nc" id="L88">        lblLoadNombreSorteo = new javax.swing.JLabel();</span>
+<span class="nc" id="L89">        lblLoadPart = new javax.swing.JLabel();</span>
+<span class="nc" id="L90">        lblLoadDesc = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L91">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
+<span class="nc" id="L92">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
 
-<span class="nc" id="L93">        lblResultados.setFont(new java.awt.Font(&quot;DialogInput&quot;, 1, 18)); // NOI18N</span>
-<span class="nc" id="L94">        lblResultados.setText(&quot;RESULTADOS DE SORTEO&quot;);</span>
+<span class="nc" id="L94">        lblResultados.setFont(new java.awt.Font(&quot;DialogInput&quot;, 1, 18)); // NOI18N</span>
+<span class="nc" id="L95">        lblResultados.setText(&quot;RESULTADOS DE SORTEO&quot;);</span>
 
-<span class="nc" id="L96">        lblGanadores.setText(&quot;Ganadores&quot;);</span>
+<span class="nc" id="L97">        lblGanadores.setText(&quot;Ganadores&quot;);</span>
 
-<span class="nc" id="L98">        lblDesc.setText(&quot;Descripcion&quot;);</span>
+<span class="nc" id="L99">        lblDesc.setText(&quot;Descripcion&quot;);</span>
 
-<span class="nc" id="L100">        lblParticipantes.setText(&quot;Participantes&quot;);</span>
+<span class="nc" id="L101">        lblParticipantes.setText(&quot;Participantes&quot;);</span>
 
-<span class="nc" id="L102">        tablaGanadores.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L103">        tablaGanadores.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -110,90 +111,90 @@ public class SorteoUI extends javax.swing.JFrame {
                 &quot;Premio N°&quot;, &quot;Nombre&quot;, &quot;Correo&quot;
             }
         ));
-<span class="nc" id="L113">        tblPane.setViewportView(tablaGanadores);</span>
+<span class="nc" id="L114">        tblPane.setViewportView(tablaGanadores);</span>
 
-<span class="nc" id="L115">        btnSalir.setText(&quot;Salir&quot;);</span>
-<span class="nc" id="L116">        btnSalir.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L116">        btnSalir.setText(&quot;Salir&quot;);</span>
+<span class="nc" id="L117">        btnSalir.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L118">                btnSalirActionPerformed(evt);</span>
-<span class="nc" id="L119">            }</span>
+<span class="nc" id="L119">                btnSalirActionPerformed(evt);</span>
+<span class="nc" id="L120">            }</span>
         });
 
-<span class="nc" id="L122">        lblNombre.setText(&quot;Nombre&quot;);</span>
+<span class="nc" id="L123">        lblNombre.setText(&quot;Nombre&quot;);</span>
 
-<span class="nc" id="L124">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L125">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L126">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L127">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L128">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L129">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L130">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L131">                        .addGap(54, 54, 54)</span>
-<span class="nc" id="L132">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L133">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L134">                                .addComponent(lblParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L135">                                .addGap(18, 18, 18)</span>
-<span class="nc" id="L136">                                .addComponent(lblLoadPart, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L137">                            .addComponent(lblDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L138">                            .addComponent(tblPane, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L139">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L140">                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L141">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L142">                                .addComponent(lblLoadNombreSorteo))))</span>
-<span class="nc" id="L143">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L144">                        .addGap(222, 222, 222)</span>
-<span class="nc" id="L145">                        .addComponent(lblGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L146">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L147">                        .addGap(187, 187, 187)</span>
-<span class="nc" id="L148">                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L149">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L150">                        .addGap(155, 155, 155)</span>
-<span class="nc" id="L151">                        .addComponent(lblResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L152">                .addContainerGap(57, Short.MAX_VALUE))</span>
-<span class="nc" id="L153">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L154">                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L155">                    .addGap(160, 160, 160)</span>
-<span class="nc" id="L156">                    .addComponent(lblLoadDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L157">                    .addContainerGap(323, Short.MAX_VALUE)))</span>
+<span class="nc" id="L125">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L126">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L127">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L128">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L129">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L130">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L131">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L132">                        .addGap(54, 54, 54)</span>
+<span class="nc" id="L133">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L134">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L135">                                .addComponent(lblParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L136">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L137">                                .addComponent(lblLoadPart, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L138">                            .addComponent(lblDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L139">                            .addComponent(tblPane, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L140">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L141">                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L142">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L143">                                .addComponent(lblLoadNombreSorteo))))</span>
+<span class="nc" id="L144">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L145">                        .addGap(222, 222, 222)</span>
+<span class="nc" id="L146">                        .addComponent(lblGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L147">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L148">                        .addGap(187, 187, 187)</span>
+<span class="nc" id="L149">                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L150">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L151">                        .addGap(155, 155, 155)</span>
+<span class="nc" id="L152">                        .addComponent(lblResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L153">                .addContainerGap(57, Short.MAX_VALUE))</span>
+<span class="nc" id="L154">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L155">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L156">                    .addGap(160, 160, 160)</span>
+<span class="nc" id="L157">                    .addComponent(lblLoadDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L158">                    .addContainerGap(323, Short.MAX_VALUE)))</span>
         );
-<span class="nc" id="L159">        layout.setVerticalGroup(</span>
-<span class="nc" id="L160">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L161">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L162">                .addGap(9, 9, 9)</span>
-<span class="nc" id="L163">                .addComponent(lblResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L164">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L165">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L166">                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L167">                    .addComponent(lblLoadNombreSorteo))</span>
-<span class="nc" id="L168">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L169">                .addComponent(lblDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L170">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L171">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L172">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L173">                        .addComponent(lblParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L174">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L175">                        .addGap(19, 19, 19)</span>
-<span class="nc" id="L176">                        .addComponent(lblLoadPart, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L177">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L178">                .addComponent(lblGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L179">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L180">                .addComponent(tblPane, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L181">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L182">                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L183">                .addGap(41, 41, 41))</span>
-<span class="nc" id="L184">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L185">                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L186">                    .addGap(122, 122, 122)</span>
-<span class="nc" id="L187">                    .addComponent(lblLoadDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L188">                    .addContainerGap(364, Short.MAX_VALUE)))</span>
+<span class="nc" id="L160">        layout.setVerticalGroup(</span>
+<span class="nc" id="L161">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L162">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L163">                .addGap(9, 9, 9)</span>
+<span class="nc" id="L164">                .addComponent(lblResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L165">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L166">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L167">                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L168">                    .addComponent(lblLoadNombreSorteo))</span>
+<span class="nc" id="L169">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L170">                .addComponent(lblDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L171">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L172">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L173">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L174">                        .addComponent(lblParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L175">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L176">                        .addGap(19, 19, 19)</span>
+<span class="nc" id="L177">                        .addComponent(lblLoadPart, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L178">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L179">                .addComponent(lblGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L180">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L181">                .addComponent(tblPane, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L182">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L183">                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L184">                .addGap(41, 41, 41))</span>
+<span class="nc" id="L185">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L186">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L187">                    .addGap(122, 122, 122)</span>
+<span class="nc" id="L188">                    .addComponent(lblLoadDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L189">                    .addContainerGap(364, Short.MAX_VALUE)))</span>
         );
 
-<span class="nc" id="L191">        pack();</span>
-<span class="nc" id="L192">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L192">        pack();</span>
+<span class="nc" id="L193">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-<span class="nc" id="L195">        this.dispose();</span>
-<span class="nc" id="L196">    }//GEN-LAST:event_btnSalirActionPerformed</span>
+<span class="nc" id="L196">        this.dispose();</span>
+<span class="nc" id="L197">    }//GEN-LAST:event_btnSalirActionPerformed</span>
 
     /**
      * @param args the command line arguments

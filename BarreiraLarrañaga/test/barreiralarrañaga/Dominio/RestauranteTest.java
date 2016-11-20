@@ -49,7 +49,7 @@ public class RestauranteTest {
     public void testSetDireccion() {
         System.out.println("setDireccion");
         String laDireccion = "Sin direccion";
-        Restaurante instance = new Restaurante();
+        Restaurante instance = new Restaurante("Sin nombre", "Sin direccion", "Sin tipo comida", "Sin horario");
         instance.setDireccion(laDireccion);
     }
 

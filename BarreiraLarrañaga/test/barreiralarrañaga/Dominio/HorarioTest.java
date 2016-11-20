@@ -39,7 +39,7 @@ public class HorarioTest {
     @Test
     public void testGetDia() {
         System.out.println("getDia");
-        Horario instance = new Horario();
+        Horario instance = new Horario("", "", "");
         String expResult = "";
         String result = instance.getDia();
         assertEquals(expResult, result);
