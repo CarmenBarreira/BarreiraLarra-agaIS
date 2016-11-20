@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>EditarRestaurante.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BarreiraLarra_aga&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">barreiralarrañaga.Interfaz</a> &gt; <span class="el_source">EditarRestaurante.java</span></div><h1>EditarRestaurante.java</h1><pre class="source lang-java linenums">package barreiralarrañaga.Interfaz;
+
+import barreiralarrañaga.Dominio.Restaurante;
+import barreiralarrañaga.Dominio.Sistema;
+import java.text.ParseException;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import javax.swing.text.MaskFormatter;
+
+public class EditarRestaurante extends javax.swing.JFrame {
+    
+<span class="nc" id="L13">    public EditarRestaurante(Sistema sis) throws ParseException {</span>
+<span class="nc" id="L14">        initComponents();</span>
+<span class="nc" id="L15">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L21">        lblDireccionR = new javax.swing.JLabel();</span>
+<span class="nc" id="L22">        txtNombreR = new javax.swing.JTextField();</span>
+<span class="nc" id="L23">        lblNombreR = new javax.swing.JLabel();</span>
+<span class="nc" id="L24">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L25">        btnEditarRestaurante = new javax.swing.JButton();</span>
+<span class="nc" id="L26">        txtDireccion = new javax.swing.JTextField();</span>
+<span class="nc" id="L27">        lblDireccionR1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L28">        lblDireccionR2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L29">        txtTipoComida = new javax.swing.JTextField();</span>
+<span class="nc" id="L30">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L31">        txtHorariosDe = new JFormattedTextField();</span>
+<span class="nc" id="L32">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L33">        cmbHorariosDe = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L34">        lblHorarioHasta = new javax.swing.JLabel();</span>
+<span class="nc" id="L35">        cmbHorariosHasta = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L36">        txtHorariosHasta = new JFormattedTextField();</span>
+
+<span class="nc" id="L38">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
+<span class="nc" id="L39">        setTitle(&quot;Nuevo Restaurante&quot;);</span>
+<span class="nc" id="L40">        setAutoRequestFocus(false);</span>
+
+<span class="nc" id="L42">        lblDireccionR.setText(&quot;Dirección: &quot;);</span>
+
+<span class="nc" id="L44">        lblNombreR.setText(&quot;Nombre: &quot;);</span>
+
+<span class="nc" id="L46">        jLabel1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 14)); // NOI18N</span>
+<span class="nc" id="L47">        jLabel1.setText(&quot;Modificar Restaurante IS&quot;);</span>
+
+<span class="nc" id="L49">        btnEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/save_16.png&quot;))); // NOI18N</span>
+<span class="nc" id="L50">        btnEditarRestaurante.setText(&quot;Guardar &quot;);</span>
+<span class="nc" id="L51">        btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L53">                btnEditarRestauranteActionPerformed(evt);</span>
+<span class="nc" id="L54">            }</span>
+        });
+
+<span class="nc" id="L57">        lblDireccionR1.setText(&quot;Horarios: &quot;);</span>
+
+<span class="nc" id="L59">        lblDireccionR2.setText(&quot;Tipo/s de comida/s: &quot;);</span>
+
+<span class="nc" id="L61">        jLabel4.setFont(jLabel4.getFont());</span>
+<span class="nc" id="L62">        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L63">        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg&quot;))); // NOI18N</span>
+<span class="nc" id="L64">        jLabel4.setIconTextGap(6);</span>
+<span class="nc" id="L65">        jLabel4.setMaximumSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L66">        jLabel4.setMinimumSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L67">        jLabel4.setPreferredSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L68">        jLabel4.setVerifyInputWhenFocusTarget(false);</span>
+
+<span class="nc" id="L70">        txtHorariosDe.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));</span>
+<span class="nc" id="L71">        txtHorariosDe.setToolTipText(&quot;hh:mm&quot;);</span>
+
+<span class="nc" id="L73">        jLabel2.setText(&quot;De: &quot;);</span>
+
+<span class="nc" id="L75">        cmbHorariosDe.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Lunes&quot;, &quot;Martes&quot;, &quot;Miercoles&quot;, &quot;Jueves&quot;, &quot;Viernes&quot;, &quot;Sabado&quot;, &quot;Domingo&quot; }));</span>
+
+<span class="nc" id="L77">        lblHorarioHasta.setText(&quot;Hasta: &quot;);</span>
+
+<span class="nc" id="L79">        cmbHorariosHasta.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Lunes&quot;, &quot;Martes&quot;, &quot;Miercoles&quot;, &quot;Jueves&quot;, &quot;Viernes&quot;, &quot;Sabado&quot;, &quot;Domingo&quot; }));</span>
+
+<span class="nc" id="L81">        txtHorariosHasta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));</span>
+<span class="nc" id="L82">        txtHorariosHasta.setToolTipText(&quot;hh:mm&quot;);</span>
+
+<span class="nc" id="L84">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L85">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L86">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L87">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L88">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L89">                .addGap(178, 178, 178)</span>
+<span class="nc" id="L90">                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L91">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L92">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L93">                .addContainerGap(20, Short.MAX_VALUE)</span>
+<span class="nc" id="L94">                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L95">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L96">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L97">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L98">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L99">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L100">                                .addComponent(lblDireccionR1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L101">                                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L102">                                    .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L103">                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L104">                                    .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L105">                                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L106">                                    .addComponent(lblHorarioHasta)</span>
+<span class="nc" id="L107">                                    .addGap(18, 18, 18)</span>
+<span class="nc" id="L108">                                    .addComponent(cmbHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L109">                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L110">                                    .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L111">                                    .addGap(8, 8, 8))</span>
+<span class="nc" id="L112">                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()</span>
+<span class="nc" id="L113">                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L114">                                        .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L115">                                        .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L116">                                    .addGap(101, 101, 101)</span>
+<span class="nc" id="L117">                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L118">                                        .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L119">                                        .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L120">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L121">                                .addGap(47, 47, 47)</span>
+<span class="nc" id="L122">                                .addComponent(jLabel2)</span>
+<span class="nc" id="L123">                                .addGap(32, 32, 32)</span>
+<span class="nc" id="L124">                                .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L125">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L126">                                .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L127">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L128">                        .addGap(117, 117, 117)</span>
+<span class="nc" id="L129">                        .addComponent(btnEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L130">                .addGap(58, 58, 58))</span>
+        );
+<span class="nc" id="L132">        layout.setVerticalGroup(</span>
+<span class="nc" id="L133">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L134">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L135">                .addContainerGap()</span>
+<span class="nc" id="L136">                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L137">                .addGap(40, 40, 40)</span>
+<span class="nc" id="L138">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L139">                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L140">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L141">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L142">                            .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L143">                            .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L144">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L145">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L146">                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L147">                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L148">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L149">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L150">                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L151">                            .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L152">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L153">                        .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L154">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L155">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L156">                            .addComponent(jLabel2)</span>
+<span class="nc" id="L157">                            .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L158">                            .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L159">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L160">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L161">                            .addComponent(lblHorarioHasta)</span>
+<span class="nc" id="L162">                            .addComponent(cmbHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L163">                            .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L164">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L165">                .addComponent(btnEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L166">                .addGap(7, 7, 7))</span>
+        );
+
+<span class="nc" id="L169">        pack();</span>
+<span class="nc" id="L170">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRestauranteActionPerformed
+        String nombre, direccion, tipoComida;
+<span class="nc" id="L174">        nombre = txtNombreR.getText();</span>
+<span class="nc" id="L175">        direccion = txtDireccion.getText();</span>
+<span class="nc" id="L176">        tipoComida= txtTipoComida.getText();</span>
+<span class="nc" id="L177">        String horarios = &quot;De &quot; + cmbHorariosDe.getSelectedItem().toString() +</span>
+<span class="nc" id="L178">                &quot; a &quot;+ cmbHorariosHasta.getSelectedItem().toString() + &quot; - &quot; + </span>
+<span class="nc" id="L179">                txtHorariosDe.getText() + &quot; a &quot; + txtHorariosHasta.getText();</span>
+<span class="nc" id="L180">        Restaurante aux = null ; </span>
+        
+<span class="nc bnc" id="L182" title="All 6 branches missed.">        if(nombre.length() == 0 || direccion.length() ==0 || tipoComida.length() ==0 </span>
+<span class="nc bnc" id="L183" title="All 4 branches missed.">                || txtHorariosDe.getText().length() ==0 || txtHorariosHasta.getText().length() ==0 ){</span>
+<span class="nc" id="L184">             JOptionPane.showMessageDialog(this, &quot;Debe completar todos los datos&quot;, </span>
+                     &quot;Campos Obligatorios&quot;, ERROR_MESSAGE);
+        }else{
+<span class="nc bnc" id="L187" title="All 2 branches missed.">            if(!stringCorrecto(nombre, &quot;nombre&quot;)){</span>
+<span class="nc" id="L188">                JOptionPane.showMessageDialog(this, &quot;El nombre es Incorrecto &quot;</span>
+                        + &quot;(el mismo no puede ser vacio ni mayor a 30 caracteres)&quot;, 
+                        &quot;Nombre Incorrecto&quot;, ERROR_MESSAGE);
+<span class="nc" id="L191">                txtNombreR.selectAll();</span>
+<span class="nc" id="L192">                txtNombreR.requestFocusInWindow();</span>
+            }
+            else{//nombre correcto
+<span class="nc bnc" id="L195" title="All 2 branches missed.">                if(!stringCorrecto(direccion, &quot;direccion&quot;)){</span>
+<span class="nc" id="L196">                    JOptionPane.showMessageDialog(this, &quot;La direccion es Incorrecto&quot;, </span>
+                            &quot;Direccion Incorrecta&quot;, ERROR_MESSAGE);
+<span class="nc" id="L198">                    txtDireccion.selectAll();</span>
+<span class="nc" id="L199">                    txtDireccion.requestFocusInWindow();</span>
+                }
+                else{
+<span class="nc bnc" id="L202" title="All 2 branches missed.">                   if(!stringCorrecto(tipoComida, &quot;tipoComida&quot;)){</span>
+<span class="nc" id="L203">                       JOptionPane.showMessageDialog(this, &quot;El tipo de comida es &quot;</span>
+                            + &quot;Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)&quot;, 
+                            &quot;Nombre Incorrecto&quot;, ERROR_MESSAGE);
+<span class="nc" id="L206">                        txtTipoComida.selectAll();</span>
+<span class="nc" id="L207">                        txtTipoComida.requestFocusInWindow();</span>
+                   }else{
+<span class="nc bnc" id="L209" title="All 4 branches missed.">                       if(txtHorariosDe.getText().length()==0 || txtHorariosHasta.getText().length() == 0){</span>
+<span class="nc" id="L210">                            JOptionPane.showMessageDialog(this, &quot;El formato de hora es hh:mm&quot;</span>
+                                    + &quot;(siendo hh la hora y mm los minutos)&quot;, 
+                            &quot;Horario Incorrecto&quot;, ERROR_MESSAGE);
+                       }
+                       else{//todos los datos bien
+<span class="nc" id="L215">                           aux = new Restaurante(nombre, direccion, tipoComida, horarios);   </span>
+<span class="nc" id="L216">                           JOptionPane.showMessageDialog(null, &quot;Se edito exitosamente el restaurante&quot;,  </span>
+                                   &quot;Modifcación exitosa&quot;, JOptionPane.INFORMATION_MESSAGE);
+                       }
+                   }
+                } 
+            }           
+        }
+    
+<span class="nc" id="L224">    }//GEN-LAST:event_btnEditarRestauranteActionPerformed</span>
+
+    /**
+     * @param args the command line arguments
+     */
+  /* public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //&lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot; Look and feel setting code (optional) &quot;&gt;
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+       /* try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if (&quot;Nimbus&quot;.equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(EditarRestaurante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //&lt;/editor-fold&gt;
+        
+        //&lt;/editor-fold&gt;
+
+        /* Create and display the form */
+   /*      java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new EditarRestaurante().setVisible(true);
+            }
+        });
+    }*/
+<span class="nc" id="L257">    Sistema sis = new Sistema();</span>
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditarRestaurante;
+    private javax.swing.JComboBox&lt;String&gt; cmbHorariosDe;
+    private javax.swing.JComboBox&lt;String&gt; cmbHorariosHasta;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lblDireccionR;
+    private javax.swing.JLabel lblDireccionR1;
+    private javax.swing.JLabel lblDireccionR2;
+    private javax.swing.JLabel lblHorarioHasta;
+    private javax.swing.JLabel lblNombreR;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JFormattedTextField txtHorariosDe;
+    private javax.swing.JFormattedTextField txtHorariosHasta;
+    private javax.swing.JTextField txtNombreR;
+    private javax.swing.JTextField txtTipoComida;
+    // End of variables declaration//GEN-END:variables
+
+ public MaskFormatter Mascara(String Mascara){
+<span class="nc" id="L278">        MaskFormatter F_Mascara = new MaskFormatter();</span>
+        try{
+<span class="nc" id="L280">            F_Mascara.setMask(Mascara); //Atribui a mascara</span>
+<span class="nc" id="L281">            F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento </span>
+        }
+<span class="nc" id="L283">        catch (Exception excecao) {</span>
+<span class="nc" id="L284">        } </span>
+<span class="nc" id="L285">        return F_Mascara;</span>
+ }   
+    
+    public boolean stringCorrecto(String s, String tipo) {
+        /*Esta funcion valida si el string que se pasa por parametro segun el tipo
+        es o no valido. Y retorna un booleano segun sea o no valido*/
+<span class="nc" id="L291">        boolean esCorrecto = false;</span>
+<span class="nc" id="L292">        boolean espaciosVacios = false;</span>
+<span class="nc bnc" id="L293" title="All 2 branches missed.">        if (!s.isEmpty()) {</span>
+<span class="nc bnc" id="L294" title="All 4 branches missed.">            if (s.charAt(0) == ' ' || s.isEmpty()) {</span>
+<span class="nc" id="L295">                espaciosVacios = true;</span>
+            }
+<span class="nc bnc" id="L297" title="All 6 branches missed.">            if (s.equals(&quot;&quot;) || espaciosVacios || s.length()&gt;10) {</span>
+                //el string esta vacio o empieza con espacio
+<span class="nc bnc" id="L299" title="All 2 branches missed.">                if (tipo.toUpperCase().equals(&quot;nombre&quot;.toUpperCase())</span>
+<span class="nc bnc" id="L300" title="All 2 branches missed.">                        || (tipo.toUpperCase().equals(&quot;alias&quot;.toUpperCase()))) {</span>
+<span class="nc" id="L301">                    esCorrecto = false;</span>
+                }
+            } else {
+<span class="nc" id="L304">                esCorrecto = true;</span>
+            }
+        }
+<span class="nc" id="L307">        return esCorrecto;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
