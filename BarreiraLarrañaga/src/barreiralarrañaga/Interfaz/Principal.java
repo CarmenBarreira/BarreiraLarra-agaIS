@@ -81,7 +81,8 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSorteoActionPerformed
-        // TODO add your handling code here:
+        NuevoSorteoUI sorteoUI = new NuevoSorteoUI(elSis);
+        sorteoUI.setVisible(true);
     }//GEN-LAST:event_btnSorteoActionPerformed
 
     private void btnRestaurantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaurantesActionPerformed
