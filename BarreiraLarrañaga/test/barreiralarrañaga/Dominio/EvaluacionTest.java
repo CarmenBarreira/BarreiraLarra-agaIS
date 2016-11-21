@@ -79,7 +79,7 @@ public class EvaluacionTest {
     public void testSetEstrellas() {
         System.out.println("setEstrellas");
         int lasEstrellas = 0;
-        Evaluacion instance = new Evaluacion();
+        Evaluacion instance = new Evaluacion(new Cliente(), 0, "");
         instance.setEstrellas(lasEstrellas);
     }
 

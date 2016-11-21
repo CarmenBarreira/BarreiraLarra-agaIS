@@ -72,10 +72,7 @@ public class Sistema extends Observable implements Serializable {
             s.close();
         } catch (FileNotFoundException e) {
             System.out.println("1G-" + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("2G-"
-                    + "-" + e.getMessage());
-        }
+        } 
     }
 
     public Sistema persistirLeer() throws IOException, ClassNotFoundException {
@@ -89,16 +86,14 @@ public class Sistema extends Observable implements Serializable {
             ss.close();
         } catch (FileNotFoundException e) {
             System.out.println("1L-" + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("2L-" + e.getMessage());
-        }
+        } 
         return sisRetorno;
     }
 
     public ArrayList<Cliente> sortear() {
         /*Esta funcion realiza el sorte, y devuelve una lista con los ganadores 
         del mismo.*/
-        ArrayList<Cliente> ganadoresDeSorteo = new ArrayList<>();
+        ArrayList<Cliente> ganadoresDeSorteo = new ArrayList<Cliente>();
         int contador = 0;
 
         while (contador < sorteoActual.getCantidadPremios() && contador <= sorteoActual.getParticipantes().size()) {

@@ -35,7 +35,7 @@ public class SistemaTest {
     public void testGetRestaurante() {
         System.out.println("getRestaurante");
         Sistema instance = new Sistema();
-        Restaurante expResult = new Sistema().getRestaurante();
+        Restaurante expResult = instance.getRestaurante();
         Restaurante result = instance.getRestaurante();
         assertEquals(expResult, result);
     }
@@ -141,12 +141,18 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.persistirGuardar(sis);
     }
-
+    @Test
+    public void testPersistirGuardar1() throws Exception {
+        System.out.println("persistirGuardar");
+        Sistema sis = new Sistema();
+        Sistema instance = new Sistema();
+        instance.persistirGuardar(sis);
+    }
     @Test
     public void testPersistirLeer() throws Exception {
         System.out.println("persistirLeer");
         Sistema instance = new Sistema();
-        Sistema expResult = new Sistema().persistirLeer();
+        Sistema expResult = instance.persistirLeer();
         Sistema result = instance.persistirLeer();
         assertEquals(expResult, result);
     }
@@ -155,7 +161,7 @@ public class SistemaTest {
     public void testSortear() {
         System.out.println("sortear");
         Sistema instance = new Sistema();        
-        ArrayList<Cliente> expResult = new Sistema().sortear();
+        ArrayList<Cliente> expResult = new ArrayList<>();
         ArrayList<Cliente> result = instance.sortear();
         assertEquals(expResult, result);
     }    
