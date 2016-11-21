@@ -137,11 +137,11 @@ public class Sistema extends Observable implements Serializable {
 
     public ArrayList&lt;Cliente&gt; getParticipantesSorteo() {
         /*Retorna la lista de participantes del mismo*/
-<span class="fc" id="L140">        ArrayList&lt;Cliente&gt; participantes = new ArrayList&lt;&gt;();</span>
-<span class="pc bpc" id="L141" title="1 of 2 branches missed.">        for (int i = 0; i &lt; this.getEvaluaciones().size(); i++) {</span>
-<span class="nc" id="L142">            Evaluacion aux = getEvaluaciones().get(i);</span>
-<span class="nc bnc" id="L143" title="All 4 branches missed.">            if (!aux.getResenia().isEmpty() &amp;&amp; !aux.getCliente().getNombreCliente().isEmpty()) {</span>
-<span class="nc" id="L144">                participantes.add(aux.getCliente());</span>
+<span class="fc" id="L140">        ArrayList&lt;Cliente&gt; participantes = new ArrayList&lt;Cliente&gt;();</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">        for (int i = 0; i &lt; this.getEvaluaciones().size(); i++) {</span>
+<span class="fc" id="L142">            Evaluacion aux = getEvaluaciones().get(i);</span>
+<span class="pc bpc" id="L143" title="2 of 4 branches missed.">            if (!aux.getResenia().isEmpty() &amp;&amp; !aux.getCliente().getNombreCliente().isEmpty()) {</span>
+<span class="fc" id="L144">                participantes.add(aux.getCliente());</span>
             }
         }
 <span class="fc" id="L147">        return participantes;</span>

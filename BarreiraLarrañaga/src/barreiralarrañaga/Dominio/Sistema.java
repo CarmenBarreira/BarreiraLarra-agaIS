@@ -137,7 +137,7 @@ public class Sistema extends Observable implements Serializable {
 
     public ArrayList<Cliente> getParticipantesSorteo() {
         /*Retorna la lista de participantes del mismo*/
-        ArrayList<Cliente> participantes = new ArrayList<>();
+        ArrayList<Cliente> participantes = new ArrayList<Cliente>();
         for (int i = 0; i < this.getEvaluaciones().size(); i++) {
             Evaluacion aux = getEvaluaciones().get(i);
             if (!aux.getResenia().isEmpty() && !aux.getCliente().getNombreCliente().isEmpty()) {

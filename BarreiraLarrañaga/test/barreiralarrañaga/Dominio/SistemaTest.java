@@ -95,7 +95,11 @@ public class SistemaTest {
     public void testGetParticipantesSorteo1() {
         System.out.println("getParticipantesSorteo");
         Sistema instance = new Sistema();
-        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
+        ArrayList<Evaluacion> evaluaciones= new ArrayList<Evaluacion>();
+        evaluaciones.add(new Evaluacion());
+        evaluaciones.add(new Evaluacion());
+        instance.setEvaluaciones(evaluaciones);
+        ArrayList<Cliente> expResult = instance.getParticipantesSorteo();
         ArrayList<Cliente> result = instance.getParticipantesSorteo();
         assertEquals(expResult, result);
     }
@@ -161,10 +165,24 @@ public class SistemaTest {
     public void testSortear() {
         System.out.println("sortear");
         Sistema instance = new Sistema();        
-        ArrayList<Cliente> expResult = new ArrayList<>();
+        ArrayList<Cliente> expResult = new ArrayList<Cliente>();
         ArrayList<Cliente> result = instance.sortear();
         assertEquals(expResult, result);
     }    
+    @Test
+    public void testSortear1() {
+        System.out.println("sortear");
+        Sistema instance = new Sistema(); 
+        ArrayList<Cliente> participantes = new ArrayList<Cliente>();
+        participantes.add(new Cliente());
+        participantes.add(new Cliente());
+        instance.getSorteoActual().setParticipantes(participantes);
+       // instance.getSorteoActual().setCantidadPremios(1);
+        ArrayList<Cliente> expResult = instance.sortear();
+        ArrayList<Cliente> result = instance.sortear();
+        assertEquals(expResult, result);
+    } 
+    
     
     @Test
     public void testGetPromedioEval() {
