@@ -34,203 +34,204 @@ public class EditarRestaurante extends javax.swing.JFrame {
 <span class="nc" id="L34">        txtHorariosHasta = new JFormattedTextField();</span>
 
 <span class="nc" id="L36">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
-<span class="nc" id="L37">        setTitle(&quot;Nuevo Restaurante&quot;);</span>
-<span class="nc" id="L38">        setAutoRequestFocus(false);</span>
+<span class="nc" id="L37">        setTitle(&quot;Editar Datos Restaurante&quot;);</span>
+<span class="nc" id="L38">        setAlwaysOnTop(true);</span>
+<span class="nc" id="L39">        setAutoRequestFocus(false);</span>
 
-<span class="nc" id="L40">        lblDireccionR.setText(&quot;Dirección: &quot;);</span>
+<span class="nc" id="L41">        lblDireccionR.setText(&quot;Dirección: &quot;);</span>
 
-<span class="nc" id="L42">        txtNombreR.setPreferredSize(new java.awt.Dimension(4, 20));</span>
+<span class="nc" id="L43">        txtNombreR.setPreferredSize(new java.awt.Dimension(4, 20));</span>
 
-<span class="nc" id="L44">        lblNombreR.setText(&quot;Nombre: &quot;);</span>
+<span class="nc" id="L45">        lblNombreR.setText(&quot;Nombre: &quot;);</span>
 
-<span class="nc" id="L46">        lblTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 24)); // NOI18N</span>
-<span class="nc" id="L47">        lblTitulo.setText(&quot;Editar datos&quot;);</span>
+<span class="nc" id="L47">        lblTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 24)); // NOI18N</span>
+<span class="nc" id="L48">        lblTitulo.setText(&quot;Editar datos&quot;);</span>
 
-<span class="nc" id="L49">        btnGuardarEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/save_16.png&quot;))); // NOI18N</span>
-<span class="nc" id="L50">        btnGuardarEditarRestaurante.setText(&quot;Guardar &quot;);</span>
-<span class="nc" id="L51">        btnGuardarEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L50">        btnGuardarEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/save_16.png&quot;))); // NOI18N</span>
+<span class="nc" id="L51">        btnGuardarEditarRestaurante.setText(&quot;Guardar &quot;);</span>
+<span class="nc" id="L52">        btnGuardarEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L53">                btnGuardarEditarRestauranteActionPerformed(evt);</span>
-<span class="nc" id="L54">            }</span>
+<span class="nc" id="L54">                btnGuardarEditarRestauranteActionPerformed(evt);</span>
+<span class="nc" id="L55">            }</span>
         });
 
-<span class="nc" id="L57">        txtDireccion.setPreferredSize(new java.awt.Dimension(4, 20));</span>
+<span class="nc" id="L58">        txtDireccion.setPreferredSize(new java.awt.Dimension(4, 20));</span>
 
-<span class="nc" id="L59">        lblDireccionR1.setText(&quot;Horarios: &quot;);</span>
+<span class="nc" id="L60">        lblDireccionR1.setText(&quot;Horarios: &quot;);</span>
 
-<span class="nc" id="L61">        lblDireccionR2.setText(&quot;Tipo/s de comida/s: &quot;);</span>
+<span class="nc" id="L62">        lblDireccionR2.setText(&quot;Tipo/s de comida/s: &quot;);</span>
 
-<span class="nc" id="L63">        txtTipoComida.setPreferredSize(new java.awt.Dimension(4, 20));</span>
+<span class="nc" id="L64">        txtTipoComida.setPreferredSize(new java.awt.Dimension(4, 20));</span>
 
-<span class="nc" id="L65">        lblFoto.setFont(lblFoto.getFont());</span>
-<span class="nc" id="L66">        lblFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L67">        lblFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg&quot;))); // NOI18N</span>
-<span class="nc" id="L68">        lblFoto.setIconTextGap(6);</span>
-<span class="nc" id="L69">        lblFoto.setMaximumSize(new java.awt.Dimension(434, 150));</span>
-<span class="nc" id="L70">        lblFoto.setMinimumSize(new java.awt.Dimension(434, 150));</span>
-<span class="nc" id="L71">        lblFoto.setPreferredSize(new java.awt.Dimension(434, 150));</span>
-<span class="nc" id="L72">        lblFoto.setVerifyInputWhenFocusTarget(false);</span>
+<span class="nc" id="L66">        lblFoto.setFont(lblFoto.getFont());</span>
+<span class="nc" id="L67">        lblFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L68">        lblFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg&quot;))); // NOI18N</span>
+<span class="nc" id="L69">        lblFoto.setIconTextGap(6);</span>
+<span class="nc" id="L70">        lblFoto.setMaximumSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L71">        lblFoto.setMinimumSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L72">        lblFoto.setPreferredSize(new java.awt.Dimension(434, 150));</span>
+<span class="nc" id="L73">        lblFoto.setVerifyInputWhenFocusTarget(false);</span>
 
-<span class="nc" id="L74">        txtHorariosDe.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));</span>
-<span class="nc" id="L75">        txtHorariosDe.setToolTipText(&quot;hh:mm&quot;);</span>
+<span class="nc" id="L75">        txtHorariosDe.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));</span>
+<span class="nc" id="L76">        txtHorariosDe.setToolTipText(&quot;hh:mm&quot;);</span>
 
-<span class="nc" id="L77">        lblDe.setText(&quot;De: &quot;);</span>
+<span class="nc" id="L78">        lblDe.setText(&quot;De: &quot;);</span>
 
-<span class="nc" id="L79">        cmbHorariosDe.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Lunes&quot;, &quot;Martes&quot;, &quot;Miercoles&quot;, &quot;Jueves&quot;, &quot;Viernes&quot;, &quot;Sabado&quot;, &quot;Domingo&quot; }));</span>
+<span class="nc" id="L80">        cmbHorariosDe.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Lunes&quot;, &quot;Martes&quot;, &quot;Miercoles&quot;, &quot;Jueves&quot;, &quot;Viernes&quot;, &quot;Sabado&quot;, &quot;Domingo&quot; }));</span>
 
-<span class="nc" id="L81">        lblHorarioHasta.setText(&quot;Hasta: &quot;);</span>
+<span class="nc" id="L82">        lblHorarioHasta.setText(&quot;Hasta: &quot;);</span>
 
-<span class="nc" id="L83">        cmbHorariosHasta.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Lunes&quot;, &quot;Martes&quot;, &quot;Miercoles&quot;, &quot;Jueves&quot;, &quot;Viernes&quot;, &quot;Sabado&quot;, &quot;Domingo&quot; }));</span>
+<span class="nc" id="L84">        cmbHorariosHasta.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Lunes&quot;, &quot;Martes&quot;, &quot;Miercoles&quot;, &quot;Jueves&quot;, &quot;Viernes&quot;, &quot;Sabado&quot;, &quot;Domingo&quot; }));</span>
 
-<span class="nc" id="L85">        txtHorariosHasta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));</span>
-<span class="nc" id="L86">        txtHorariosHasta.setToolTipText(&quot;hh:mm&quot;);</span>
+<span class="nc" id="L86">        txtHorariosHasta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));</span>
+<span class="nc" id="L87">        txtHorariosHasta.setToolTipText(&quot;hh:mm&quot;);</span>
 
-<span class="nc" id="L88">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L89">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L90">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L91">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L92">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L93">                .addGap(17, 17, 17)</span>
-<span class="nc" id="L94">                .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L95">                .addGap(26, 26, 26)</span>
-<span class="nc" id="L96">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L97">                    .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L98">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
-<span class="nc" id="L99">                        .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L100">                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L101">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L102">                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L103">                        .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L104">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L105">                                .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L106">                                .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L107">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L108">                                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L109">                                    .addGap(66, 66, 66)</span>
-<span class="nc" id="L110">                                    .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L111">                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L112">                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L113">                                    .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L114">                        .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L115">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L116">                                .addComponent(lblDe)</span>
-<span class="nc" id="L117">                                .addComponent(lblHorarioHasta))</span>
-<span class="nc" id="L118">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L119">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L120">                                .addComponent(cmbHorariosHasta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L121">                                .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L122">                            .addGap(18, 18, 18)</span>
-<span class="nc" id="L123">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L124">                                .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L125">                                .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))</span>
-<span class="nc" id="L126">                .addGap(0, 61, Short.MAX_VALUE))</span>
-<span class="nc" id="L127">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L128">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L129">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L130">                        .addGap(201, 201, 201)</span>
-<span class="nc" id="L131">                        .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L132">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L133">                        .addGap(259, 259, 259)</span>
-<span class="nc" id="L134">                        .addComponent(lblTitulo)))</span>
-<span class="nc" id="L135">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L89">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L90">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L91">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L92">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L93">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L94">                .addGap(17, 17, 17)</span>
+<span class="nc" id="L95">                .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L96">                .addGap(26, 26, 26)</span>
+<span class="nc" id="L97">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L98">                    .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L99">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L100">                        .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L101">                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L102">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L103">                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L104">                        .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L105">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L106">                                .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L107">                                .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L108">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L109">                                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L110">                                    .addGap(66, 66, 66)</span>
+<span class="nc" id="L111">                                    .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L112">                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L113">                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L114">                                    .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L115">                        .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L116">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L117">                                .addComponent(lblDe)</span>
+<span class="nc" id="L118">                                .addComponent(lblHorarioHasta))</span>
+<span class="nc" id="L119">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L120">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L121">                                .addComponent(cmbHorariosHasta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L122">                                .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L123">                            .addGap(18, 18, 18)</span>
+<span class="nc" id="L124">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L125">                                .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L126">                                .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))</span>
+<span class="nc" id="L127">                .addGap(0, 61, Short.MAX_VALUE))</span>
+<span class="nc" id="L128">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L129">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L130">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L131">                        .addGap(259, 259, 259)</span>
+<span class="nc" id="L132">                        .addComponent(lblTitulo))</span>
+<span class="nc" id="L133">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L134">                        .addGap(201, 201, 201)</span>
+<span class="nc" id="L135">                        .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L136">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
         );
-<span class="nc" id="L137">        layout.setVerticalGroup(</span>
-<span class="nc" id="L138">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L139">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L140">                .addContainerGap()</span>
-<span class="nc" id="L141">                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L142">                .addGap(15, 15, 15)</span>
-<span class="nc" id="L143">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L144">                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L145">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L146">                        .addGap(9, 9, 9)</span>
-<span class="nc" id="L147">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L148">                            .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L149">                            .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L150">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L151">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L152">                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L153">                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L154">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L155">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L156">                            .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L157">                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L158">                        .addGap(8, 8, 8)</span>
-<span class="nc" id="L159">                        .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L160">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L161">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L162">                            .addComponent(lblDe)</span>
-<span class="nc" id="L163">                            .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L164">                            .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L165">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L166">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L167">                            .addComponent(cmbHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L168">                            .addComponent(lblHorarioHasta)</span>
-<span class="nc" id="L169">                            .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L170">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L171">                .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L172">                .addGap(23, 23, 23))</span>
+<span class="nc" id="L138">        layout.setVerticalGroup(</span>
+<span class="nc" id="L139">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L140">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L141">                .addContainerGap()</span>
+<span class="nc" id="L142">                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L143">                .addGap(15, 15, 15)</span>
+<span class="nc" id="L144">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L146">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L147">                        .addGap(9, 9, 9)</span>
+<span class="nc" id="L148">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L149">                            .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L150">                            .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L151">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L152">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L153">                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L154">                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L155">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L156">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L157">                            .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L158">                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L159">                        .addGap(8, 8, 8)</span>
+<span class="nc" id="L160">                        .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L161">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L162">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L163">                            .addComponent(lblDe)</span>
+<span class="nc" id="L164">                            .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L165">                            .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L166">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L167">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L168">                            .addComponent(cmbHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L169">                            .addComponent(lblHorarioHasta)</span>
+<span class="nc" id="L170">                            .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L171">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L172">                .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L173">                .addContainerGap())</span>
         );
 
-<span class="nc" id="L175">        pack();</span>
-<span class="nc" id="L176">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L176">        pack();</span>
+<span class="nc" id="L177">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnGuardarEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEditarRestauranteActionPerformed
         String nombre, direccion, tipoComida;
-<span class="nc" id="L180">        nombre = txtNombreR.getText();</span>
-<span class="nc" id="L181">        direccion = txtDireccion.getText();</span>
-<span class="nc" id="L182">        tipoComida = txtTipoComida.getText();</span>
+<span class="nc" id="L181">        nombre = txtNombreR.getText();</span>
+<span class="nc" id="L182">        direccion = txtDireccion.getText();</span>
+<span class="nc" id="L183">        tipoComida = txtTipoComida.getText();</span>
         //Armo el string de horarios en base a los combos de dias y los horarios
-<span class="nc" id="L184">        String horarios = &quot;De &quot; + cmbHorariosDe.getSelectedItem().toString()</span>
-<span class="nc" id="L185">                + &quot; a &quot; + cmbHorariosHasta.getSelectedItem().toString() + &quot; - &quot;</span>
-<span class="nc" id="L186">                + txtHorariosDe.getText() + &quot; a &quot; + txtHorariosDe.getText();</span>
+<span class="nc" id="L185">        String horarios = &quot;De &quot; + cmbHorariosDe.getSelectedItem().toString()</span>
+<span class="nc" id="L186">                + &quot; a &quot; + cmbHorariosHasta.getSelectedItem().toString() + &quot; - &quot;</span>
+<span class="nc" id="L187">                + txtHorariosDe.getText() + &quot; a &quot; + txtHorariosDe.getText();</span>
 
-<span class="nc bnc" id="L188" title="All 6 branches missed.">        if (nombre.length() == 0 || direccion.length() == 0 || tipoComida.length() == 0</span>
-<span class="nc bnc" id="L189" title="All 4 branches missed.">                || txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {</span>
+<span class="nc bnc" id="L189" title="All 6 branches missed.">        if (nombre.length() == 0 || direccion.length() == 0 || tipoComida.length() == 0</span>
+<span class="nc bnc" id="L190" title="All 4 branches missed.">                || txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {</span>
             //si algun dato esta vacio
-<span class="nc" id="L191">            JOptionPane.showMessageDialog(this, &quot;Debe completar todos los datos&quot;,</span>
+<span class="nc" id="L192">            JOptionPane.showMessageDialog(this, &quot;Debe completar todos los datos&quot;,</span>
                     &quot;Campos Obligatorios&quot;, ERROR_MESSAGE);
         } 
         else{ 
-<span class="nc bnc" id="L195" title="All 2 branches missed.">            if (!stringCorrecto(nombre, &quot;nombre&quot;)) { //nombre incorrecto</span>
-<span class="nc" id="L196">                JOptionPane.showMessageDialog(this, &quot;El nombre es Incorrecto &quot;</span>
+<span class="nc bnc" id="L196" title="All 2 branches missed.">            if (!stringCorrecto(nombre, &quot;nombre&quot;)) { //nombre incorrecto</span>
+<span class="nc" id="L197">                JOptionPane.showMessageDialog(this, &quot;El nombre es Incorrecto &quot;</span>
                         + &quot;(el mismo no puede ser vacio ni mayor a 30 caracteres)&quot;,
                         &quot;Nombre Incorrecto&quot;, ERROR_MESSAGE);
-<span class="nc" id="L199">                txtNombreR.selectAll();</span>
-<span class="nc" id="L200">                txtNombreR.requestFocusInWindow();</span>
+<span class="nc" id="L200">                txtNombreR.selectAll();</span>
+<span class="nc" id="L201">                txtNombreR.requestFocusInWindow();</span>
             } 
             else{//nombre correcto
-<span class="nc bnc" id="L203" title="All 2 branches missed.">                if (!stringCorrecto(direccion, &quot;direccion&quot;)) { //direccion incorrecta</span>
-<span class="nc" id="L204">                    JOptionPane.showMessageDialog(this, &quot;La direccion es Incorrecto&quot;,</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">                if (!stringCorrecto(direccion, &quot;direccion&quot;)) { //direccion incorrecta</span>
+<span class="nc" id="L205">                    JOptionPane.showMessageDialog(this, &quot;La direccion es Incorrecto&quot;,</span>
                             &quot;Direccion Incorrecta&quot;, ERROR_MESSAGE);
-<span class="nc" id="L206">                    txtDireccion.selectAll();</span>
-<span class="nc" id="L207">                    txtDireccion.requestFocusInWindow();</span>
-<span class="nc bnc" id="L208" title="All 2 branches missed.">                } else if (!stringCorrecto(tipoComida, &quot;tipoComida&quot;)) { //tipo comida incorrecta</span>
-<span class="nc" id="L209">                    JOptionPane.showMessageDialog(this, &quot;El tipo de comida es &quot;</span>
+<span class="nc" id="L207">                    txtDireccion.selectAll();</span>
+<span class="nc" id="L208">                    txtDireccion.requestFocusInWindow();</span>
+<span class="nc bnc" id="L209" title="All 2 branches missed.">                } else if (!stringCorrecto(tipoComida, &quot;tipoComida&quot;)) { //tipo comida incorrecta</span>
+<span class="nc" id="L210">                    JOptionPane.showMessageDialog(this, &quot;El tipo de comida es &quot;</span>
                             + &quot;Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)&quot;,
                             &quot;Nombre Incorrecto&quot;, ERROR_MESSAGE);
-<span class="nc" id="L212">                    txtTipoComida.selectAll();</span>
-<span class="nc" id="L213">                    txtTipoComida.requestFocusInWindow();</span>
-<span class="nc bnc" id="L214" title="All 4 branches missed.">                } else if (txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {</span>
-<span class="nc" id="L215">                    JOptionPane.showMessageDialog(this, &quot;El formato de hora es hh:mm&quot;</span>
+<span class="nc" id="L213">                    txtTipoComida.selectAll();</span>
+<span class="nc" id="L214">                    txtTipoComida.requestFocusInWindow();</span>
+<span class="nc bnc" id="L215" title="All 4 branches missed.">                } else if (txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {</span>
+<span class="nc" id="L216">                    JOptionPane.showMessageDialog(this, &quot;El formato de hora es hh:mm&quot;</span>
                             + &quot;(siendo hh la hora y mm los minutos)&quot;,
                             &quot;Horario Incorrecto&quot;, ERROR_MESSAGE);
                 } else {//todos los datos bien
-<span class="nc" id="L219">                    sis.getRestaurante().setNombre(nombre);</span>
-<span class="nc" id="L220">                    sis.getRestaurante().setDireccion(direccion);</span>
-<span class="nc" id="L221">                    sis.getRestaurante().setHorarios(horarios);</span>
-<span class="nc" id="L222">                    sis.getRestaurante().setTiposComida(tipoComida);</span>
+<span class="nc" id="L220">                    sis.getRestaurante().setNombre(nombre);</span>
+<span class="nc" id="L221">                    sis.getRestaurante().setDireccion(direccion);</span>
+<span class="nc" id="L222">                    sis.getRestaurante().setHorarios(horarios);</span>
+<span class="nc" id="L223">                    sis.getRestaurante().setTiposComida(tipoComida);</span>
 
-<span class="nc" id="L224">                    JOptionPane.showMessageDialog(null, &quot;Se edito exitosamente el restaurante&quot;,</span>
+<span class="nc" id="L225">                    JOptionPane.showMessageDialog(null, &quot;Se edito exitosamente el restaurante&quot;,</span>
                             &quot;Modifcación exitosa&quot;, JOptionPane.INFORMATION_MESSAGE);
-<span class="nc" id="L226">                    this.dispose();</span>
+<span class="nc" id="L227">                    this.dispose();</span>
                    // PanelRestaurantes.
                 }
             }//Else de nombre correcto
         }
-<span class="nc" id="L231">    }//GEN-LAST:event_btnGuardarEditarRestauranteActionPerformed</span>
+<span class="nc" id="L232">    }//GEN-LAST:event_btnGuardarEditarRestauranteActionPerformed</span>
 
-<span class="nc" id="L233">    Sistema sis = new Sistema();</span>
+<span class="nc" id="L234">    Sistema sis = new Sistema();</span>
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarEditarRestaurante;
     private javax.swing.JComboBox&lt;String&gt; cmbHorariosDe;
@@ -253,23 +254,23 @@ public class EditarRestaurante extends javax.swing.JFrame {
 public boolean stringCorrecto(String s, String tipo) {
         /*Esta funcion valida si el string que se pasa por parametro segun el tipo
         es o no valido. Y retorna un booleano segun sea o no valido*/
-<span class="nc" id="L256">        boolean esCorrecto = false;</span>
-<span class="nc" id="L257">        boolean espaciosVacios = false;</span>
-<span class="nc bnc" id="L258" title="All 2 branches missed.">        if (!s.isEmpty()) {</span>
-<span class="nc bnc" id="L259" title="All 4 branches missed.">            if (s.charAt(0) == ' ' || s.isEmpty()) {</span>
-<span class="nc" id="L260">                espaciosVacios = true;</span>
+<span class="nc" id="L257">        boolean esCorrecto = false;</span>
+<span class="nc" id="L258">        boolean espaciosVacios = false;</span>
+<span class="nc bnc" id="L259" title="All 2 branches missed.">        if (!s.isEmpty()) {</span>
+<span class="nc bnc" id="L260" title="All 4 branches missed.">            if (s.charAt(0) == ' ' || s.isEmpty()) {</span>
+<span class="nc" id="L261">                espaciosVacios = true;</span>
             }
-<span class="nc bnc" id="L262" title="All 4 branches missed.">            if (s.equals(&quot;&quot;) || espaciosVacios) {</span>
+<span class="nc bnc" id="L263" title="All 4 branches missed.">            if (s.equals(&quot;&quot;) || espaciosVacios) {</span>
                 //el string esta vacio o empieza con espacio
-<span class="nc bnc" id="L264" title="All 2 branches missed.">                if (tipo.toUpperCase().equals(&quot;nombre&quot;.toUpperCase())</span>
-<span class="nc bnc" id="L265" title="All 2 branches missed.">                        || (tipo.toUpperCase().equals(&quot;alias&quot;.toUpperCase()))) {</span>
-<span class="nc" id="L266">                    esCorrecto = false;</span>
+<span class="nc bnc" id="L265" title="All 2 branches missed.">                if (tipo.toUpperCase().equals(&quot;nombre&quot;.toUpperCase())</span>
+<span class="nc bnc" id="L266" title="All 2 branches missed.">                        || (tipo.toUpperCase().equals(&quot;alias&quot;.toUpperCase()))) {</span>
+<span class="nc" id="L267">                    esCorrecto = false;</span>
                 }
             } else {
-<span class="nc" id="L269">                esCorrecto = true;</span>
+<span class="nc" id="L270">                esCorrecto = true;</span>
             }
         }
-<span class="nc" id="L272">        return esCorrecto;</span>
+<span class="nc" id="L273">        return esCorrecto;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
