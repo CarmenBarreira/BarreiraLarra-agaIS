@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Sorteo implements Serializable {
+
     //Atributos
     private ArrayList<Cliente> ganadores;
     private String premio;
@@ -82,7 +83,7 @@ public class Sorteo implements Serializable {
     public Date getFecha() {
         return this.fecha;
     }
-    
+
     public void setFecha(Date laFecha) {
         this.fecha = laFecha;
     }

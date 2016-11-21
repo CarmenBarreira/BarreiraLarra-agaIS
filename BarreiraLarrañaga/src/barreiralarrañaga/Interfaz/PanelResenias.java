@@ -48,7 +48,6 @@ public class PanelResenias extends javax.swing.JPanel {
         btnStarFive.setBorderPainted(false);
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -321,7 +320,7 @@ public class PanelResenias extends javax.swing.JPanel {
         String nombre, email, resenia;
         nombre = txtNombreCliente.getText();
         email = txtCorreoCliente.getText();
-        resenia = txtResenia.getText();       
+        resenia = txtResenia.getText();
 
         if (validaEmail(email) == false && email.length() != 0) {
             JOptionPane.showMessageDialog(this, "El correo ingresado es Incorrecto", "Email Incorrecto", ERROR_MESSAGE);
@@ -329,7 +328,7 @@ public class PanelResenias extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Califique con al menos una estrella", "Calificación incompleta", ERROR_MESSAGE);
         } else {
             Evaluacion evaluacion;// = new Evaluacion(clie, WIDTH, resenia)
-            
+
             Cliente c;
             if (nombre.length() != 0 && email.length() != 0) {
                 c = new Cliente(nombre, email);
@@ -339,7 +338,7 @@ public class PanelResenias extends javax.swing.JPanel {
             evaluacion = new Evaluacion(c, cantEstrellas, resenia);
             unSis.getEvaluaciones().add(evaluacion);
             JOptionPane.showMessageDialog(null, "Gracias por la votación! Es muy importante para nosotros su opinión!",
-                    "Evaluación ingresada exitosamente", JOptionPane.INFORMATION_MESSAGE);            
+                    "Evaluación ingresada exitosamente", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
@@ -390,14 +389,13 @@ public class PanelResenias extends javax.swing.JPanel {
     //Caracteres aceptados en direccion de email
     private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-    
-    
+
     public static boolean validaEmail(String email) {
-       /*Esta funcion valida si el mail pasado por paramentro cumple el formato de mail*/
+        /*Esta funcion valida si el mail pasado por paramentro cumple el formato de mail*/
         Pattern pattern = Pattern.compile(PATTERN_EMAIL);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
-    }    
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

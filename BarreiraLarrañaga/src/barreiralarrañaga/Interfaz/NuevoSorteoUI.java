@@ -108,12 +108,12 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
             if (valueSpinner > 0) {
                 if (!txtDescripcionPremio.getText().isEmpty()) {
                     if (sis.getSorteoActual() != null) {
-                        resp = JOptionPane.showConfirmDialog(this, 
-                            "Esta seguro que quiere sobreescribir el sorteo actual?", 
-                            "Sorteo en marcha", JOptionPane.YES_NO_OPTION);
+                        resp = JOptionPane.showConfirmDialog(this,
+                                "Esta seguro que quiere sobreescribir el sorteo actual?",
+                                "Sorteo en marcha", JOptionPane.YES_NO_OPTION);
                     }
                     if (resp == 0) {
-                        Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(), 
+                        Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(),
                                 txtDescripcionPremio.getText(), valueSpinner);
                         sis.setSorteoActual(sorteoActual);
                         this.dispose();
@@ -122,20 +122,20 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                     }
 
                 } else {
-                    JOptionPane.showMessageDialog(this, "Ingrese una descripcion para el premio", 
+                    JOptionPane.showMessageDialog(this, "Ingrese una descripcion para el premio",
                             "Premio Invalido", JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
-                JOptionPane.showMessageDialog(this, "Se necesita al menos un ganador", 
+                JOptionPane.showMessageDialog(this, "Se necesita al menos un ganador",
                         "Cantidad de ganadores invalida", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un nombre para el sorteo", 
+            JOptionPane.showMessageDialog(this, "Ingrese un nombre para el sorteo",
                     "Nombre Invalido", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCrearActionPerformed
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LblNuevoSorteo;
     private javax.swing.JButton btnCrear;

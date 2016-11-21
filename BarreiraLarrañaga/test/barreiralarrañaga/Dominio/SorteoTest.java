@@ -11,9 +11,9 @@ import static org.junit.Assert.*;
 
 public class SorteoTest {
     
-    private Cliente[] ganadores;
-    private String premio;
-    private int cantidadPremios;
+    private final Cliente[] ganadores;
+    private final String premio;
+    private final int cantidadPremios;
     private ArrayList<Cliente> participantes;
     
     public SorteoTest() {

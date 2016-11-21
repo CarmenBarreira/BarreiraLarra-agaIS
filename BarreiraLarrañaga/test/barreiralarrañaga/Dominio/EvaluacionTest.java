@@ -11,9 +11,9 @@ import static org.junit.Assert.*;
 public class EvaluacionTest {
     
     //Atributos
-    private Cliente cliente;
-    private String resenia;
-    private int estrellas;
+    private final Cliente cliente;
+    private final String resenia;
+    private final int estrellas;
     private Date fechaEvaluacion;
     
     public EvaluacionTest() {

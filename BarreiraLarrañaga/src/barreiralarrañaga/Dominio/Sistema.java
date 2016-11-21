@@ -29,7 +29,6 @@ public class Sistema extends Observable implements Serializable {
     }
 
     //get's y set's
-    
     public Restaurante getRestaurante() {
         return this.restaurante;
     }
@@ -37,7 +36,7 @@ public class Sistema extends Observable implements Serializable {
     public ArrayList<Evaluacion> getEvaluaciones() {
         return this.evaluaciones;
     }
-    
+
     public void setRestaurante(Restaurante miRestaurante) {
         this.restaurante = miRestaurante;
     }
@@ -45,15 +44,15 @@ public class Sistema extends Observable implements Serializable {
     public void setEvaluaciones(ArrayList<Evaluacion> lasEvaluaciones) {
         this.evaluaciones = lasEvaluaciones;
     }
-    
+
     public void setSorteos(ArrayList<Sorteo> losSorteos) {
         this.sorteos = losSorteos;
     }
-    
+
     public ArrayList<Sorteo> getSorteos() {
         return this.sorteos;
     }
-    
+
     public Sorteo getSorteoActual() {
         return this.sorteoActual;
     }
@@ -61,7 +60,7 @@ public class Sistema extends Observable implements Serializable {
     public void setSorteoActual(Sorteo elSorteoActual) {
         this.sorteoActual = elSorteoActual;
     }
-    
+
     public void persistirGuardar(Sistema sis) throws IOException {
         //Esta funcion persiste los datos
         FileOutputStream f = new FileOutputStream("archivo");
@@ -72,7 +71,7 @@ public class Sistema extends Observable implements Serializable {
             s.close();
         } catch (FileNotFoundException e) {
             System.out.println("1G-" + e.getMessage());
-        } 
+        }
     }
 
     public Sistema persistirLeer() throws IOException, ClassNotFoundException {
@@ -86,7 +85,7 @@ public class Sistema extends Observable implements Serializable {
             ss.close();
         } catch (FileNotFoundException e) {
             System.out.println("1L-" + e.getMessage());
-        } 
+        }
         return sisRetorno;
     }
 
@@ -145,6 +144,6 @@ public class Sistema extends Observable implements Serializable {
             }
         }
         return participantes;
-    }  
+    }
 
 }

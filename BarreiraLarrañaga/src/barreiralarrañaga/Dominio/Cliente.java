@@ -2,7 +2,7 @@ package barreiralarrañaga.Dominio;
 
 import java.io.Serializable;
 
-public class Cliente  implements Serializable{
+public class Cliente implements Serializable {
 
     //atributos
     private String nombreCliente;
@@ -27,7 +27,7 @@ public class Cliente  implements Serializable{
     public String getEmailCliente() {
         return this.emailCliente;
     }
-    
+
     public void setNombreCliente(String elNombreCliente) {
         this.nombreCliente = elNombreCliente;
     }

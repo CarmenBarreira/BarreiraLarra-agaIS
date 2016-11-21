@@ -1,25 +1,14 @@
 package barreiralarrañaga.Interfaz;
 
-import barreiralarrañaga.Dominio.Cliente;
 import barreiralarrañaga.Dominio.Sistema;
 import barreiralarrañaga.Dominio.Sorteo;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 
 public class PanelSorteo extends javax.swing.JPanel {
 
     Sistema unSis;
 
-    
     public PanelSorteo(Sistema sis) {
 
         initComponents();
@@ -148,7 +137,7 @@ public class PanelSorteo extends javax.swing.JPanel {
     private void btnNuevoSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoSorteoActionPerformed
         NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis);
         nuevoSorteo.setVisible(true);
-        
+
     }//GEN-LAST:event_btnNuevoSorteoActionPerformed
 
     private void btnSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortearActionPerformed
@@ -185,7 +174,7 @@ public class PanelSorteo extends javax.swing.JPanel {
             modelo.removeRow(0);
         }
     }
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNuevoSorteo;
     private javax.swing.JButton btnSortear;

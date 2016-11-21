@@ -8,10 +8,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RestauranteTest {
-    private String nombre;
-    private String direccion;
+    private final String nombre;
+    private final String direccion;
     String tiposComida;
-    private String horarios;
+    private final String horarios;
     
     
     public RestauranteTest() {

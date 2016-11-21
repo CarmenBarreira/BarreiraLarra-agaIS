@@ -3,7 +3,6 @@ package barreiralarrañaga.Interfaz;
 import barreiralarrañaga.Dominio.Sistema;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import javax.swing.border.Border;
 
 public class InicioUI extends javax.swing.JFrame {
@@ -34,13 +33,13 @@ public class InicioUI extends javax.swing.JFrame {
                     elSis.persistirGuardar(elSis);
                     System.out.println("Guardado con Exito!");
                 } catch (IOException ex) {
-                
+
                 }
             }
         });
     }
 
-     @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -68,6 +67,7 @@ public class InicioUI extends javax.swing.JFrame {
         restauranteBtn.setMaximumSize(new java.awt.Dimension(180, 120));
         restauranteBtn.setMinimumSize(new java.awt.Dimension(180, 120));
         restauranteBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        restauranteBtn.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconoRestaurantPressed.png"))); // NOI18N
         restauranteBtn.setRequestFocusEnabled(false);
         restauranteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +87,7 @@ public class InicioUI extends javax.swing.JFrame {
         reseniaBtn.setMaximumSize(new java.awt.Dimension(180, 120));
         reseniaBtn.setMinimumSize(new java.awt.Dimension(180, 120));
         reseniaBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        reseniaBtn.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconoReseniaPressed.png"))); // NOI18N
         reseniaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reseniaBtnActionPerformed(evt);
@@ -105,6 +106,7 @@ public class InicioUI extends javax.swing.JFrame {
         sorteoBtn.setMaximumSize(new java.awt.Dimension(180, 120));
         sorteoBtn.setMinimumSize(new java.awt.Dimension(180, 120));
         sorteoBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        sorteoBtn.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSorteosPressed.png"))); // NOI18N
         sorteoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sorteoBtnActionPerformed(evt);
@@ -123,6 +125,7 @@ public class InicioUI extends javax.swing.JFrame {
         salirBtn.setMaximumSize(new java.awt.Dimension(180, 120));
         salirBtn.setMinimumSize(new java.awt.Dimension(180, 120));
         salirBtn.setPreferredSize(new java.awt.Dimension(180, 120));
+        salirBtn.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSalirPressed.png"))); // NOI18N
         salirBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirBtnActionPerformed(evt);
@@ -177,10 +180,10 @@ public class InicioUI extends javax.swing.JFrame {
 
     private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
         try {
-           //al salir se persiste sistema
+            //al salir se persiste sistema
             elSis.persistirGuardar(elSis);
-           dispose();
-           
+            dispose();
+
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

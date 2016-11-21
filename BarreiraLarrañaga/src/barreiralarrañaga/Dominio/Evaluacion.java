@@ -1,10 +1,9 @@
 package barreiralarrañaga.Dominio;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Date;
 
-public class Evaluacion implements Serializable{
+public class Evaluacion implements Serializable {
 
     //Atributos
     private Cliente cliente;
@@ -17,7 +16,7 @@ public class Evaluacion implements Serializable{
         cliente = new Cliente();
         resenia = "Sin reseña";
         estrellas = 0;
-       // fechaEvaluacion = Date.from(Instant.MIN);
+        // fechaEvaluacion = Date.from(Instant.MIN);
     }
 
     public Evaluacion(Cliente clie, int calif, String reseniaIngresada) {
@@ -62,8 +61,7 @@ public class Evaluacion implements Serializable{
         this.fechaEvaluacion = laFechaEvaluacion;
     }
 
-    
-     @Override
+    @Override
     public boolean equals(Object o) {
         Evaluacion aux = (Evaluacion) o;
         return this.cliente.equals(aux.getCliente()) && this.estrellas == aux.getEstrellas() && this.resenia.equals(aux.getResenia());
