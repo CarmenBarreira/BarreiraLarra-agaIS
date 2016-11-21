@@ -157,7 +157,7 @@ public class SistemaTest {
         System.out.println("persistirLeer");
         Sistema instance = new Sistema();
         Sistema expResult = instance.persistirLeer();
-        Sistema result = instance.persistirLeer();
+        Sistema result = instance;
         assertEquals(expResult, result);
     }
 
@@ -172,14 +172,19 @@ public class SistemaTest {
     @Test
     public void testSortear1() {
         System.out.println("sortear");
-        Sistema instance = new Sistema(); 
+        Sistema instance1 = new Sistema(); 
+        Sistema instance2 = new Sistema(); 
         ArrayList<Cliente> participantes = new ArrayList<Cliente>();
-        participantes.add(new Cliente());
-        participantes.add(new Cliente());
-        instance.getSorteoActual().setParticipantes(participantes);
+        participantes.add(new Cliente("Carmen", "csilbarreira@gmail.com"));
+        participantes.add(new Cliente("Juan", "juanignaciolarra@gmail.com"));
+        Sorteo s = new Sorteo();
+        s.setParticipantes(participantes);
+        s.setCantidadPremios(1);
+        instance1.setSorteoActual(s);
+        instance2.setSorteoActual(s);
        // instance.getSorteoActual().setCantidadPremios(1);
-        ArrayList<Cliente> expResult = instance.sortear();
-        ArrayList<Cliente> result = instance.sortear();
+        ArrayList<Cliente> expResult = instance1.sortear();
+        ArrayList<Cliente> result = instance2.sortear();
         assertEquals(expResult, result);
     } 
     
