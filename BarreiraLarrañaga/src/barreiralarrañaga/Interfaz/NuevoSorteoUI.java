@@ -7,10 +7,12 @@ import javax.swing.JOptionPane;
 public class NuevoSorteoUI extends javax.swing.JFrame {
 
     Sistema sis;
+    PanelSorteo updateSort;
 
-    public NuevoSorteoUI(Sistema unSis) {
+    public NuevoSorteoUI(Sistema unSis, PanelSorteo pSort) {
         initComponents();
         sis = unSis;
+        updateSort = pSort;
     }
 
     @SuppressWarnings("unchecked")
@@ -116,6 +118,7 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                         Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(),
                                 txtDescripcionPremio.getText(), valueSpinner);
                         sis.setSorteoActual(sorteoActual);
+                        updateSort.update(null, null);
                         this.dispose();
                     } else if (resp == 1) {
                         this.dispose();

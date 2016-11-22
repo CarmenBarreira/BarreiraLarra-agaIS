@@ -3,9 +3,11 @@ package barreiralarrañaga.Interfaz;
 import barreiralarrañaga.Dominio.Sistema;
 import barreiralarrañaga.Dominio.Sorteo;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.table.DefaultTableModel;
 
-public class PanelSorteo extends javax.swing.JPanel {
+public class PanelSorteo extends javax.swing.JPanel implements Observer {
 
     Sistema unSis;
 
@@ -135,13 +137,13 @@ public class PanelSorteo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNuevoSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoSorteoActionPerformed
-        NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis);
+        NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis,this);
         nuevoSorteo.setVisible(true);
 
     }//GEN-LAST:event_btnNuevoSorteoActionPerformed
 
     private void btnSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortearActionPerformed
-        SorteoUI resultados = new SorteoUI(unSis);
+        SorteoUI resultados = new SorteoUI(unSis, this);
         resultados.setVisible(true);
         btnSortear.setEnabled(false);
     }//GEN-LAST:event_btnSortearActionPerformed
@@ -174,7 +176,12 @@ public class PanelSorteo extends javax.swing.JPanel {
             modelo.removeRow(0);
         }
     }
-
+   @Override
+    public void update(Observable o, Object arg) {
+        cargarLista();
+        lblSorteoActual.setText(unSis.getSorteoActual().getNombre());
+        btnSortear.setEnabled(false);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNuevoSorteo;
     private javax.swing.JButton btnSortear;
@@ -184,4 +191,6 @@ public class PanelSorteo extends javax.swing.JPanel {
     private javax.swing.JLabel lblSorteoActual;
     private javax.swing.JTable tablaSorteos;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

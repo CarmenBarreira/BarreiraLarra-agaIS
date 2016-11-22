@@ -8,8 +8,24 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 public class EditarRestaurante extends javax.swing.JFrame {
 
-    public EditarRestaurante(Sistema sis) throws ParseException {
+    boolean nombreCorrecto = true, dirCorrecta = true, horCorrecta = true, tipoCorrecto = true;
+    Sistema sis;
+    String nombre, direccion, tipoComida, horarios;
+    PanelRestaurantes res;
+
+    public EditarRestaurante(Sistema unSis, PanelRestaurantes pRes) throws ParseException {
         initComponents();
+        txtDireccion.setEnabled(false);
+        txtHorariosDe.setEnabled(false);
+        txtHorariosHasta.setEnabled(false);
+        txtTipoComida.setEnabled(false);
+        txtNombreR.setEnabled(false);
+        sis = unSis;
+        res = pRes;
+        nombre = sis.getRestaurante().getNombre();
+        direccion = sis.getRestaurante().getDireccion();
+        tipoComida = sis.getRestaurante().getTiposComida();
+        horarios = sis.getRestaurante().getHorarios();
     }
 
     @SuppressWarnings("unchecked")
@@ -26,12 +42,16 @@ public class EditarRestaurante extends javax.swing.JFrame {
         lblDireccionR2 = new javax.swing.JLabel();
         txtTipoComida = new javax.swing.JTextField();
         lblFoto = new javax.swing.JLabel();
-        txtHorariosDe = new JFormattedTextField();
         lblDe = new javax.swing.JLabel();
         cmbHorariosDe = new javax.swing.JComboBox<>();
         lblHorarioHasta = new javax.swing.JLabel();
         cmbHorariosHasta = new javax.swing.JComboBox<>();
-        txtHorariosHasta = new JFormattedTextField();
+        chkBoxNombre = new javax.swing.JCheckBox();
+        chkBoxDir = new javax.swing.JCheckBox();
+        chkBoxTipo = new javax.swing.JCheckBox();
+        chkBoxHorDe = new javax.swing.JCheckBox();
+        txtHorariosDe = new javax.swing.JTextField();
+        txtHorariosHasta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Editar Datos Restaurante");
@@ -40,6 +60,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
 
         lblDireccionR.setText("Dirección: ");
 
+        txtNombreR.setForeground(new java.awt.Color(102, 102, 102));
         txtNombreR.setPreferredSize(new java.awt.Dimension(4, 20));
 
         lblNombreR.setText("Nombre: ");
@@ -72,9 +93,6 @@ public class EditarRestaurante extends javax.swing.JFrame {
         lblFoto.setPreferredSize(new java.awt.Dimension(434, 150));
         lblFoto.setVerifyInputWhenFocusTarget(false);
 
-        txtHorariosDe.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-        txtHorariosDe.setToolTipText("hh:mm");
-
         lblDe.setText("De: ");
 
         cmbHorariosDe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" }));
@@ -83,8 +101,29 @@ public class EditarRestaurante extends javax.swing.JFrame {
 
         cmbHorariosHasta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" }));
 
-        txtHorariosHasta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-        txtHorariosHasta.setToolTipText("hh:mm");
+        chkBoxNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkBoxNombreActionPerformed(evt);
+            }
+        });
+
+        chkBoxDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkBoxDirActionPerformed(evt);
+            }
+        });
+
+        chkBoxTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkBoxTipoActionPerformed(evt);
+            }
+        });
+
+        chkBoxHorDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkBoxHorDeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,37 +132,48 @@ public class EditarRestaurante extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(66, 66, 66)
-                                    .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(chkBoxDir)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblDe)
-                                .addComponent(lblHorarioHasta))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cmbHorariosHasta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtHorariosHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(chkBoxNombre)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(36, 36, 36)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(chkBoxHorDe)
+                                                .addComponent(chkBoxTipo))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDe)
+                            .addComponent(lblHorarioHasta))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmbHorariosHasta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbHorariosDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtHorariosDe)
+                            .addComponent(txtHorariosHasta, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))))
                 .addGap(0, 61, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +183,7 @@ public class EditarRestaurante extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(201, 201, 201)
                         .addComponent(btnGuardarEditarRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,19 +195,29 @@ public class EditarRestaurante extends javax.swing.JFrame {
                     .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(txtNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(chkBoxNombre))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(chkBoxDir))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(chkBoxTipo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDireccionR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDireccionR2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTipoComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(8, 8, 8)
-                        .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDireccionR1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkBoxHorDe))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblDe)
@@ -177,63 +237,144 @@ public class EditarRestaurante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarEditarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEditarRestauranteActionPerformed
-        String nombre, direccion, tipoComida;
-        nombre = txtNombreR.getText();
-        direccion = txtDireccion.getText();
-        tipoComida = txtTipoComida.getText();
-        //Armo el string de horarios en base a los combos de dias y los horarios
-        String horarios = "De " + cmbHorariosDe.getSelectedItem().toString()
-                + " a " + cmbHorariosHasta.getSelectedItem().toString() + " - "
-                + txtHorariosDe.getText() + " a " + txtHorariosDe.getText();
 
-        if (nombre.length() == 0 || direccion.length() == 0 || tipoComida.length() == 0
-                || txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {
-            //si algun dato esta vacio
-            JOptionPane.showMessageDialog(this, "Debe completar todos los datos",
-                    "Campos Obligatorios", ERROR_MESSAGE);
-        } 
-        else{ 
-            if (!stringCorrecto(nombre, "nombre")) { //nombre incorrecto
-                JOptionPane.showMessageDialog(this, "El nombre es Incorrecto "
-                        + "(el mismo no puede ser vacio ni mayor a 30 caracteres)",
-                        "Nombre Incorrecto", ERROR_MESSAGE);
-                txtNombreR.selectAll();
-                txtNombreR.requestFocusInWindow();
-            } 
-            else{//nombre correcto
-                if (!stringCorrecto(direccion, "direccion")) { //direccion incorrecta
-                    JOptionPane.showMessageDialog(this, "La direccion es Incorrecto",
-                            "Direccion Incorrecta", ERROR_MESSAGE);
-                    txtDireccion.selectAll();
-                    txtDireccion.requestFocusInWindow();
-                } else if (!stringCorrecto(tipoComida, "tipoComida")) { //tipo comida incorrecta
-                    JOptionPane.showMessageDialog(this, "El tipo de comida es "
-                            + "Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)",
-                            "Nombre Incorrecto", ERROR_MESSAGE);
-                    txtTipoComida.selectAll();
-                    txtTipoComida.requestFocusInWindow();
-                } else if (txtHorariosDe.getText().length() == 0 || txtHorariosDe.getText().length() == 0) {
-                    JOptionPane.showMessageDialog(this, "El formato de hora es hh:mm"
-                            + "(siendo hh la hora y mm los minutos)",
-                            "Horario Incorrecto", ERROR_MESSAGE);
-                } else {//todos los datos bien
-                    sis.getRestaurante().setNombre(nombre);
-                    sis.getRestaurante().setDireccion(direccion);
-                    sis.getRestaurante().setHorarios(horarios);
-                    sis.getRestaurante().setTiposComida(tipoComida);
+        if (chkBoxNombre.isSelected()) {
+            if (!stringCorrecto(txtNombreR.getText())) {
 
-                    JOptionPane.showMessageDialog(null, "Se edito exitosamente el restaurante",
-                            "Modifcación exitosa", JOptionPane.INFORMATION_MESSAGE);
-                    this.dispose();
-                   // PanelRestaurantes.
-                }
-            }//Else de nombre correcto
+                JOptionPane.showMessageDialog(this, "Debe completar todos los datos",
+                        "Campos Obligatorios", ERROR_MESSAGE);
+                nombreCorrecto = false;
+            } else {
+                nombre = txtNombreR.getText();
+                nombreCorrecto = true;
+            }
         }
-    }//GEN-LAST:event_btnGuardarEditarRestauranteActionPerformed
+        if (chkBoxDir.isSelected()) {
+            if (!stringCorrecto(txtDireccion.getText())) { //direccion incorrecta
+                JOptionPane.showMessageDialog(this, "La direccion es Incorrecto",
+                        "Direccion Incorrecta", ERROR_MESSAGE);
+                dirCorrecta = false;
+            } else {
+                direccion = txtDireccion.getText();
+                dirCorrecta = true;
+            }
 
-    Sistema sis = new Sistema();
+        }
+        if (chkBoxTipo.isSelected()) { //tipo comida incorrecta
+
+            if (!stringCorrecto(txtTipoComida.getText())) {
+
+                JOptionPane.showMessageDialog(this, "El tipo de comida es "
+                        + "Incorrecto (el mismo no puede ser vacio ni mayor a 30 caracteres)",
+                        "Nombre Incorrecto", ERROR_MESSAGE);
+                tipoCorrecto = false;
+
+            } else {
+                tipoComida = txtTipoComida.getText();
+                tipoCorrecto = true;
+            }
+        }
+
+        if (chkBoxHorDe.isSelected()) {
+
+            if (!checkHorarios(txtHorariosDe.getText()) || !checkHorarios(txtHorariosHasta.getText())) {
+                JOptionPane.showMessageDialog(this, "El formato de hora es hh:mm"
+                        + "(siendo hh la hora y mm los minutos)",
+                        "Horario Incorrecto", ERROR_MESSAGE);
+                horCorrecta = false;
+            } else {
+                horarios = "De " + cmbHorariosDe.getSelectedItem().toString()
+                        + " a " + cmbHorariosHasta.getSelectedItem().toString() + " - "
+                        + txtHorariosDe.getText() + " a " + txtHorariosDe.getText();
+                horCorrecta = true;
+            }
+        }
+
+        if (nombreCorrecto && dirCorrecta && horCorrecta && tipoCorrecto) {//todos los datos bien
+
+            //Armo el string de horarios en base a los combos de dias y los horarios
+            sis.getRestaurante().setNombre(nombre);
+            sis.getRestaurante().setHorarios(horarios);
+            sis.getRestaurante().setDireccion(direccion);
+            sis.getRestaurante().setTiposComida(tipoComida);
+            res.update(null, null);
+            this.dispose();
+
+
+    }//GEN-LAST:event_btnGuardarEditarRestauranteActionPerformed
+    }
+    private void chkBoxNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBoxNombreActionPerformed
+        if (chkBoxNombre.isSelected()) {
+            txtNombreR.setEnabled(true);
+
+        } else {
+            txtNombreR.setEnabled(false);
+            nombreCorrecto = true;
+            nombre = sis.getRestaurante().getNombre();
+        }
+    }//GEN-LAST:event_chkBoxNombreActionPerformed
+
+    private void chkBoxDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBoxDirActionPerformed
+        if (chkBoxDir.isSelected()) {
+            txtDireccion.setEnabled(true);
+
+        } else {
+            txtDireccion.setEnabled(false);
+            dirCorrecta = true;
+            direccion = sis.getRestaurante().getDireccion();
+        }
+    }//GEN-LAST:event_chkBoxDirActionPerformed
+
+    private void chkBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBoxTipoActionPerformed
+        if (chkBoxTipo.isSelected()) {
+            txtTipoComida.setEnabled(true);
+
+        } else {
+            txtTipoComida.setEnabled(false);
+            tipoCorrecto = true;
+            tipoComida = sis.getRestaurante().getTiposComida();
+        }
+
+
+    }//GEN-LAST:event_chkBoxTipoActionPerformed
+
+    private void chkBoxHorDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBoxHorDeActionPerformed
+        if (chkBoxHorDe.isSelected()) {
+            txtHorariosDe.setEnabled(true);
+            txtHorariosHasta.setEnabled(true);
+        } else {
+            txtHorariosDe.setEnabled(false);
+            txtHorariosHasta.setEnabled(false);
+            horCorrecta = true;
+            horarios = sis.getRestaurante().getHorarios();
+        }
+    }//GEN-LAST:event_chkBoxHorDeActionPerformed
+
+    public boolean checkHorarios(String horario) {
+        boolean esCorrecto = false;
+        if (horario.length() == 5) {
+            String[] horarioSpl = horario.split(":");
+
+            if (horarioSpl.length == 2) {
+                int hora = Integer.parseInt(horarioSpl[0]);
+                int minutos = Integer.parseInt(horarioSpl[1]);
+                if (hora >= 0 && hora <= 24 && minutos >= 0 && minutos <= 59) {
+                    esCorrecto = true;
+
+                }
+
+            }
+
+        }
+        return esCorrecto;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarEditarRestaurante;
+    private javax.swing.JCheckBox chkBoxDir;
+    private javax.swing.JCheckBox chkBoxHorDe;
+    private javax.swing.JCheckBox chkBoxNombre;
+    private javax.swing.JCheckBox chkBoxTipo;
     private javax.swing.JComboBox<String> cmbHorariosDe;
     private javax.swing.JComboBox<String> cmbHorariosHasta;
     private javax.swing.JLabel lblDe;
@@ -245,30 +386,20 @@ public class EditarRestaurante extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombreR;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtDireccion;
-    private javax.swing.JFormattedTextField txtHorariosDe;
-    private javax.swing.JFormattedTextField txtHorariosHasta;
+    private javax.swing.JTextField txtHorariosDe;
+    private javax.swing.JTextField txtHorariosHasta;
     private javax.swing.JTextField txtNombreR;
     private javax.swing.JTextField txtTipoComida;
     // End of variables declaration//GEN-END:variables
 
-public boolean stringCorrecto(String s, String tipo) {
+    public boolean stringCorrecto(String s) {
         /*Esta funcion valida si el string que se pasa por parametro segun el tipo
         es o no valido. Y retorna un booleano segun sea o no valido*/
         boolean esCorrecto = false;
-        boolean espaciosVacios = false;
-        if (!s.isEmpty()) {
-            if (s.charAt(0) == ' ' || s.isEmpty()) {
-                espaciosVacios = true;
-            }
-            if (s.equals("") || espaciosVacios) {
-                //el string esta vacio o empieza con espacio
-                if (tipo.toUpperCase().equals("nombre".toUpperCase())
-                        || (tipo.toUpperCase().equals("alias".toUpperCase()))) {
-                    esCorrecto = false;
-                }
-            } else {
-                esCorrecto = true;
-            }
+        if (s.length()>0) {
+            if ( s.charAt(0) != ' ') {
+                 esCorrecto = true;
+            } 
         }
         return esCorrecto;
     }
