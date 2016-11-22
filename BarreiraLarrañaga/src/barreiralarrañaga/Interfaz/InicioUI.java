@@ -1,5 +1,6 @@
 package barreiralarrañaga.Interfaz;
 
+import barreiralarrañaga.Dominio.SendMail;
 import barreiralarrañaga.Dominio.Sistema;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,11 +10,10 @@ public class InicioUI extends javax.swing.JFrame {
 
     Sistema elSis;
     Border bor;
-
+    SendMail a;
     public InicioUI(Sistema unSis) throws ClassNotFoundException {
 
         initComponents();
-
         paneInterior.setVisible(false);
         //seteo icono de form
 

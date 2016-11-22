@@ -59,5 +59,9 @@ public class Restaurante implements Comparable<Restaurante>, Serializable{
     public int compareTo(Restaurante o) {
         return this.getNombre().compareTo(o.getNombre());
     }
+
+    public String getTiposComida() {
+        return tiposComida;
+    }
     
 }
