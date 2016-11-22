@@ -6,7 +6,6 @@
 package barreiralarrañaga.Interfaz;
 
 import barreiralarrañaga.Dominio.Cliente;
-import barreiralarrañaga.Dominio.SendMail;
 import barreiralarrañaga.Dominio.Sistema;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,10 +22,9 @@ public final class SorteoUI extends javax.swing.JFrame {
 
     /**
      * Creates new form SorteoUI
-     *
      * @param sis
      */
-    public SorteoUI(Sistema sis, PanelSorteo pSort) {
+    public SorteoUI(Sistema sis) {
         unSis = sis;
         initComponents();
 
@@ -42,10 +40,9 @@ public final class SorteoUI extends javax.swing.JFrame {
         unSis.getSorteoActual().setParticipantes(partAux);
         unSis.getSorteoActual().setFecha(date);
         cargarLista();
-        notificarGanadores(arrayGanadores);
+
         unSis.getSorteos().add(unSis.getSorteoActual());
         unSis.setSorteoActual(null);
-      pSort.update(null, null);
     }
 
     public void cargarLista() {
@@ -69,20 +66,6 @@ public final class SorteoUI extends javax.swing.JFrame {
         for (int i = 0; i < filas; i++) {
             modelo.removeRow(0);
         }
-    }
-
-    private void notificarGanadores(ArrayList<Cliente> clin) {
-        SendMail mail = new SendMail();
-        for (int i = 0; i < clin.size(); i++) {
-            String titulo = "Felicidades" + clin.get(i).getNombreCliente() + "!!!";
-            String mensajeCuerpo = "El restaurant " + unSis.getRestaurante().getNombre() + 
-                    "te quiere felicitar por participar y ganar el sorteo" + unSis.getSorteoActual().getNombre() 
-                    + "Y ganarte: " + unSis.getSorteoActual().getNombre();
-            
-            mail.Send(titulo,mensajeCuerpo, clin.get(i).getEmailCliente());
-
-        }
-
     }
 
     /**
