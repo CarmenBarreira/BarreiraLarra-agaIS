@@ -29,12 +29,12 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnNuevoSorteo" max="32767" attributes="0"/>
-                  <Component id="btnSortear" max="32767" attributes="0"/>
+                  <Component id="btnSortear" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="488" max="-2" attributes="0"/>
               <EmptySpace pref="8" max="32767" attributes="0"/>
           </Group>
@@ -48,8 +48,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="lblSorteo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblSorteoActual" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                      <Component id="lblSorteoActual" min="-2" pref="291" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -68,14 +68,13 @@
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="230" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="btnNuevoSorteo" min="-2" pref="81" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnSortear" min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="152" max="32767" attributes="0"/>
+              <EmptySpace pref="143" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -164,11 +163,17 @@
     </Container>
     <Component class="javax.swing.JLabel" name="lblSorteo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft Yi Baiti" size="24" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sorteo Actual: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSorteoActual">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft Yi Baiti" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="No hay sorteos activos."/>
       </Properties>
     </Component>

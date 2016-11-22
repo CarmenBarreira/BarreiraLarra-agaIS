@@ -3,9 +3,11 @@ package barreiralarrañaga.Interfaz;
 import barreiralarrañaga.Dominio.Sistema;
 import barreiralarrañaga.Dominio.Sorteo;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.table.DefaultTableModel;
 
-public class PanelSorteo extends javax.swing.JPanel {
+public class PanelSorteo extends javax.swing.JPanel implements Observer {
 
     Sistema unSis;
 
@@ -85,8 +87,10 @@ public class PanelSorteo extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaSorteos);
 
+        lblSorteo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         lblSorteo.setText("Sorteo Actual: ");
 
+        lblSorteoActual.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblSorteoActual.setText("No hay sorteos activos.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -94,11 +98,11 @@ public class PanelSorteo extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnNuevoSorteo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSortear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnSortear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(8, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -110,8 +114,8 @@ public class PanelSorteo extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblSorteo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblSorteoActual)
-                        .addGap(224, 224, 224))))
+                        .addComponent(lblSorteoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,22 +130,21 @@ public class PanelSorteo extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
                         .addComponent(btnNuevoSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSortear, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNuevoSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoSorteoActionPerformed
-        NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis);
+        NuevoSorteoUI nuevoSorteo = new NuevoSorteoUI(unSis,this);
         nuevoSorteo.setVisible(true);
 
     }//GEN-LAST:event_btnNuevoSorteoActionPerformed
 
     private void btnSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortearActionPerformed
-        SorteoUI resultados = new SorteoUI(unSis);
+        SorteoUI resultados = new SorteoUI(unSis, this);
         resultados.setVisible(true);
         btnSortear.setEnabled(false);
     }//GEN-LAST:event_btnSortearActionPerformed
@@ -174,7 +177,17 @@ public class PanelSorteo extends javax.swing.JPanel {
             modelo.removeRow(0);
         }
     }
-
+   @Override
+    public void update(Observable o, Object arg) {
+        cargarLista();
+        if(unSis.getSorteoActual()!=null){
+         lblSorteoActual.setText(unSis.getSorteoActual().getNombre());
+        }else{
+         lblSorteoActual.setText("No hay sorteos activos");
+        }
+       
+        btnSortear.setEnabled(false);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNuevoSorteo;
     private javax.swing.JButton btnSortear;
@@ -184,4 +197,6 @@ public class PanelSorteo extends javax.swing.JPanel {
     private javax.swing.JLabel lblSorteoActual;
     private javax.swing.JTable tablaSorteos;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

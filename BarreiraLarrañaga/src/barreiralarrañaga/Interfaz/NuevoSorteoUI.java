@@ -7,10 +7,12 @@ import javax.swing.JOptionPane;
 public class NuevoSorteoUI extends javax.swing.JFrame {
 
     Sistema sis;
+    PanelSorteo updateSort;
 
-    public NuevoSorteoUI(Sistema unSis) {
+    public NuevoSorteoUI(Sistema unSis, PanelSorteo pSort) {
         initComponents();
         sis = unSis;
+        updateSort = pSort;
     }
 
     @SuppressWarnings("unchecked")
@@ -28,9 +30,12 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
         txtDescripcionPremio = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo Sorteo");
 
+        lblGanadores.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblGanadores.setText("Cantidad de Ganadores:");
 
+        btnCrear.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         btnCrear.setText("Crear Sorteo");
         btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -38,14 +43,17 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
             }
         });
 
-        LblNuevoSorteo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LblNuevoSorteo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         LblNuevoSorteo.setText("Nuevo Sorteo");
 
+        lblNombre.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblNombre.setText("Nombre de sorteo:");
 
-        lblDesc.setText("Descripcion de premio:");
+        lblDesc.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
+        lblDesc.setText("Descripción de premio:");
 
         txtDescripcionPremio.setColumns(20);
+        txtDescripcionPremio.setFont(new java.awt.Font("Microsoft Yi Baiti", 0, 18)); // NOI18N
         txtDescripcionPremio.setRows(5);
         jScrollPane1.setViewportView(txtDescripcionPremio);
 
@@ -63,9 +71,6 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                                 .addComponent(lblNombre)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtNombreSorteo))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(98, 98, 98)
-                                .addComponent(LblNuevoSorteo))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblGanadores)
@@ -73,8 +78,11 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                                 .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
-                        .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                        .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(LblNuevoSorteo)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +103,7 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                     .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,8 +124,10 @@ public class NuevoSorteoUI extends javax.swing.JFrame {
                         Sorteo sorteoActual = new Sorteo(txtNombreSorteo.getText(),
                                 txtDescripcionPremio.getText(), valueSpinner);
                         sis.setSorteoActual(sorteoActual);
+                        updateSort.update(null, null);
                         this.dispose();
                     } else if (resp == 1) {
+                         updateSort.update(null, null);
                         this.dispose();
                     }
 

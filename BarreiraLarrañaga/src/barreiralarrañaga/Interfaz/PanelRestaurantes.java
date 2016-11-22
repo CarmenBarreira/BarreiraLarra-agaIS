@@ -6,10 +6,12 @@ import java.awt.Rectangle;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.table.DefaultTableModel;
 
-public final class PanelRestaurantes extends javax.swing.JPanel {
+public final class PanelRestaurantes extends javax.swing.JPanel implements Observer {
 
     private final Sistema elSis;
 
@@ -17,6 +19,7 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
         initComponents();
         elSis = sis;
         cargarLista();
+       jLabel1.setText( elSis.getRestaurante().getNombre());
         double eval = elSis.getPromedioEval();
         lblPromedioTitulo.setVisible(true);
         if (eval > 0) {
@@ -69,7 +72,6 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblFotoRes = new javax.swing.JLabel();
         lblComidaDesc = new javax.swing.JLabel();
         lblTiposComida = new javax.swing.JLabel();
         lblHorarios = new javax.swing.JLabel();
@@ -86,6 +88,7 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
         btnStarOne3 = new javax.swing.JToggleButton();
         btnStarOne4 = new javax.swing.JToggleButton();
         lblPromedio = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(683, 548));
         setMinimumSize(new java.awt.Dimension(683, 548));
@@ -93,27 +96,19 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(683, 548));
 
-        lblFotoRes.setFont(lblFotoRes.getFont());
-        lblFotoRes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFotoRes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/restauranteFoto.jpg"))); // NOI18N
-        lblFotoRes.setIconTextGap(6);
-        lblFotoRes.setMaximumSize(new java.awt.Dimension(434, 150));
-        lblFotoRes.setMinimumSize(new java.awt.Dimension(434, 150));
-        lblFotoRes.setPreferredSize(new java.awt.Dimension(434, 150));
-        lblFotoRes.setVerifyInputWhenFocusTarget(false);
+        lblComidaDesc.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        lblComidaDesc.setText("COMIDAS:");
 
-        lblComidaDesc.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblComidaDesc.setText("Comidas: ");
+        lblTiposComida.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
+        lblTiposComida.setText("ITALIANA");
 
-        lblTiposComida.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        lblTiposComida.setText("Italiana");
-
-        lblHorarios.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        lblHorarios.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblHorarios.setText("Jueves a Domingos - 10:00 a 00:00");
 
-        lblDireccionRestaurante1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        lblDireccionRestaurante1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblDireccionRestaurante1.setText("Cuareim 1451");
 
+        btnEditarRestaurante.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         btnEditarRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/editar.png"))); // NOI18N
         btnEditarRestaurante.setText("Editar Restaurante");
         btnEditarRestaurante.addActionListener(new java.awt.event.ActionListener() {
@@ -122,11 +117,11 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
             }
         });
 
-        lblDirMostrar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblDirMostrar.setText("Direccion: ");
+        lblDirMostrar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        lblDirMostrar.setText("DIRECCIÓN: ");
 
-        lblHorarioDesc.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblHorarioDesc.setText("Horario: ");
+        lblHorarioDesc.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        lblHorarioDesc.setText("HORARIO: ");
 
         tablaResenias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -157,8 +152,8 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tablaResenias);
         tablaResenias.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        lblPromedioTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblPromedioTitulo.setText("Promedio:");
+        lblPromedioTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
+        lblPromedioTitulo.setText("PROMEDIO:");
 
         btnStarOne.setBackground(new java.awt.Color(204, 204, 255));
         btnStarOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/notPressed.png"))); // NOI18N
@@ -215,90 +210,90 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
         btnStarOne4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/star.png"))); // NOI18N
         btnStarOne4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/star.png"))); // NOI18N
 
-        lblPromedio.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblPromedio.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
+        jLabel1.setText("RESTAURANT");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblComidaDesc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTiposComida, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEditarRestaurante))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(lblPromedioTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnStarOne, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnStarOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnStarOne3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnStarOne2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnStarOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblDirMostrar)
-                        .addGap(4, 4, 4)
-                        .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblHorarioDesc)
-                        .addGap(28, 28, 28)
-                        .addComponent(lblHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)))
-                .addGap(14, 14, 14))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblFotoRes, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(403, 403, 403)
-                        .addComponent(lblPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addComponent(lblHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEditarRestaurante))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblComidaDesc)
-                                    .addComponent(lblTiposComida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDirMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblHorarioDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addComponent(lblFotoRes, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btnStarOne, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnStarOne2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnStarOne3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblPromedioTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnStarOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnStarOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(50, 50, 50))
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addComponent(btnEditarRestaurante))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblDirMostrar)
+                                .addGap(4, 4, 4)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTiposComida, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(lblPromedioTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnStarOne, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnStarOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnStarOne3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnStarOne2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnStarOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(btnEditarRestaurante))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel1)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblComidaDesc)
+                    .addComponent(lblTiposComida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDirMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDireccionRestaurante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHorarioDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnStarOne, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnStarOne2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnStarOne3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblPromedioTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnStarOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStarOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -306,7 +301,7 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
 
         EditarRestaurante editRest = null;
         try {
-            editRest = new EditarRestaurante(elSis);
+            editRest = new EditarRestaurante(elSis, this);
 
         } catch (ParseException ex) {
 
@@ -358,11 +353,11 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnStarOne2;
     private javax.swing.JToggleButton btnStarOne3;
     private javax.swing.JToggleButton btnStarOne4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblComidaDesc;
     private javax.swing.JLabel lblDirMostrar;
     private javax.swing.JLabel lblDireccionRestaurante1;
-    private javax.swing.JLabel lblFotoRes;
     private javax.swing.JLabel lblHorarioDesc;
     private javax.swing.JLabel lblHorarios;
     private javax.swing.JLabel lblPromedio;
@@ -370,4 +365,12 @@ public final class PanelRestaurantes extends javax.swing.JPanel {
     private javax.swing.JLabel lblTiposComida;
     private javax.swing.JTable tablaResenias;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+       lblDireccionRestaurante1.setText(elSis.getRestaurante().getDireccion());
+       jLabel1.setText(elSis.getRestaurante().getNombre());
+       lblTiposComida.setText(elSis.getRestaurante().getTiposComida());
+       lblHorarios.setText(elSis.getRestaurante().getHorarios());
+    }
 }

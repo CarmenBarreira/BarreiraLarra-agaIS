@@ -28,23 +28,20 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblTextoResenia3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTextoResenia2" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTextoResenia1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jPanel1" min="-2" pref="511" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblTextoResenia3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTextoResenia2" max="32767" attributes="0"/>
+                      <Component id="lblTextoResenia1" alignment="0" min="-2" pref="728" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" pref="560" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="391" max="32767" attributes="0"/>
+              <EmptySpace pref="254" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,9 +56,9 @@
               <Component id="lblTextoResenia2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTextoResenia3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,49 +82,48 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblPuntuacion" min="-2" pref="72" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnStarOne" min="-2" pref="59" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnStarTwo" min="-2" pref="59" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnStarThree" min="-2" pref="59" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnStarFour" min="-2" pref="59" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnStarFive" min="-2" pref="59" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
-                          <Component id="lblNombreCliente" min="-2" pref="72" max="-2" attributes="0"/>
+                          <Component id="lblNombreCliente" min="-2" pref="89" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="txtNombreCliente" min="-2" pref="154" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lblCorreoCliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txtCorreoCliente" min="-2" pref="169" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="66" pref="66" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="btnEnviar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblPuntuacion" min="-2" pref="114" max="-2" attributes="0"/>
+                                      <Component id="lblResenia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnStarOne" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnStarTwo" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnStarThree" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnStarFour" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnStarFive" min="-2" pref="59" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnEnviar" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jScrollPane1" alignment="1" min="-2" pref="425" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" min="-2" pref="425" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblResenia" min="-2" pref="55" max="-2" attributes="0"/>
-                      <EmptySpace pref="650" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -135,7 +131,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtNombreCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblNombreCliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
@@ -144,34 +140,25 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnStarOne" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="btnStarTwo" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="btnStarThree" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="btnStarFour" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="btnStarFive" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="btnStarOne" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btnStarTwo" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btnStarThree" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btnStarFour" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btnStarFive" alignment="1" min="-2" pref="51" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="lblPuntuacion" min="-2" pref="25" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblResenia" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jScrollPane1" min="-2" pref="111" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="99" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnEnviar" alignment="1" min="-2" pref="82" max="-2" attributes="0"/>
-                      <Component id="btnCancelar" alignment="1" min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="btnEnviar" min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="btnCancelar" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                      <Component id="lblResenia" min="-2" pref="24" max="-2" attributes="0"/>
-                      <EmptySpace pref="127" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -179,6 +166,9 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblCorreoCliente">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Yi Baiti" size="24" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Correo: "/>
           </Properties>
         </Component>
@@ -359,16 +349,25 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblPuntuacion">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Yi Baiti" size="18" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Puntuaci&#xf3;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreCliente">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Yi Baiti" size="24" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nombre: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblResenia">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Yi Baiti" size="18" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Rese&#xf1;a: "/>
           </Properties>
         </Component>
@@ -376,17 +375,26 @@
     </Container>
     <Component class="javax.swing.JLabel" name="lblTextoResenia1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="              Le agradecemos por habernos visitado. Para mejorar la atencion y a la calidad del servicio"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft Yi Baiti" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="     Le agradecemos por habernos visitado. Para mejorar la atencion y a la calidad del "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTextoResenia2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="le pedimos que nos deje su rese&#xf1;a. Completando esta misma con su nombre y correo electronico "/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft Yi Baiti" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="servicio le pedimos que nos deje su rese&#xf1;a. Completando esta misma con su nombre y "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTextoResenia3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="participa usted en los frecuentes sorteos del establecimiento.  No se lo puede perder!"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft Yi Baiti" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="correo electronico participa usted en los frecuentes sorteos del establecimiento.  "/>
       </Properties>
     </Component>
   </SubComponents>

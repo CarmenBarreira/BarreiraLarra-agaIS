@@ -63,9 +63,10 @@ public final class ResultadosSorteoDetallado extends javax.swing.JFrame {
         lblTextResumenSorteo = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Resumen de Sorteo");
 
-        lblTextGanadores.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblTextGanadores.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         lblTextGanadores.setText("Ganadores");
 
         tablaGanadores.setModel(new javax.swing.table.DefaultTableModel(
@@ -81,20 +82,26 @@ public final class ResultadosSorteoDetallado extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tablaGanadores);
 
+        lblNombreSorteo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblNombreSorteo.setText("Nombre de sorteo:");
 
+        lblDescripcionPremios.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblDescripcionPremios.setText("Descripción de premios:");
 
+        lblFecha.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 18)); // NOI18N
         lblFecha.setText("Fecha");
 
+        txtAreaDesc.setEditable(false);
         txtAreaDesc.setColumns(20);
+        txtAreaDesc.setFont(new java.awt.Font("Microsoft Yi Baiti", 0, 18)); // NOI18N
         txtAreaDesc.setRows(5);
         jScrollPane3.setViewportView(txtAreaDesc);
 
-        lblTextResumenSorteo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblTextResumenSorteo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         lblTextResumenSorteo.setText("Resumen de sorteo");
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barreiralarrañaga/Interfaz/img/iconSalirChico.png"))); // NOI18N
+        btnSalir.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -120,19 +127,21 @@ public final class ResultadosSorteoDetallado extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(lblTextResumenSorteo)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(lblNombreSorteo)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(lblNombreSOrteo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(lblFecha)
-                                        .addGap(70, 70, 70)
-                                        .addComponent(fechaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 56, Short.MAX_VALUE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(lblFecha)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(fechaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(lblNombreSorteo)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lblNombreSOrteo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 49, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -140,14 +149,14 @@ public final class ResultadosSorteoDetallado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(lblTextResumenSorteo)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNombreSorteo)
-                    .addComponent(lblNombreSOrteo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fechaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFecha))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNombreSOrteo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombreSorteo))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblFecha)
+                    .addComponent(fechaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDescripcionPremios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -156,9 +165,9 @@ public final class ResultadosSorteoDetallado extends javax.swing.JFrame {
                 .addComponent(lblTextGanadores)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addGap(44, 44, 44))
         );
 
         pack();
